@@ -7,7 +7,7 @@ User=ubuntu
 Group=www-data
 WorkingDirectory=/home/ubuntu/ChatbotNutrizionisti
 Environment="PATH=/home/ubuntu/ChatbotNutrizionisti/venv/bin"
-ExecStart=/home/ubuntu/ChatbotNutrizionisti/venv/bin/gunicorn --workers 3 --bind unix:myproject.sock -m 007 wsgi:app
+ExecStart=/home/ubuntu/ChatbotNutrizionisti/venv/bin/gunicorn --reload --workers 3 --bind unix:myproject.sock -m 007 wsgi:app
 
 [Install]
 WantedBy=multi-user.target
