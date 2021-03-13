@@ -11,10 +11,11 @@ from keras.models import load_model
 import pickle
 import os
 import re
-
+from datetime import datetime as dt
 
 class Chatbot:
     MODEL_FOLDER = "model"
+    LOGS_FOLDER = "logs"
 
     SENSITIVITY = None
 
@@ -31,12 +32,17 @@ class Chatbot:
         self._nlp = spacy.load("it_core_news_sm")
         self.SENSITIVITY = sensitivity
 
+        if(not os.path.isdir(self.LOGS_FOLDER)):
+            os.mkdir(self.LOGS_FOLDER)
+            self._create_log("errors.log")
+            self._create_log("conversations.log")
+
     def add_action(self, intent, action):
         self._actions_map[intent] = action
 
-    def ask(self, answer, return_proba=False):
+    def ask(self, question, return_proba=False):
 
-        tokens = self._nlp(answer)
+        tokens = self._nlp(question)
 
         entities = {}
 
@@ -59,11 +65,14 @@ class Chatbot:
             y = y_proba.argmax()
             intent = self._le.inverse_transform([y])
             response = self._get_response(intent, entities=entities)
-
-            return (response, y_proba_max) if return_proba else response
         else:
-            default = self._get_default()
-            return (default, y_proba_max) if return_proba else default
+            response = self._get_default()
+            intent = "Sconosciuto"
+            self._save_log(question, response, intent, y_proba_max, error=True)
+
+        self._save_log(question, response, intent, y_proba_max)
+        return (response, y_proba_max) if return_proba else response
+
 
     def train(self, corpus_file, epochs=1000):
 
@@ -204,6 +213,33 @@ class Chatbot:
         # eseguiamo l'addestramento
         model.fit(X.toarray(), y.toarray(), epochs=epochs)
         return model
+
+
+    def _create_log(self, filename):
+        f = open(self.LOGS_FOLDER + "/" + filename, "w+")
+        f.write("DATA E ORA\tDOMANDA\tRISPOSTA\tINTENT\tPROBABILITA'")
+        f.close()
+
+
+    def _save_log(self, question, answer, intent, proba, error=False):
+
+            if(error):
+                f = open(self.LOGS_FOLDER+"/errors.log","a+")
+            else:
+                f = open(self.LOGS_FOLDER+"/conversations.log","a+")
+
+            date_time = dt.now().strftime("%d/%m/%Y %H:%M:%S")
+
+            f.write("\n"+
+                    date_time+"\t"+
+                    question+"\t"+
+                    answer+"\t"+
+                    intent+"\t"+
+                    str(proba)
+            )
+
+            f.close()
+
 
 
 if __name__ == '__main__':
