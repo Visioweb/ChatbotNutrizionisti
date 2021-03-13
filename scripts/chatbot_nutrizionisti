@@ -1,0 +1,9 @@
+server {
+    listen 80;
+    server_name chatbot.benessereevita.it www.chatbot.benessereevita.it;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/ubuntu/ChatbotNutrizionisti/myproject.sock;
+    }
+}
