@@ -17,7 +17,3 @@ def ask():
 
     return jsonify({"answer": str(answer[0]),
                     "probability": str(answer[1])}), 200
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
