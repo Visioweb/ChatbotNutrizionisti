@@ -5,20 +5,10 @@ from actions import *
 
 
 app = Flask(__name__)
-app.config['CORS_HEADERS'] = 'Content-Type'
-
-cors = CORS(app, resources={r"/ask": {"origins": "https://visioweb.it"}})
-
-@app.route('/ask', methods=["GET", "POST"])
-@cross_origin(origin='https://visioweb.it',headers=['Content- Type','Authorization'])
-
-
-'''
-app = Flask(__name__)
 CORS(app)
 
 @app.route('/ask', methods=["GET", "POST"])
-'''
+
 def ask():
 
     data = request.get_json()
