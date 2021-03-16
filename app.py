@@ -15,6 +15,7 @@ def ask():
 
     chatbot = Chatbot()
     chatbot.load()
+    chatbot.add_action("SearchNutrizionists", search_nutrizionists)
     answer = chatbot.ask(data["message"], return_proba=True)
 
     return jsonify({"answer": str(answer[0]),
