@@ -5,13 +5,12 @@ from actions import *
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'the quick brown fox jumps over the lazy   dog'
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 cors = CORS(app, resources={r"/ask": {"origins": "https://visioweb.it"}})
 
 @app.route('/ask', methods=["GET", "POST"])
-@cross_origin(origin='visioweb.it',headers=['Content- Type','Authorization'])
+@cross_origin(origin='https://visioweb.it',headers=['Content- Type','Authorization'])
 
 
 '''
