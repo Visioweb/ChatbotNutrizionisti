@@ -22,14 +22,14 @@ def search_nutritionists(vars):
   db = db_connect()
   cursor = db.cursor()
 
-  cursor.execute("SELECT email FROM utente LIMIT 1")
+  cursor.execute("SELECT * FROM utente WHERE provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
 
   result = cursor.fetchall()
 
   for nutritionist in result:
     # in questo caso prendiamo solo il primo nutrizionista
     # non ho capito nel tuo db qual è il campo relativo al nome
-    vars["NUTR"] = nutritionist["nome"]
+    vars["NUTR"] = nutritionist[12]
 
   return vars
 
