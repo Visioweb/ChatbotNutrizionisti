@@ -34,6 +34,6 @@ def search_nutritionists(vars):
   return vars
 
 # Per testare
-if _name_ == "_main_":
+if _name_ == "__main:__":
   vars = search_nutritionists({"LOC":"Roma"})
   print(vars)
