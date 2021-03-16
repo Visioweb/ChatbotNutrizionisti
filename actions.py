@@ -34,5 +34,6 @@ def search_nutritionists(vars):
   return vars
 
 # Per testare
-vars = search_nutritionists({"LOC":"Roma"})
-print(vars)
+if _name_ == "_main_":
+  vars = search_nutritionists({"LOC":"Roma"})
+  print(vars)
