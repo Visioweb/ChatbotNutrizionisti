@@ -246,6 +246,5 @@ if __name__ == '__main__':
 
     chatbot = Chatbot(sensitivity=.7)
     chatbot.load()
-    chatbot.add_action("SearchNutrizionists", search_nutrizionists)
     answer = chatbot.ask("ciao come stai ?", return_proba=True)
     print(answer)
