@@ -3,3 +3,6 @@ _pycache_/
 static/
 template/
 venv/
+*.pyc
+*.sock
+logs/

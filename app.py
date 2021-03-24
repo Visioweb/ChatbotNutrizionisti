@@ -4,6 +4,9 @@ from flask_cors import CORS
 from actions import *
 
 
+
+
+#app.debug = True
 app = Flask(__name__)
 CORS(app)
 
@@ -12,12 +15,12 @@ def ask():
 
     data = request.get_json()
 
-    if("message" not in data):
-        return jsonify({"message":"please specify a message"}), 400
+    if not data or "message" not in data:
+       return jsonify({"message":"please specify a message"}), 400
 
-    chatbot = Chatbot()
+    chatbot = Chatbot(sensitivity=0.5)
     chatbot.load()
-    chatbot.add_action("SearchNutrizionists", search_nutrizionists)
+    chatbot.add_action("SearchNutritionists", search_nutritionists)
     answer = chatbot.ask(data["message"], return_proba=True)
 
     return jsonify({"answer": str(answer[0]),
