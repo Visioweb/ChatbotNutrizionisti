@@ -33,7 +33,7 @@ class Chatbot:
         self._nlp = spacy.load("it_core_news_sm")
         self.SENSITIVITY = sensitivity
 
-        if(not os.path.isdir(self.LOGS_FOLDER)):
+        if (not os.path.isdir(self.LOGS_FOLDER)):
             os.mkdir(self.LOGS_FOLDER)
             self._create_log("errors.log")
             self._create_log("conversations.log")
@@ -56,7 +56,6 @@ class Chatbot:
             if (not token.is_punct and not token.is_stop):
                 doc += " " + token.lemma_
 
-
         x = self._bow.transform([doc])
 
         y_proba = self._model.predict([x])[0]
@@ -64,16 +63,18 @@ class Chatbot:
 
         if y_proba_max > self.SENSITIVITY:
             y = y_proba.argmax()
-            intent = self._le.inverse_transform([y])
+            intent = self._le.inverse_transform([y])[0]
             response = self._get_response(intent, entities=entities)
         else:
             response = self._get_default()
             intent = "Sconosciuto"
             self._save_log(question, response, intent, y_proba_max, error=True)
+            self._save_conv_db(question, response, intent, y_proba_max, error=True)
 
         self._save_log(question, response, intent, y_proba_max)
-        return (response, y_proba_max) if return_proba else response
+        self._save_conv_db(question, response, intent, y_proba_max)
 
+        return (response, y_proba_max) if return_proba else response
 
     def train(self, corpus_file, epochs=1000):
 
@@ -215,37 +216,56 @@ class Chatbot:
         model.fit(X.toarray(), y.toarray(), epochs=epochs)
         return model
 
-
     def _create_log(self, filename):
         f = open(self.LOGS_FOLDER + "/" + filename, "w+")
         f.write("DATA E ORA\tDOMANDA\tRISPOSTA\tINTENT\tPROBABILITA'")
         f.close()
 
-
     def _save_log(self, question, answer, intent, proba, error=False):
 
-            if(error):
-                f = open(self.LOGS_FOLDER+"/errors.log","a+")
+        if (error):
+            f = open(self.LOGS_FOLDER + "/errors.log", "a+")
+        else:
+            f = open(self.LOGS_FOLDER + "/conversations.log", "a+")
+
+        date_time = dt.now().strftime("%d/%m/%Y %H:%M:%S")
+
+        f.write("\n" +
+                date_time + "\t" +
+                question + "\t" +
+                answer + "\t" +
+                intent + "\t" +
+                str(proba)
+                )
+
+        f.close()
+
+        def _save_conv_db(self, question, answer, intent, proba, error=False):
+            if (error):
+                errore = 1
             else:
-                f = open(self.LOGS_FOLDER+"/conversations.log","a+")
+                errore = 0
+            formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
 
-            date_time = dt.now().strftime("%d/%m/%Y %H:%M:%S")
-
-            f.write("\n"+
-                    date_time+"\t"+
-                    question+"\t"+
-                    answer+"\t"+
-                    intent+"\t"+
-                    str(proba)
-            )
-
-            f.close()
+            db = db_connect()
+            cursor = db.cursor()
 
 
+            sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
+            val = (question, answer, intent, proba, errore, formatted_date)
+            cursor.execute(sql, val)
 
-if __name__ == '__main__':
+            db.commit()
 
-    chatbot = Chatbot(sensitivity=.7)
+
+
+
+
+
+    if __name__ == '__main__':
+
+    chatbot = Chatbot(sensitivity=.5)
     chatbot.load()
-    answer = chatbot.ask("ciao come stai ?", return_proba=True)
+    chatbot.add_action("SearchNutritionists", search_nutritionists)
+    answer = chatbot.ask("cerco un nutrizionista a Milano", return_proba=True)
     print(answer)
