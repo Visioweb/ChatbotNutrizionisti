@@ -241,8 +241,6 @@ class Chatbot:
         f.close()
         
     class NumpyMySQLConverter(mysql.connector.conversion.MySQLConverter):
-    """ A mysql.connector Converter that handles Numpy types """
-
         def _float32_to_mysql(self, value):
             return float(value)
 
