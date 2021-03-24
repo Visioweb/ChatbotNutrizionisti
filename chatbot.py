@@ -240,22 +240,22 @@ class Chatbot:
 
         f.close()
 
-        def _save_conv_db(self, question, answer, intent, proba, error=False):
-            if (error):
-                errore = 1
-            else:
-                errore = 0
-            formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
+    def _save_conv_db(self, question, answer, intent, proba, error=False):
+        if (error):
+            errore = 1
+        else:
+            errore = 0
+        formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
 
-            db = db_connect()
-            cursor = db.cursor()
+        db = db_connect()
+        cursor = db.cursor()
 
 
-            sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
-            val = (question, answer, intent, proba, errore, formatted_date)
-            cursor.execute(sql, val)
+        sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
+        val = (question, answer, intent, proba, errore, formatted_date)
+        cursor.execute(sql, val)
 
-            db.commit()
+        db.commit()
 
 
 
@@ -264,8 +264,8 @@ class Chatbot:
 
     if __name__ == '__main__':
 
-    chatbot = Chatbot(sensitivity=.5)
-    chatbot.load()
-    chatbot.add_action("SearchNutritionists", search_nutritionists)
-    answer = chatbot.ask("cerco un nutrizionista a Milano", return_proba=True)
-    print(answer)
+        chatbot = Chatbot(sensitivity=.5)
+        chatbot.load()
+        chatbot.add_action("SearchNutritionists", search_nutritionists)
+        answer = chatbot.ask("cerco un nutrizionista a Milano", return_proba=True)
+        print(answer)
