@@ -8,9 +8,17 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/homepage')
-def index():
-    return 'Web App with Python Flask!'
+@app.route('/dashboard')
+def home():
+    # Check if user is loggedin
+    '''
+    if 'loggedin' in session:
+        # User is loggedin show them the home page
+        return render_template('home.html', username=session['username'])
+    # User is not loggedin redirect to login page
+    return redirect(url_for('login'))
+    '''
+    return render_template('home.html')
 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
