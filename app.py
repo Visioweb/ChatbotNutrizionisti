@@ -21,10 +21,7 @@ def login():
         # Create variables for easy access
         username = request.form['username']
         password = request.form['password']
-        
-        
-        
-       
+           
         db = db_connect()
         cursor = db.cursor()
 
@@ -40,7 +37,7 @@ def login():
             session['username'] = account['username']
             # Redirect to home page
             #return 'Logged in successfully!'
-            ,sg = session['loggedin']
+            msg = session['loggedin']
         else:
             # Account doesnt exist or username/password incorrect
             msg = 'Incorrect username/password!'
