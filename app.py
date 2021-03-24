@@ -3,7 +3,7 @@ from chatbot import Chatbot
 from flask_cors import CORS
 from actions import *
 
-#app.debug = True
+app.debug = True
 app = Flask(__name__)
 CORS(app)
 
