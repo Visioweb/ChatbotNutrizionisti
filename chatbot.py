@@ -239,6 +239,12 @@ class Chatbot:
                 )
 
         f.close()
+        
+    class NumpyMySQLConverter(mysql.connector.conversion.MySQLConverter):
+    """ A mysql.connector Converter that handles Numpy types """
+
+        def _float32_to_mysql(self, value):
+            return float(value)
 
     def _save_conv_db(self, question, answer, intent, proba, error=False):
         if (error):
@@ -248,8 +254,10 @@ class Chatbot:
         formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
 
         db = db_connect()
+        db.set_converter_class(NumpyMySQLConverter)
         cursor = db.cursor()
 
+        
 
         sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
         val = (question, answer, intent, proba, errore, formatted_date)
