@@ -67,15 +67,15 @@ class Chatbot:
             y = y_proba.argmax()
             intent = self._le.inverse_transform([y])[0]
             response = self._get_response(intent, entities=entities)
-            errore = True
+            errore = 1
         else:
             response = self._get_default()
             intent = "Sconosciuto"
-            errore = False
+            errore = 0
             self._save_log(question, response, intent, y_proba_max, error=True)
 
+        print(errore)   
         
-        self._save_conv_db(question, response, intent, y_proba_max, errore)            
         self._save_log(question, response, intent, y_proba_max)
 
         return (response, y_proba_max) if return_proba else response
