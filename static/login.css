@@ -135,7 +135,6 @@ body.loggedin {
 }
 .content > p table td, .content > div table td {
 	padding: 5px;
-	text-align:center;
 }
 .content > p table td:first-child, .content > div table td:first-child {
 	font-weight: bold;
@@ -147,6 +146,7 @@ body.loggedin {
 	margin: 0 0 10px 0;
 }
 
-.content table {
-	width: 90%;	
+.content > div table {
+	width: 90% !important;
+	text-align:center !important;
 }
