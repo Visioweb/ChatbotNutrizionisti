@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template, redirect, url_for, session
 from chatbot import Chatbot
 from flask_cors import CORS
 from actions import *
@@ -9,6 +9,18 @@ from actions import *
 #app.debug = True
 app = Flask(__name__)
 CORS(app)
+
+
+@app.route('/login/', methods=['GET', 'POST'])
+def login():
+    # Output message if something goes wrong...
+    msg = ''
+    return render_template('index.html', msg='')
+
+
+
+
+
 
 @app.route('/ask', methods=["GET", "POST"])
 def ask():
