@@ -91,8 +91,8 @@ def conversation():
     cursor = db.cursor()
     #cursor.execute('SELECT * FROM accounts WHERE id = %s', (session['id'],))
     cursor.execute('SELECT * FROM conversations')
-    conversation = cursor.fetchone()
-    # Show the profile page with account info
+    conversation = cursor.fetchall()
+
     return render_template('conversation.html', conversation=conversation)
 
 
