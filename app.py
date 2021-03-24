@@ -18,7 +18,7 @@ def ask():
     if not data or "message" not in data:
        return jsonify({"message":"please specify a message"}), 400
 
-    chatbot = Chatbot(sensitivity=0.5)
+    chatbot = Chatbot(sensitivity=0.7)
     chatbot.load()
     chatbot.add_action("SearchNutritionists", search_nutritionists)
     answer = chatbot.ask(data["message"], return_proba=True)
