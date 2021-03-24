@@ -33,17 +33,14 @@ def login():
         account = cursor.fetchone()
 
         # If account exists in accounts table in out database
-        if account:
-            
-            msg = account
-            '''
+        if account:         
             # Create session data, we can access this data in other routes
             session['loggedin'] = True
             session['id'] = account['id']
             session['username'] = account['username']
             # Redirect to home page
-            return 'Logged in successfully!'
-            '''
+            #return 'Logged in successfully!'
+            ,sg = session['loggedin']
         else:
             # Account doesnt exist or username/password incorrect
             msg = 'Incorrect username/password!'
