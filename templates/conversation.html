@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}Conversation{% endblock %}
+
+{% block content %}
+<h2>Conversazioni</h2>
+<div>
+    <p>Qui troverai tutte le conversazioni:</p>
+
+    <table>
+        <tr>
+            <td>id:</td>
+            <td>{{ conversation[0] }}</td>
+        </tr>
+        <tr>
+            <td>IP:</td>
+            <td>{{ conversation[1] }}</td>
+        </tr>
+        <tr>
+            <td>Domanda:</td>
+            <td>{{ conversation[2] }}</td>
+        </tr>
+        <tr>
+            <td>Risposta:</td>
+            <td>{{ conversation[3] }}</td>
+        </tr>
+        <tr>
+            <td>Intent:</td>
+            <td>{{ conversation[4] }}</td>
+        </tr>
+        <tr>
+            <td>Probabilita:</td>
+            <td>{{ conversation[5] }}</td>
+        </tr>
+        <tr>
+            <td>Errore:</td>
+            <td>{{ conversation[6] }}</td>
+        </tr>
+        <tr>
+            <td>Data e Ora:</td>
+            <td>{{ conversation[7] }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
