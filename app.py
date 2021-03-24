@@ -82,6 +82,19 @@ def logout():
 
 
 
+@app.route('/conversazioni')
+def conversation():
+    # Check if user is loggedin
+    #if 'loggedin' in session:
+        # We need all the account info for the user so we can display it on the profile page
+    db = db_connect()
+    cursor = db.cursor()
+    #cursor.execute('SELECT * FROM accounts WHERE id = %s', (session['id'],))
+    cursor.execute('SELECT * FROM conversations')
+    conversation = cursor.fetchone()
+    # Show the profile page with account info
+    return render_template('conversation.html', conversation=conversation)
+
 
 
 @app.route('/ask', methods=["GET", "POST"])
