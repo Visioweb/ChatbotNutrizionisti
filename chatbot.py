@@ -250,9 +250,7 @@ class Chatbot:
         formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
 
         db = db_connect()
-        db.set_converter_class(NumpyMySQLConverter)
         cursor = db.cursor()
-
         
 
         sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
