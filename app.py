@@ -3,15 +3,12 @@ from chatbot import Chatbot
 from flask_cors import CORS
 from actions import *
 
-
-
-
 #app.debug = True
 app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/')
+@app.route('/homepage')
 def index():
     return 'Web App with Python Flask!'
 
