@@ -261,11 +261,11 @@ class Chatbot:
 
 
 
+if __name__ == '__main__':
+    from actions import *
 
-    if __name__ == '__main__':
-
-        chatbot = Chatbot(sensitivity=.5)
-        chatbot.load()
-        chatbot.add_action("SearchNutritionists", search_nutritionists)
-        answer = chatbot.ask("cerco un nutrizionista a Milano", return_proba=True)
-        print(answer)
+    chatbot = Chatbot(sensitivity=.5)
+    chatbot.load()
+    chatbot.add_action("SearchNutritionists", search_nutritionists)
+    answer = chatbot.ask("cerco un nutrizionista a Milano", return_proba=True)
+    print(answer)
