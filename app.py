@@ -31,12 +31,14 @@ def login():
 
         # If account exists in accounts table in out database
         if account:         
+            '''
             # Create session data, we can access this data in other routes
             session['loggedin'] = True
             session['id'] = account['id']
             session['username'] = account['username']
             # Redirect to home page
             #return 'Logged in successfully!'
+            '''
             return redirect(url_for('index'))
         else:
             # Account doesnt exist or username/password incorrect
