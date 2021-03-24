@@ -245,7 +245,6 @@ class Chatbot:
 
 
     def _save_conv_db(self, question, answer, intent, proba, error=False):
-        from actions import *
         if (error):
             errore = 1
         else:
