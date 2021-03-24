@@ -11,8 +11,11 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/login/', methods=['GET', 'POST'])
+@app.route('/')
+def index():
+    return 'Web App with Python Flask!'
 
+@app.route('/login/', methods=['GET', 'POST'])
 def login():
     # Output message if something goes wrong...
     msg = ''
@@ -37,7 +40,7 @@ def login():
             session['username'] = account['username']
             # Redirect to home page
             #return 'Logged in successfully!'
-            msg = session['loggedin']
+            return redirect(url_for('index'))
         else:
             # Account doesnt exist or username/password incorrect
             msg = 'Incorrect username/password!'
