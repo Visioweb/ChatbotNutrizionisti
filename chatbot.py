@@ -71,10 +71,8 @@ class Chatbot:
             response = self._get_default()
             intent = "Sconosciuto"
             self._save_log(question, response, intent, y_proba_max, error=True)
-            self._save_conv_db(question, response, intent, y_proba_max, error=True)
 
         self._save_log(question, response, intent, y_proba_max)
-        self._save_conv_db(question, response, intent, y_proba_max)
 
         return (response, y_proba_max) if return_proba else response
 
@@ -224,11 +222,23 @@ class Chatbot:
         f.close()
 
     def _save_log(self, question, answer, intent, proba, error=False):
-
+        db = db_connect()
+        cursor = db.cursor()
+        formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
+        
         if (error):
             f = open(self.LOGS_FOLDER + "/errors.log", "a+")
+            errore = 1
         else:
             f = open(self.LOGS_FOLDER + "/conversations.log", "a+")
+            errore = 0
+            
+        sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
+        val = (question, answer, intent, float(proba), errore, formatted_date)
+        cursor.execute(sql, val)
+
+        db.commit()
+
 
         date_time = dt.now().strftime("%d/%m/%Y %H:%M:%S")
 
@@ -242,35 +252,6 @@ class Chatbot:
 
         f.close()
         
-
-
-    def _save_conv_db(self, question, answer, intent, proba, error=False):        
-        db = db_connect()
-        cursor = db.cursor()
-        formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
-
-        if (error):
-            errore = 1
-            sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
-            val = (question, answer, intent, float(proba), errore, formatted_date)
-            cursor.execute(sql, val)
-
-            db.commit()
-        else:
-            errore = 0
-            sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
-            val = (question, answer, intent, float(proba), errore, formatted_date)
-            cursor.execute(sql, val)
-
-            db.commit()
-
-        
-
-
-
-
-
-
 
 if __name__ == '__main__':
     from actions import *
