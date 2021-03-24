@@ -30,7 +30,6 @@ def profile():
     #cursor.execute('SELECT * FROM accounts WHERE id = %s', (session['id'],))
     cursor.execute('SELECT * FROM accounts WHERE id = 1')
     account = cursor.fetchone()
-    print(account)
     # Show the profile page with account info
     return render_template('profile.html', account=account)
     # User is not loggedin redirect to login page
