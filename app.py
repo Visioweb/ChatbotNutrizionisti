@@ -20,6 +20,21 @@ def home():
     '''
     return render_template('home.html')
 
+@app.route('/profile')
+def profile():
+    # Check if user is loggedin
+    #if 'loggedin' in session:
+        # We need all the account info for the user so we can display it on the profile page
+    db = db_connect()
+    cursor = db.cursor()
+    #cursor.execute('SELECT * FROM accounts WHERE id = %s', (session['id'],))
+    cursor.execute('SELECT * FROM accounts WHERE id = 1')
+    account = cursor.fetchone()
+    # Show the profile page with account info
+    return render_template('profile.html', account=account)
+    # User is not loggedin redirect to login page
+    #return redirect(url_for('login'))
+
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
     # Output message if something goes wrong...
