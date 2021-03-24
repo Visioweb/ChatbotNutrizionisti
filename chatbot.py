@@ -240,9 +240,7 @@ class Chatbot:
 
         f.close()
         
-    class NumpyMySQLConverter(mysql.connector.conversion.MySQLConverter):
-        def _float32_to_mysql(self, value):
-            return float(value)
+
 
     def _save_conv_db(self, question, answer, intent, proba, error=False):
         if (error):
