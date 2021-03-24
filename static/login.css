@@ -146,7 +146,7 @@ body.loggedin {
 	margin: 0 0 10px 0;
 }
 
-.content > div table {
+#conv {
 	width: 90% !important;
 	text-align:center !important;
 }
