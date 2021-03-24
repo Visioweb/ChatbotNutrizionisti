@@ -254,7 +254,7 @@ class Chatbot:
         
 
         sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
-        val = (question, answer, intent, proba, errore, formatted_date)
+        val = (question, answer, intent, float(proba), errore, formatted_date)
         cursor.execute(sql, val)
 
         db.commit()
