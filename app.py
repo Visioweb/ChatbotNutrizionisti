@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('login/', methods=['GET', 'POST'])
+@app.route('/login/', methods=['GET', 'POST'])
 
 def login():
     # Output message if something goes wrong...
@@ -45,7 +45,7 @@ def login():
     return msg #render_template('index.html', msg=msg)
 
 # http://localhost:5000/python/logout - this will be the logout page
-@app.route('login/logout')
+@app.route('/login/logout')
 def logout():
     # Remove session data, this will log the user out
    session.pop('loggedin', None)
