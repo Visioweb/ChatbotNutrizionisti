@@ -244,7 +244,7 @@ class Chatbot:
 
         f.close()
         
-    def _save_conv_db(question, response, intent, y_proba_max, errore, errors=False):
+    def _save_conv_db(self, question, answer, intent, proba, errore, error=False):
         db = db_connect()
         cursor = db.cursor()
         formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")  
