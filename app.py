@@ -47,7 +47,7 @@ def login():
             # Redirect to home page
             #return 'Logged in successfully!'
             '''
-            return redirect(url_for('index'))
+            return redirect(url_for('home'))
         else:
             # Account doesnt exist or username/password incorrect
             msg = 'Incorrect username/password!'
