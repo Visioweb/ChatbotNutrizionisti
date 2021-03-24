@@ -67,15 +67,15 @@ class Chatbot:
             y = y_proba.argmax()
             intent = self._le.inverse_transform([y])[0]
             response = self._get_response(intent, entities=entities)
-            errore = 1
+            errore = 0
         else:
             response = self._get_default()
             intent = "Sconosciuto"
-            errore = 0
+            errore = 1
             self._save_log(question, response, intent, y_proba_max, error=True)
 
         print(errore)   
-        
+        self._save_conv_db(question, response, intent, y_proba_max, errore)
         self._save_log(question, response, intent, y_proba_max)
 
         return (response, y_proba_max) if return_proba else response
@@ -244,14 +244,10 @@ class Chatbot:
 
         f.close()
         
-    def _save_conv_db(question, response, intent, y_proba_max, error=False):
+    def _save_conv_db(question, response, intent, y_proba_max, errore):
         db = db_connect()
         cursor = db.cursor()
         formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")  
-        if (error):
-            errore = 1
-        else:
-            errore = 0
 
         sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
         val = (question, answer, intent, float(proba), errore, formatted_date)
