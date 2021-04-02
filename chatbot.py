@@ -13,6 +13,7 @@ import os
 import re
 from datetime import datetime as dt
 from actions import *
+import numpy as np
 
 
 
@@ -43,54 +44,77 @@ class Chatbot:
     def add_action(self, intent, action):
         self._actions_map[intent] = action
 
-    def ask(self, question, return_proba=False):
+    def ask(self, question, current_context=None, return_proba=False):
 
         tokens = self._nlp(question)
-
+        print(current_context)
+        print("TOKENS "+str(tokens))
         entities = {}
 
         for ent in tokens.ents:
-            entities[ent.label_] = ent.text
+            entities[ent.label_] = ent.text        
 
         doc = ""
 
         for token in tokens:
-            if (not token.is_punct and not token.is_stop):
-                doc += " " + token.lemma_
+            if (not token.is_punct) and (not token.is_stop):
+                if token.ent_type_ is not "":
+                    doc += " " + str(token.ent_type_).lower()
+                elif token.lemma_ is not None:
+                    doc += " " + token.lemma_
+                else:
+                    doc += " " + token
+        
+        doc = doc.strip()
+        print("DOC: "+"'"+str(doc)+"'")
 
         x = self._bow.transform([doc])
 
         y_proba = self._model.predict([x])[0]
-        y_proba_max = y_proba.max()
+        y_sorted = np.argsort(y_proba)[::-1]
 
-        if y_proba_max > self.SENSITIVITY:
-            y = y_proba.argmax()
+        response = None
+        new_context = None
+
+        for i in range(y_sorted.shape[0]):
+
+            y = y_sorted[i]
+            y_proba_max = y_proba[y]
+
+            if y_proba_max < self.SENSITIVITY:
+                break
+
             intent = self._le.inverse_transform([y])[0]
-            response = self._get_response(intent, entities=entities)
-            errore = 0
-        else:
+            response, new_context = self._get_response(intent, entities=entities, current_context=current_context)
+            
+            if response:
+                break
+            
+        if not response:
             response = self._get_default()
             intent = "Sconosciuto"
             errore = 1
             self._save_log(question, response, intent, y_proba_max, error=True)
-
-        print(errore)   
+        
         self._save_conv_db(question, response, intent, y_proba_max, errore)
         self._save_log(question, response, intent, y_proba_max)
 
-        return (response, y_proba_max) if return_proba else response
+        return (response, new_context, y_proba_max) if return_proba else response
 
-    def train(self, corpus_file, epochs=1000):
+
+    def train(self, corpus_file, epochs=1000, verbose=True):
 
         with open(corpus_file) as f:
             self._corpus = json.loads(f.read())  # carichiamo il json in un dict
 
         self.dictionary, docs, intents = self._clean(self._corpus)
+        
         X = self._bagofwords(docs)
         y = self._encoding(intents)
         X, y = shuffle(X, y, random_state=0)  # mescoliamo i dati
-        self._model = self._build_dnn(X, y, epochs)
+        self._model = self._build_dnn(X, y, epochs, verbose)
         self._save()
+        
 
     def load(self):
 
@@ -117,7 +141,7 @@ class Chatbot:
 
         self._model = load_model(self.MODEL_FOLDER + "/model")
 
-    def _get_response(self, intent_name, entities=None):
+    def _get_response(self, intent_name, entities=None, current_context=None):
 
         # cerchiamo una risposta
         # per l'intent
@@ -126,6 +150,12 @@ class Chatbot:
             if intent["name"] == intent_name:
                 response = choice(intent["responses"])  # selezioniamo una risposta casualmente
                 break
+
+        if "context" in intent:
+            if(current_context!=intent["context"]["required"]):
+                return None, None
+            else:
+                new_context = intent["context"]["set"]
 
         vars = entities
 
@@ -139,7 +169,7 @@ class Chatbot:
             # sostituiamo i placeholders con il dizionario
             response = response.replace("<" + var + ">", vars[var])
 
-        return response
+        return response, new_context
 
     def _get_default(self):
         return choice(self._corpus["defaults"])
@@ -156,7 +186,8 @@ class Chatbot:
             for sample in intent["samples"]:
 
                 sample = sample.lower()
-                sample = re.sub(r'\<[^()]*\>', '', sample)  # rimuoviamo i placeholders
+                #sample = re.sub(r'\<[^()]*\>', '', sample)  # rimuoviamo i placeholders
+                sample = sample.replace("<","").replace(">","")
                 tokens = self._nlp(sample)
                 doc = ""
 
@@ -164,11 +195,9 @@ class Chatbot:
                     if (not token.is_punct and not token.is_stop):
                         doc += " " + token.lemma_  # otteniamo il lemma
                         dictionary.add(token.lemma_)  # aggiungiamo al dizionario
-
                 if (len(doc) > 0):
-                    docs.append(doc.rstrip())
+                    docs.append(doc.strip())
                     intents.append(intent["name"])
-
         return dictionary, docs, intents
 
     def _save(self):
@@ -207,7 +236,7 @@ class Chatbot:
         y = ohe.fit_transform(y.reshape(-1, 1))
         return y
 
-    def _build_dnn(self, X, y, epochs):
+    def _build_dnn(self, X, y, epochs, verbose):
 
         # definiamo l'architettura della rete
         model = Sequential()
@@ -217,7 +246,7 @@ class Chatbot:
         model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
 
         # eseguiamo l'addestramento
-        model.fit(X.toarray(), y.toarray(), epochs=epochs)
+        model.fit(X.toarray(), y.toarray(), epochs=epochs, verbose=int(verbose))
         return model
 
     def _create_log(self, filename):
@@ -260,8 +289,9 @@ class Chatbot:
 if __name__ == '__main__':
     from actions import *
 
-    chatbot = Chatbot(sensitivity=.5)
+    chatbot = Chatbot(sensitivity=.2)
+    chatbot.train("corpus_with_context.json", verbose=False)
     chatbot.load()
-    chatbot.add_action("SearchNutritionists", search_nutritionists)
-    answer = chatbot.ask("cerco un nutrizionista a Milano", return_proba=True)
+    #chatbot.add_action("SearchNutritionists", search_nutritionists)
+    answer = chatbot.ask("Lo vorrei a Milano", current_context="citta_nutrizionista", return_proba=True)
     print(answer)

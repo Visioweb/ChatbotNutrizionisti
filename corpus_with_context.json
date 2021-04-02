@@ -1,0 +1,53 @@
+{
+	"intents": [{
+			"name": "SalutiInizialiIntent",
+			"samples": ["Ciao", "Salve", "hei", "Ci sei ?", "Buongiorno", "Buonasera", "buon pomeriggio", "hola", "Hey dr.Lifebot", "Come butta", "Ue"],
+			"responses": ["Buongiorno mi chiamo Lifebot come posso aiutarti?", "buonasera cosa posso fare per te?", "salve io sono Dr Lifebot sono qui per aiutarti dimmi tutto", "buon pomeriggio io sono Dr.Lifebot in che modo posso aiutarti?", "Bentrovata sono Dr.Lifebot posso esserti di aiuto?", "bentornato posso fare qualcosa per te?", "Io sono Dr.Lifebot dimmi cosa posso fare per te", "Mi chiamo Lifebot e sono sicuro che posso fare qualcosa per aiutarti", "Ciao sono Lifebot sempre qui a disposizione dimmi tutto", "Hola amigo"]
+		}, {
+			"name": "SalutiFinaliIntent",
+			"samples": ["Addio", "Arrivederci", "Buona giornata", "A presto", "Ci vediamo", "Buona serata", "Alla prossima", "Ci sentiamo presto", "ci sentiamo prossimamente", "Ciao buon proseguimento", "Ciao", "Buon proseguimento di giornata", "A risentirci"],
+			"responses": ["Grazie per averci contattato ! Buona giornata", "Per qualsiasi cosa ci trovi sempre qui, buona giornata !", "Buona giornata !", "Arrivederci torna a trovarmi", "A presto torna quando vuoi", "Buona giornata a te grazie per averci scelto", "Buona serata a te non esitare a tornare", "Alla prossima ti aspetto qui", "ti aspetto", "Sono qui per questo", "Buon proseguimento di giornata se hai problemi non esitare", "ciao, se hai bisogno non esitare a chiedere", "Torna a trovarmi quando vuoi", "Ci sentiamo prossimamente", "Buon proseguimento", "A risentirla"]
+		}, {
+			"name": "RingraziamentiIntent",
+			"samples": ["Ti ringrazio", "Fantastico", "Grazie davvero", "Sei stato molto utile", "Grazie per le risposte", "Te ne sono grato", "Grazie infinite", "Ti sono riconoscente", "Grazie molto gentile", "Cosa avrei fatto senza il tuo aiuto", "Ti ringrazio davvero tanto", "Gentilissimo grazie", "Ti ringrazio per le risposte, sei stato davvero esaudiente"],
+			"responses": ["E' stato un piacere, se hai bisogno di altro non esitare a chiedere", "E' stato un piacere aiutarti", "Figurati, \u00e8 il mio lavoro :)", "Figurati \u00e8 un piacere", "Felice di averti aiutato", "\u00e8 sempre un piacere per me", "Sono qui per questo :)", "Estremo piacere per me", "A buon rendere torna a trovarmi", "Almeno servo a qualcosa ;)", "Non ringraziarmi \u00e8 mio dovere aiutarti", "Nessun problema ;)", "Sono qui per questo :)", "Prego felice di esserti stato utile", "Sono onorato", "Ci mancherebbe altro ;)", "Di nulla \u00e8 stato un piacere, si ricordi che sono qui per servirla"]
+		},
+		{
+			"name": "CercaNutrizionistaIntent",
+			"samples": ["cerco un nutrizionista", "Voglio un nutrizionista"],
+			"responses": ["Ok, un nutrizionista, in che città ?"],
+			"context": {
+				"set": "citta_nutrizionista",
+				"required": null
+			}
+		},
+		{
+			"name": "CercaDietistaIntent",
+			"samples": ["cerco un dietista", "Voglio un dietista"],
+			"responses": ["Ok, un dietista, in che città ?"],
+			"context": {
+				"set": "citta_dietista",
+				"required": null
+			}
+		},
+		{
+			"name": "NutrizionistaCittaIntent",
+			"samples": ["Lo vorrei a <LOC>", "Lo cerco a <LOC>", "A <LOC>","Sono di <LOC>","<LOC>"],
+			"responses": ["Questo potrebbe fare al caso tuo <NUTR>"],
+			"context": {
+				"set": null,
+				"required": "citta_nutrizionista"
+			}
+		},
+		{
+			"name": "DietistaCittaIntent",
+			"samples": ["Lo vorrei a <LOC>", "Lo cerco a <LOC>", "A <LOC>","Sono di <LOC>","<LOC>"],
+			"responses": ["Questo potrebbe fare al caso tuo <DIET>"],
+			"context": {
+				"set": null,
+				"required": "citta_dietista"
+			}
+		}
+	],
+	"defaults": ["Non ho capito", "Scusa, non ho capito", "Potresti ripetere la domanda?", "Scusa, forse cercavi un nutrizionista?", "stai cercando un nutrizionista?", "stai cercando un dietista?", "stai cercando un dietologo?"]
+}

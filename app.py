@@ -102,13 +102,21 @@ def ask():
 
     data = request.get_json()
 
-    if not data or "message" not in data:
+    if not data:
+        return jsonify({"message":"No payload received"}), 400
+    if("message" not in data):
        return jsonify({"message":"please specify a message"}), 400
 
-    chatbot = Chatbot(sensitivity=0.7)
+    if("current_context" not in data):
+        current_context = None
+    else:
+        current_context = data["current_context"]
+
+    chatbot = Chatbot(sensitivity=0.4)
     chatbot.load()
     chatbot.add_action("SearchNutritionists", search_nutritionists)
-    answer = chatbot.ask(data["message"], return_proba=True)
+    answer = chatbot.ask(data["message"], current_context=current_context, return_proba=True)
 
     return jsonify({"answer": str(answer[0]),
-                    "probability": str(answer[1])}), 200
+                    "new_context": str(answer[1]),
+                    "probability": str(answer[2])}), 200
