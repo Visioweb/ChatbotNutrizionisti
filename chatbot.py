@@ -33,7 +33,7 @@ class Chatbot:
     _actions_map = {}
 
     def __init__(self, sensitivity=0.7):
-        self._nlp = spacy.load("it_core_news_sm")
+        self._nlp = spacy.load("it_core_news_lg")
         self.SENSITIVITY = sensitivity
 
         if (not os.path.isdir(self.LOGS_FOLDER)):
@@ -47,8 +47,6 @@ class Chatbot:
     def ask(self, question, current_context=None, return_proba=False):
 
         tokens = self._nlp(question)
-        print(current_context)
-        print("TOKENS "+str(tokens))
         entities = {}
 
         for ent in tokens.ents:
@@ -57,9 +55,12 @@ class Chatbot:
         doc = ""
 
         for token in tokens:
-            if (not token.is_punct) and (not token.is_stop):
+
+            if (not token.is_punct):
                 if token.ent_type_ is not "":
                     doc += " " + str(token.ent_type_).lower()
+                elif token.is_stop:
+                    continue
                 elif token.lemma_ is not None:
                     doc += " " + token.lemma_
                 else:
@@ -295,5 +296,5 @@ if __name__ == '__main__':
     chatbot.train("corpus_with_context.json", verbose=False)
     chatbot.load()
     chatbot.add_action("NutrizionistaCittaIntent", search_nutritionists)
-    answer = chatbot.ask("Sono di Napoli", current_context="citta_nutrizionista", return_proba=True)
+    answer = chatbot.ask("Torino", current_context="citta_nutrizionista", return_proba=True)
     print(answer)
