@@ -147,6 +147,8 @@ class Chatbot:
         # cerchiamo una risposta
         # per l'intent
 
+        new_context = None
+
         for intent in self._corpus["intents"]:
             if intent["name"] == intent_name:
                 response = choice(intent["responses"])  # selezioniamo una risposta casualmente
