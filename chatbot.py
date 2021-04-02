@@ -97,7 +97,7 @@ class Chatbot:
             errore = 1
             self._save_log(question, response, intent, y_proba_max, error=True)
         
-        self._save_conv_db(question, response, intent, y_proba_max, errore)
+        #self._save_conv_db(question, response, intent, y_proba_max, errore)
         self._save_log(question, response, intent, y_proba_max)
 
         return (response, new_context, y_proba_max) if return_proba else response
@@ -294,5 +294,5 @@ if __name__ == '__main__':
     chatbot.train("corpus_with_context.json", verbose=False)
     chatbot.load()
     #chatbot.add_action("SearchNutritionists", search_nutritionists)
-    answer = chatbot.ask("Lo vorrei a Milano", current_context="citta_nutrizionista", return_proba=True)
+    answer = chatbot.ask("Sono di Napoli", current_context="citta_nutrizionista", return_proba=True)
     print(answer)
