@@ -28,9 +28,9 @@ def search_nutritionists(vars):
 
   result = cursor.fetchall()
 
-  if(cursor.rowcount)
+  if(cursor.rowcount==0):
     vars["NUTR"] = "nessuno"
-    
+
   else:
     for nutritionist in result:
       print(nutritionist[12])
