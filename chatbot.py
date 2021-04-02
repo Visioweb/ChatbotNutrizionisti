@@ -159,7 +159,6 @@ class Chatbot:
                 new_context = intent["context"]["set"]
 
         vars = entities
-
         if intent["name"] in self._actions_map:
             # se c'è una action per l'intent
             # allora la eseguiamo e utilizziamo il dizionario ritornato
@@ -293,6 +292,6 @@ if __name__ == '__main__':
     chatbot = Chatbot(sensitivity=.2)
     chatbot.train("corpus_with_context.json", verbose=False)
     chatbot.load()
-    #chatbot.add_action("SearchNutritionists", search_nutritionists)
+    chatbot.add_action("NutrizionistaCittaIntent", search_nutritionists)
     answer = chatbot.ask("Sono di Napoli", current_context="citta_nutrizionista", return_proba=True)
     print(answer)
