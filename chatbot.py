@@ -75,6 +75,7 @@ class Chatbot:
 
         response = None
         new_context = None
+        errore = 0
 
         for i in range(y_sorted.shape[0]):
 
