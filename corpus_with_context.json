@@ -14,7 +14,7 @@
 		},
 		{
 			"name": "CercaNutrizionistaIntent",
-			"samples": ["cerco un nutrizionista", "Voglio un nutrizionista"],
+			"samples": ["cerco un nutrizionista", "Voglio un nutrizionista", "Vorrei un nutrizionista", "avrei bisogno di una "],
 			"responses": ["Ok, un nutrizionista, in che città ?"],
 			"context": {
 				"set": "citta_nutrizionista",

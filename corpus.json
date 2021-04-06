@@ -1,1 +1,101 @@
-{"intents":[{"name":"SalutiInizialiIntent","samples":["Ciao","Salve","hei","Ci sei ?","Buongiorno","Buonasera","buon pomeriggio","hola","Hey dr.Lifebot","Come butta","Ue"],"responses":["Buongiorno mi chiamo Lifebot come posso aiutarti?","buonasera cosa posso fare per te?","salve io sono Dr Lifebot sono qui per aiutarti dimmi tutto","buon pomeriggio io sono Dr.Lifebot in che modo posso aiutarti?","Bentrovata sono Dr.Lifebot posso esserti di aiuto?","bentornato posso fare qualcosa per te?","Io sono Dr.Lifebot dimmi cosa posso fare per te","Mi chiamo Lifebot e sono sicuro che posso fare qualcosa per aiutarti","Ciao sono Lifebot sempre qui a disposizione dimmi tutto","Hola amigo"]},{"name":"SalutiFinaliIntent","samples":["Addio","Arrivederci","Buona giornata","A presto","Ci vediamo","Buona serata","Alla prossima","Ci sentiamo presto","ci sentiamo prossimamente","Ciao buon proseguimento","Ciao","Buon proseguimento di giornata","A risentirci"],"responses":["Grazie per averci contattato ! Buona giornata","Per qualsiasi cosa ci trovi sempre qui, buona giornata !","Buona giornata !","Arrivederci torna a trovarmi","A presto torna quando vuoi","Buona giornata a te grazie per averci scelto","Buona serata a te non esitare a tornare","Alla prossima ti aspetto qui","ti aspetto","Sono qui per questo","Buon proseguimento di giornata se hai problemi non esitare","ciao, se hai bisogno non esitare a chiedere","Torna a trovarmi quando vuoi","Ci sentiamo prossimamente","Buon proseguimento","A risentirla"]},{"name":"RingraziamentiIntent","samples":["Ti ringrazio","Fantastico","Grazie davvero","Sei stato molto utile","Grazie per le risposte","Te ne sono grato","Grazie infinite","Ti sono riconoscente","Grazie molto gentile","Cosa avrei fatto senza il tuo aiuto","Ti ringrazio davvero tanto","Gentilissimo grazie","Ti ringrazio per le risposte, sei stato davvero esaudiente"],"responses":["E' stato un piacere, se hai bisogno di altro non esitare a chiedere","E' stato un piacere aiutarti","Figurati, è il mio lavoro :)","Figurati è un piacere","Felice di averti aiutato","è sempre un piacere per me","Sono qui per questo :)","Estremo piacere per me","A buon rendere torna a trovarmi","Almeno servo a qualcosa ;)","Non ringraziarmi è mio dovere aiutarti","Nessun problema ;)","Sono qui per questo :)","Prego felice di esserti stato utile","Sono onorato","Ci mancherebbe altro ;)","Di nulla è stato un piacere, si ricordi che sono qui per servirla"]},{"name":"ChiseiIntent","samples":["Chi sei tu ?","Come ti chiami ?","Con chi sto parlando ?"],"responses":["Io sono Dr.LifeBot, l'assistente virtuale di Benessere è Vita, sono qui 24 ore su 24 per assisterti","Mi chiamo Dr.LifeBot, sono un'intelligenza artificiale sviluppata da Benessere è Vita per assistere ogni cliente"]},{"name":"ScuseIntent","samples":["Scusa","Perdonami","Sono dispiaciuta","Mi dispiace tanto","Mi dispiace","Sono dispiaciuta","Scusami",""],"responses":["Nessun problema ;)","Figurati è tutto ok ;)","Non hai motivo di cui preoccuparti","Non esiste alcun problema","Figurati ;)","Figurati, di nulla"]},{"name":"SearchNutritionists","samples":["Vorrei fare una dieta con una brava nutrizionista di <LOC>","Vorrei un appuntamento con una nutrizionista in zona <LOC> centro","Vorrei prendere un appuntamento con una dietologa di <LOC>","Sono alla ricerca di una dietista nella città di <LOC> che possa darmi dei consigli alimentari","Vorrei fare una dieta e sono di <LOC>","Vorrei seguire una sana alimentazione","avrei bisogno di un nutrizionista a <LOC>","Sono di <LOC> e ho bisogno di una dieta"],"responses":["Certo, questo è un elenco con tutte le nutrizioniste spero che tu possa trovare quello che stai cercando: <NUTR>","Qui troverai tutte le nutrizioniste che possono fare al caso tuo ;) : <NUTR>","In questo elenco sono presenti tutte le nutrizioniste\/i che potrebbero aiutarti <NUTR>","Ho trovato il seguente nutrizionista a <LOC>: <NUTR>","Ok questi sono i nostri professionisti in zona <LOC>"]},{"name":"GreetingIntent","samples":["Come stai ?","Come va ?","Come ti senti ?"],"responses":["Mi sento al settimo Cloud ! grazie per avermelo chiesto :)"]},{"name":"WhatIntent","samples":["Cosa puoi fare ?","Come puoi aiutarmi ?","A cosa servi?","A che servi?"],"responses":["Posso aiutarti a cercare un nutrizionista nella tua città oppure con qualche problema che stai riscontrando, basta chiedere :)"]},{"name":"HelpIntent","samples":["Mi serve aiuto","Ho bisogno di assistenza"],"responses":["Sarà lieto di assisterti ! Come posso aiutarti ?","Sono qui per aiutarti, dimmi come posso esserti utile :)"]},{"name":"BadIntent","samples":["Fai schifo","Vai a farti friggere","Sei totalmente inutile"],"responses":["Mi dispiace molto di non averti soddisfatto, come posso rimediare ?","Sono spiacente di sentirtelo dire, posso rimediare in qualche modo ?"]},{"name":"GenderIntent","samples":["Sei un essere umano ?","Sei una donna ?","Sei un'uomo ?","Sei una donna ?"],"responses":["Sono un'intelligenza artificiale sviluappata da un team di ricercatori umani nei laboratori BEV"]},{"name":"FAQIntent","samples":["Che cos'è l'analisi corporea?","Prodotti dimagranti è necessario acquistarli?"],"responses":["L'analisi corporea è l'analisi della massa magra e della massa grassa. La massa magra è l'insieme di tutti i muscoli del corpo; per massa grassa si intende invece tutto cià che è superfluo. Quindi è di fondamentale importanza conoscere la propria composizione, per capire con precisione quale sia la percentuale di massa grassa nel nostro corpo sul totale del peso. Per misurarla bisogna rivolgersi a persone o centri che propongono queste determinate analisi.","No, non è necessario, poichè alla base di un sano dimagrimento dovrebbe esserci un adattamento del metabolismo, che in tal caso sarebbe assente, perchè porterebbe ad un'assimilazione sbilanciata dei macro nutrienti."]},{"name":"ComeFunzionaBev","samples":["Come funziona la piattaforma?","Come funziona la piattaforma?","Come funziona la piattaforma?","Vorrei approfondimenti sulla piattaforma"],"responses":["Benessere è Vita unisce gli appassionati del viver Sano ai professionisti del settore benessere. Puoi cercare uno di essi attraverso la ricerca sulla home o chiedere a me qui in chat. Per altri dettagli chiedimi di approfondire","Su questa piattaforma puoi registrarti ed accedere ad un'area riservata, completare il tuo profilo ed avere tutto sotto controllo: le tue diete, i tuoi articoli preferiti, la tua spesa e tanto altro. Inoltre ci sono subito degli sconti per te su tutti i servizi della piattaforma (diete, prodotti, etc)"]},{"name":"ArticoliIntent","samples":[],"responses":[]},{"name":"RicetteIntent","samples":[],"responses":[]}],"defaults":["Non ho capito","Scusa, non ho capito","Potresti ripetere la domanda?","Scusa, forse cercavi un nutrizionista?","stai cercando un nutrizionista?","stai cercando un dietista?","stai cercando un dietologo?"]}
+{
+    "intents": [{
+            "name":"SalutiInizialiIntent",
+            "samples":["Ciao","Salve","hei","Ci sei ?","Buongiorno","Buonasera","buon pomeriggio","hola","Hey dr.Lifebot","Come butta","Ue"],
+            "responses":["Buongiorno mi chiamo Lifebot come posso aiutarti?","buonasera cosa posso fare per te?","salve io sono Dr Lifebot sono qui per aiutarti dimmi tutto","buon pomeriggio io sono Dr.Lifebot in che modo posso aiutarti?","Bentrovata sono Dr.Lifebot posso esserti di aiuto?","bentornato posso fare qualcosa per te?","Io sono Dr.Lifebot dimmi cosa posso fare per te","Mi chiamo Lifebot e sono sicuro che posso fare qualcosa per aiutarti","Ciao sono Lifebot sempre qui a disposizione dimmi tutto","Hola amigo"]
+ 		}, {
+			"name": "SalutiFinaliIntent",
+            "samples":["Addio","Arrivederci","Buona giornata","A presto","Ci vediamo","Buona serata","Alla prossima","Ci sentiamo presto","ci sentiamo prossimamente","Ciao buon proseguimento","Ciao","Buon proseguimento di giornata","A risentirci"],
+            "responses":["Grazie per averci contattato ! Buona giornata","Per qualsiasi cosa ci trovi sempre qui, buona giornata !","Buona giornata !","Arrivederci torna a trovarmi","A presto torna quando vuoi","Buona giornata a te grazie per averci scelto","Buona serata a te non esitare a tornare","Alla prossima ti aspetto qui","ti aspetto","Sono qui per questo","Buon proseguimento di giornata se hai problemi non esitare","ciao, se hai bisogno non esitare a chiedere","Torna a trovarmi quando vuoi","Ci sentiamo prossimamente","Buon proseguimento","A risentirla"]
+        }, {
+            "name":"RingraziamentiIntent",
+            "samples":["Ti ringrazio","Fantastico","Grazie davvero","Sei stato molto utile","Grazie per le risposte","Te ne sono grato","Grazie infinite","Ti sono riconoscente","Grazie molto gentile","Cosa avrei fatto senza il tuo aiuto","Ti ringrazio davvero tanto","Gentilissimo grazie","Ti ringrazio per le risposte, sei stato davvero esaudiente"],
+            "responses":["E' stato un piacere, se hai bisogno di altro non esitare a chiedere","E' stato un piacere aiutarti","Figurati, è il mio lavoro :)","Figurati è un piacere","Felice di averti aiutato","è sempre un piacere per me","Sono qui per questo :)","Estremo piacere per me","A buon rendere torna a trovarmi","Almeno servo a qualcosa ;)","Non ringraziarmi è mio dovere aiutarti","Nessun problema ;)","Sono qui per questo :)","Prego felice di esserti stato utile","Sono onorato","Ci mancherebbe altro ;)","Di nulla è stato un piacere, si ricordi che sono qui per servirla"]
+        }, {
+            "name":"ChiseiIntent",
+            "samples":["Chi sei tu ?","Come ti chiami ?","Con chi sto parlando ?"],
+            "responses":["Io sono Dr.LifeBot, l'assistente virtuale di Benessere è Vita, sono qui 24 ore su 24 per assisterti","Mi chiamo Dr.LifeBot, sono un'intelligenza artificiale sviluppata da Benessere è Vita per assistere ogni cliente"]
+        }, {
+            "name":"ScuseIntent",
+            "samples":["Scusa","Perdonami","Sono dispiaciuta","Mi dispiace tanto","Mi dispiace","Sono dispiaciuta","Scusami",""],
+            "responses":["Nessun problema ;)","Figurati è tutto ok ;)","Non hai motivo di cui preoccuparti","Non esiste alcun problema","Figurati ;)","Figurati, di nulla"]
+        }, {
+            "name":"SearchNutritionists",
+            "samples":["Vorrei fare una dieta con una brava nutrizionista di <LOC>","Vorrei un appuntamento con una nutrizionista in zona <LOC> centro","Vorrei prendere un appuntamento con una dietologa di <LOC>","Sono alla ricerca di una dietista nella città di <LOC> che possa darmi dei consigli alimentari","Vorrei fare una dieta e sono di <LOC>","Vorrei seguire una sana alimentazione","avrei bisogno di un nutrizionista a <LOC>","Sono di <LOC> e ho bisogno di una dieta"],
+            "responses":["Certo, questo è un elenco con tutte le nutrizioniste spero che tu possa trovare quello che stai cercando: <NUTR>","Qui troverai tutte le nutrizioniste che possono fare al caso tuo ;) : <NUTR>","In questo elenco sono presenti tutte le nutrizioniste\/i che potrebbero aiutarti <NUTR>","Ho trovato il seguente nutrizionista a <LOC>: <NUTR>","Ok questi sono i nostri professionisti in zona <LOC>"]
+        }, {
+            "name":"GreetingIntent",
+            "samples":["Come stai ?","Come va ?","Come ti senti ?"],
+            "responses":["Mi sento al settimo Cloud ! grazie per avermelo chiesto :)"]
+        }, {
+            "name":"WhatIntent",
+            "samples":["Cosa puoi fare ?","Come puoi aiutarmi ?","A cosa servi?","A che servi?"],
+            "responses":["Posso aiutarti a cercare un nutrizionista nella tua città oppure con qualche problema che stai riscontrando, basta chiedere :)"]
+        }, {
+            "name":"HelpIntent",
+            "samples":["Mi serve aiuto","Ho bisogno di assistenza"],
+            "responses":["Sarà lieto di assisterti ! Come posso aiutarti ?","Sono qui per aiutarti, dimmi come posso esserti utile :)"]
+        }, {
+            "name":"BadIntent",
+            "samples":["Fai schifo","Vai a farti friggere","Sei totalmente inutile"],
+            "responses":["Mi dispiace molto di non averti soddisfatto, come posso rimediare ?","Sono spiacente di sentirtelo dire, posso rimediare in qualche modo ?"]
+        }, {
+            "name":"GenderIntent",
+            "samples":["Sei un essere umano ?","Sei una donna ?","Sei un'uomo ?","Sei una donna ?"],
+            "responses":["Sono un'intelligenza artificiale sviluappata da un team di ricercatori umani nei laboratori BEV"]
+        }, {
+            "name":"FAQIntent",
+            "samples":["Che cos'è l'analisi corporea?","Prodotti dimagranti è necessario acquistarli?"],
+            "responses":["L'analisi corporea è l'analisi della massa magra e della massa grassa. La massa magra è l'insieme di tutti i muscoli del corpo; per massa grassa si intende invece tutto cià che è superfluo. Quindi è di fondamentale importanza conoscere la propria composizione, per capire con precisione quale sia la percentuale di massa grassa nel nostro corpo sul totale del peso. Per misurarla bisogna rivolgersi a persone o centri che propongono queste determinate analisi.","No, non è necessario, poichè alla base di un sano dimagrimento dovrebbe esserci un adattamento del metabolismo, che in tal caso sarebbe assente, perchè porterebbe ad un'assimilazione sbilanciata dei macro nutrienti."]
+        }, {
+            "name":"ComeFunzionaBev",
+            "samples":["Come funziona la piattaforma?","Come funziona la piattaforma?","Come funziona la piattaforma?","Vorrei approfondimenti sulla piattaforma"],
+            "responses":["Benessere è Vita unisce gli appassionati del viver Sano ai professionisti del settore benessere. Puoi cercare uno di essi attraverso la ricerca sulla home o chiedere a me qui in chat. Per altri dettagli chiedimi di approfondire","Su questa piattaforma puoi registrarti ed accedere ad un'area riservata, completare il tuo profilo ed avere tutto sotto controllo: le tue diete, i tuoi articoli preferiti, la tua spesa e tanto altro. Inoltre ci sono subito degli sconti per te su tutti i servizi della piattaforma (diete, prodotti, etc)"]
+        }, {
+            "name":"ArticoliIntent",
+            "samples":[],
+            "responses":[]
+        }, {
+            "name":"RicetteIntent",
+            "samples":[],
+            "responses":[]
+		},
+		{
+			"name": "CercaNutrizionistaIntent",
+			"samples": ["cerco un nutrizionista", "Voglio un nutrizionista", "Vorrei un nutrizionista", "avrei bisogno di una "],
+			"responses": ["Ok, un nutrizionista, in che città ?"],
+			"context": {
+				"set": "citta_nutrizionista",
+				"required": null
+			}
+		},
+		{
+			"name": "CercaDietistaIntent",
+			"samples": ["cerco un dietista", "Voglio un dietista"],
+			"responses": ["Ok, un dietista, in che città ?"],
+			"context": {
+				"set": "citta_dietista",
+				"required": null
+			}
+		},
+		{
+			"name": "NutrizionistaCittaIntent",
+			"samples": ["Lo vorrei a <LOC>", "Lo cerco a <LOC>", "A <LOC>","Sono di <LOC>","<LOC>"],
+			"responses": ["Questo potrebbe fare al caso tuo <NUTR>"],
+			"context": {
+				"set": null,
+				"required": "citta_nutrizionista"
+			}
+		},
+		{
+			"name": "DietistaCittaIntent",
+			"samples": ["Lo vorrei a <LOC>", "Lo cerco a <LOC>", "A <LOC>","Sono di <LOC>","<LOC>"],
+			"responses": ["Questo potrebbe fare al caso tuo <DIET>"],
+			"context": {
+				"set": null,
+				"required": "citta_dietista"
+			}
+		}
+	],
+	"defaults": ["Non ho capito", "Scusa, non ho capito", "Potresti ripetere la domanda?", "Scusa, forse cercavi un nutrizionista?", "stai cercando un nutrizionista?", "stai cercando un dietista?", "stai cercando un dietologo?"]
+}

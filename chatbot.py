@@ -98,7 +98,7 @@ class Chatbot:
             errore = 1
             self._save_log(question, response, intent, y_proba_max, error=True)
         
-        #self._save_conv_db(question, response, intent, y_proba_max, errore)
+        self._save_conv_db(question, response, intent, y_proba_max, errore, new_context)
         self._save_log(question, response, intent, y_proba_max)
 
         return (response, new_context, y_proba_max) if return_proba else response
@@ -276,13 +276,13 @@ class Chatbot:
 
         f.close()
         
-    def _save_conv_db(self, question, answer, intent, proba, errore, error=False):
+    def _save_conv_db(self, question, answer, intent, proba, errore, contesto, error=False):
         db = db_connect()
         cursor = db.cursor()
         formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")  
 
-        sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
-        val = (question, answer, intent, float(proba), errore, formatted_date)
+        sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        val = (question, answer, intent, float(proba), errore, contesto, formatted_date)
         cursor.execute(sql, val)
 
         db.commit()
@@ -293,8 +293,8 @@ if __name__ == '__main__':
     from actions import *
 
     chatbot = Chatbot(sensitivity=.2)
-    chatbot.train("corpus_with_context.json", verbose=False)
+    chatbot.train("corpus.json", verbose=False)
     chatbot.load()
-    chatbot.add_action("NutrizionistaCittaIntent", search_nutritionists)
-    answer = chatbot.ask("Torino", current_context="citta_nutrizionista", return_proba=True)
+    chatbot.add_action("DietistaCittaIntent", search_dietisti)
+    answer = chatbot.ask("Torino", current_context="citta_dietista", return_proba=True)
     print(answer)

@@ -24,7 +24,8 @@ def search_nutritionists(vars):
   cursor = db.cursor()
 
 
-  cursor.execute("SELECT * FROM utente WHERE provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
+  cursor.execute("SELECT * FROM utente WHERE roles LIKE '%ROLE_NUTRIZIONISTA%' and provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
+  #cursor.execute("SELECT * FROM utente WHERE provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
 
   result = cursor.fetchall()
 
@@ -45,8 +46,33 @@ def search_nutritionists(vars):
   return {"NUTR":"Giuseppe"}
 """
 
+def search_dietisti(vars):
+
+  db = db_connect()
+  cursor = db.cursor()
+
+
+  cursor.execute("SELECT * FROM utente WHERE roles LIKE '%ROLE_DIETISTA%' and provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
+  #cursor.execute("SELECT * FROM utente WHERE provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
+
+  result = cursor.fetchall()
+
+  if(cursor.rowcount==0):
+    vars["DIETIST"] = "nessuno"
+
+  else:
+    for dietist in result:
+      print(dietist[12])
+      # in questo caso prendiamo solo il primo nutrizionista
+      # non ho capito nel tuo db qual è il campo relativo al nome
+      vars["DIETIST"] = dietist[12]
+
+  return vars
+
+
+
 if __name__ == '__main__':
   # Per testare
-  vars = search_nutritionists({"LOC":"napoli"})
-  print(vars["NUTR"])
+  vars = search_dietisti({"LOC":"napoli"})
+  print(vars["DIETIST"])
 
