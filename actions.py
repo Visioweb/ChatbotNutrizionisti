@@ -24,7 +24,7 @@ def search_nutritionists(vars):
   cursor = db.cursor()
 
 
-  cursor.execute("SELECT * FROM utente WHERE roles LIKE '%ROLE_NUTRIZIONISTA%' and provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
+  cursor.execute("SELECT * FROM utente WHERE roles LIKE '%%ROLE_NUTRIZIONISTA%%' and provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
   #cursor.execute("SELECT * FROM utente WHERE provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
 
   result = cursor.fetchall()
@@ -52,7 +52,7 @@ def search_dietisti(vars):
   cursor = db.cursor()
 
 
-  cursor.execute("SELECT * FROM utente WHERE roles LIKE '%ROLE_DIETISTA%' and provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
+  cursor.execute("SELECT * FROM utente WHERE roles LIKE '%%ROLE_DIETISTA%%' and provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
   #cursor.execute("SELECT * FROM utente WHERE provincia = '%s' ORDER BY id DESC LIMIT 1" % vars["LOC"])
 
   result = cursor.fetchall()
