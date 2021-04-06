@@ -58,14 +58,14 @@ def search_dietisti(vars):
   result = cursor.fetchall()
 
   if(cursor.rowcount==0):
-    vars["DIETIST"] = "nessuno"
+    vars["DIET"] = "nessuno"
 
   else:
     for dietist in result:
       print(dietist[12])
       # in questo caso prendiamo solo il primo nutrizionista
       # non ho capito nel tuo db qual è il campo relativo al nome
-      vars["DIETIST"] = dietist[12]
+      vars["DIET"] = dietist[12]
 
   return vars
 
@@ -74,5 +74,5 @@ def search_dietisti(vars):
 if __name__ == '__main__':
   # Per testare
   vars = search_dietisti({"LOC":"napoli"})
-  print(vars["DIETIST"])
+  print(vars["DIET"])
 
