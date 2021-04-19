@@ -44,7 +44,7 @@ class Chatbot:
     def add_action(self, intent, action):
         self._actions_map[intent] = action
 
-    def ask(self, question, ip, current_context=None, return_proba=False):
+    def ask(self, question, current_context=None, return_proba=False):
 
         tokens = self._nlp(question)
         entities = {}
@@ -98,7 +98,7 @@ class Chatbot:
             errore = 1
             self._save_log(question, response, intent, y_proba_max, error=True)
         
-        self._save_conv_db(ip, question, response, intent, y_proba_max, errore,new_context)
+        self._save_conv_db(question, response, intent, y_proba_max, errore, new_context)
         self._save_log(question, response, intent, y_proba_max)
 
         return (response, new_context, y_proba_max) if return_proba else response
@@ -276,13 +276,13 @@ class Chatbot:
 
         f.close()
         
-    def _save_conv_db(self, ip, question, answer, intent, proba, errore, contesto, error=False):
+    def _save_conv_db(self, question, answer, intent, proba, errore, contesto, error=False):
         db = db_connect()
         cursor = db.cursor()
         formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")  
 
-        sql = "INSERT INTO conversations (ip, domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        val = (ip, question, answer, intent, float(proba), errore, contesto, formatted_date)
+        sql = "INSERT INTO conversations (domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        val = (question, answer, intent, float(proba), errore, contesto, formatted_date)
         cursor.execute(sql, val)
 
         db.commit()
