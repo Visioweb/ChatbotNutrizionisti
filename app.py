@@ -103,7 +103,8 @@ def delete_conv(id):
     cursor.execute(delstatmt, (id,))
     db.commit()
 
-    return render_template('conversation.html', conversation=conversation)
+    return redirect(url_for('conversation'))
+
 
 @app.route('/ask', methods=["GET", "POST"])
 def ask():
