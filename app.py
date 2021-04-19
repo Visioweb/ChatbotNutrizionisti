@@ -95,12 +95,12 @@ def conversation():
 
     return render_template('conversation.html', conversation=conversation)
 
-@app.route('/conversazioni/<int:id>',methods=['GET'])
-def delete_conv(id):
+@app.route('/conversazioni/<int:pk>',methods=['GET'])
+def delete_conv(pk):
     db = db_connect()
     cursor = db.cursor()
     delstatmt = "DELETE FROM `conversations` WHERE id = ?"
-    cursor.execute(delstatmt, (id,))
+    cursor.execute(delstatmt, (pk,))
     db.commit()
 
     return redirect(url_for('conversation'))
