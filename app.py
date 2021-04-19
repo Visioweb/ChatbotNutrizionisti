@@ -121,11 +121,13 @@ def ask():
     else:
         current_context = data["current_context"]
 
+    ip = data["ip"]
+
     chatbot = Chatbot(sensitivity=0.4)
     chatbot.load()
     chatbot.add_action("NutrizionistaCittaIntent", search_nutritionists)
     chatbot.add_action("DietistaCittaIntent", search_dietisti)
-    answer = chatbot.ask(data["message"], current_context=current_context, return_proba=True)
+    answer = chatbot.ask(data["message"], ip, current_context=current_context, return_proba=True)
 
     return jsonify({"answer": str(answer[0]),
                     "new_context": str(answer[1]),
