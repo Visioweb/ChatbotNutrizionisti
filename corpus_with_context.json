@@ -1,21 +1,122 @@
 {
 	"intents": [{
 			"name": "SalutiInizialiIntent",
-			"samples": ["Ciao", "Salve", "hei", "Ci sei ?", "Buongiorno", "Buonasera", "buon pomeriggio", "hola", "Hey dr.Lifebot", "Come butta", "Ue"],
-			"responses": ["Buongiorno mi chiamo Lifebot come posso aiutarti?", "buonasera cosa posso fare per te?", "salve io sono Dr Lifebot sono qui per aiutarti dimmi tutto", "buon pomeriggio io sono Dr.Lifebot in che modo posso aiutarti?", "Bentrovata sono Dr.Lifebot posso esserti di aiuto?", "bentornato posso fare qualcosa per te?", "Io sono Dr.Lifebot dimmi cosa posso fare per te", "Mi chiamo Lifebot e sono sicuro che posso fare qualcosa per aiutarti", "Ciao sono Lifebot sempre qui a disposizione dimmi tutto", "Hola amigo"]
+			"samples": [
+				"Ciao",
+				"Salve",
+				"hei",
+				"Ci sei ?",
+				"Buongiorno",
+				"Buonasera",
+				"buon pomeriggio",
+				"Come butta",
+				"Ue"
+			],
+			"responses": [
+				"Buongiorno, mi chiamo Lifebot come posso aiutarti ?",
+				"buonasera, cosa posso fare per te ?",
+				"salve, io sono Dottor Lifebot. Sono qui per aiutarti. Dimmi tutto",
+				"buon pomeriggio, io sono Dottor Lifebot, in che modo posso aiutarti ?",
+				"Bentrovata, sono Dottor Lifebot, posso esserti di aiuto ?",
+				"Ciao, posso fare qualcosa per te ?",
+				"Io sono Dottor Lifebot, dimmi cosa posso fare per te",
+				"Mi chiamo Lifebot e sono sicuro che posso fare qualcosa per aiutarti",
+				"Ciao, sono Lifebot. Sempre qui a disposizione, dimmi tutto"
+			]
 		}, {
 			"name": "SalutiFinaliIntent",
-			"samples": ["Addio", "Arrivederci", "Buona giornata", "A presto", "Ci vediamo", "Buona serata", "Alla prossima", "Ci sentiamo presto", "ci sentiamo prossimamente", "Ciao buon proseguimento", "Ciao", "Buon proseguimento di giornata", "A risentirci"],
-			"responses": ["Grazie per averci contattato ! Buona giornata", "Per qualsiasi cosa ci trovi sempre qui, buona giornata !", "Buona giornata !", "Arrivederci torna a trovarmi", "A presto torna quando vuoi", "Buona giornata a te grazie per averci scelto", "Buona serata a te non esitare a tornare", "Alla prossima ti aspetto qui", "ti aspetto", "Sono qui per questo", "Buon proseguimento di giornata se hai problemi non esitare", "ciao, se hai bisogno non esitare a chiedere", "Torna a trovarmi quando vuoi", "Ci sentiamo prossimamente", "Buon proseguimento", "A risentirla"]
-		}, {
-			"name": "RingraziamentiIntent",
-			"samples": ["Ti ringrazio", "Fantastico", "Grazie davvero", "Sei stato molto utile", "Grazie per le risposte", "Te ne sono grato", "Grazie infinite", "Ti sono riconoscente", "Grazie molto gentile", "Cosa avrei fatto senza il tuo aiuto", "Ti ringrazio davvero tanto", "Gentilissimo grazie", "Ti ringrazio per le risposte, sei stato davvero esaudiente"],
-			"responses": ["E' stato un piacere, se hai bisogno di altro non esitare a chiedere", "E' stato un piacere aiutarti", "Figurati, \u00e8 il mio lavoro :)", "Figurati \u00e8 un piacere", "Felice di averti aiutato", "\u00e8 sempre un piacere per me", "Sono qui per questo :)", "Estremo piacere per me", "A buon rendere torna a trovarmi", "Almeno servo a qualcosa ;)", "Non ringraziarmi \u00e8 mio dovere aiutarti", "Nessun problema ;)", "Sono qui per questo :)", "Prego felice di esserti stato utile", "Sono onorato", "Ci mancherebbe altro ;)", "Di nulla \u00e8 stato un piacere, si ricordi che sono qui per servirla"]
+			"samples": [
+				"Addio",
+				"Arrivederci",
+				"Buona giornata",
+				"A presto",
+				"Ci vediamo",
+				"Buona serata",
+				"Alla prossima",
+				"Ci sentiamo presto",
+				"ci sentiamo prossimamente",
+				"Ciao buon proseguimento",
+				"Ciao",
+				"Buon proseguimento di giornata",
+				"A risentirci"
+			],
+			"responses": [
+				"Grazie per averci contattato ! Buona giornata",
+				"Per qualsiasi cosa ci trovi sempre qui, buona giornata !",
+				"Buona giornata !",
+				"Arrivederci torna a trovarmi",
+				"A presto torna quando vuoi",
+				"Buona giornata a te grazie per averci scelto",
+				"Buona serata a te non esitare a tornare",
+				"Alla prossima ti aspetto qui",
+				"ti aspetto",
+				"Sono qui per questo",
+				"Buon proseguimento di giornata se hai problemi non esitare",
+				"ciao, se hai bisogno non esitare a chiedere",
+				"Torna a trovarmi quando vuoi",
+				"Ci sentiamo prossimamente",
+				"Buon proseguimento",
+				"A risentirla"
+			]
 		},
 		{
+            "name":"ChiseiIntent",
+            "samples":[
+				"Chi sei tu ?",
+				"Come ti chiami ?",
+				"Con chi sto parlando ?"
+			],
+            "responses":[
+				"Io sono Dottor LifeBot, l'assistente virtuale di Benessere è Vita, sono qui 24 ore su 24 per assisterti",
+				"Mi chiamo Dr.LifeBot, sono un'intelligenza artificiale sviluppata da Benessere è Vita per assistere ogni cliente"
+			]
+        },
+		{
+            "name":"WhatIntent",
+            "samples":[
+				"Cosa puoi fare ?",
+				"Come puoi aiutarmi ?",
+				"A cosa servi?",
+				"A che servi?"
+			],
+            "responses":[
+				"Posso aiutarti a cercare un nutrizionista nella tua città oppure con qualche problema che stai riscontrando, basta chiedere",
+				"Posso suggerirti ricette, chiedimi pure una ricetta",
+				"posso aiutarti a cercare uno specialista per la tua dieta"
+			]
+        },
+		{
+            "name":"ComeFunzionaBev",
+            "samples":[
+				"Come funziona la piattaforma ?",
+				"Come funziona la piattaforma?",
+				"Come funziona la piattaforma ?",
+				"Vorrei approfondimenti sulla piattaforma"
+			],
+            "responses":[
+				"Benessere è Vita unisce gli appassionati del viver Sano ai professionisti del settore benessere. Puoi cercare uno di essi attraverso la ricerca sulla home o chiedere a me qui in chat. Per altri dettagli chiedimi di approfondire",
+				"Su questa piattaforma puoi registrarti ed accedere ad un'area riservata, completare il tuo profilo ed avere tutto sotto controllo: le tue diete, i tuoi articoli preferiti, la tua spesa e tanto altro. Inoltre ci sono subito degli sconti per te su tutti i servizi della piattaforma (diete, prodotti, etc)"
+			]
+        },
+		{
 			"name": "CercaNutrizionistaIntent",
-			"samples": ["cerco un nutrizionista", "Voglio un nutrizionista", "Vorrei un nutrizionista", "avrei bisogno di una "],
-			"responses": ["Ok, un nutrizionista, in che città ?"],
+			"samples": [
+				"Salve, ho bisogno di una nutrizionista",
+				"cerco un nutrizionista",
+				"Voglio un nutrizionista",
+				"Vorrei un nutrizionista",
+				"avrei bisogno di un nutrizionista",
+				"Ciao, avrei bisogno di una brava nutrizionista",
+				"Vorrei consultare l’elenco delle nutrizioniste"
+			],
+			"responses": [
+				"Ok, un nutrizionista, in che città ?",
+				"Certo in che zona ?",
+				"In che città ?",
+				"In quale città ?",
+				"Ottimo, di quale provincia ?",
+				"In che zona stai cercando una nutrizionista ?"
+			],
 			"context": {
 				"set": "citta_nutrizionista",
 				"required": null
@@ -23,8 +124,24 @@
 		},
 		{
 			"name": "CercaDietistaIntent",
-			"samples": ["cerco un dietista", "Voglio un dietista"],
-			"responses": ["Ok, un dietista, in che città ?"],
+			"samples": [
+				"cerco un dietista",
+				"Voglio un dietista",
+				"Vorrei un dietista",
+				"avrei bisogno di una dietista",
+				"Buongiorno, vorrei contattare una dietista",
+				"Buonasera, vorrei prendere un appuntamento con una brava dietista",
+				"Vorrei un elenco di dietisti"
+			],
+			"responses": [
+				"Ok, un dietista, in che città ?",
+				"Certo in che zona ?",
+				"In che città ?",
+				"In quale città ?",
+				"Ottimo, di quale provincia ?",
+				"In che zona cerchi una dietista ?",
+				"Dove vorresti trovare una dietista ?"
+			],
 			"context": {
 				"set": "citta_dietista",
 				"required": null
@@ -32,8 +149,26 @@
 		},
 		{
 			"name": "NutrizionistaCittaIntent",
-			"samples": ["Lo vorrei a <LOC>", "Lo cerco a <LOC>", "A <LOC>","Sono di <LOC>","<LOC>"],
-			"responses": ["Questo potrebbe fare al caso tuo <NUTR>"],
+			"samples": [
+				"Lo vorrei a <LOC>",
+				"Lo cerco a <LOC>",
+				"A <LOC>",
+				"Sono di <LOC>",
+				"<LOC>",
+				"in zona <LOC>",
+				"lo cerco in provincia di <LOC>",
+				"lo cerco nella provincia di <LOC>",
+				"Vorrei una nutrizionista in zona <LOC>"
+			],
+			"responses": [
+				"Questo potrebbe fare al caso tuo: <NUTR>",
+				"Posso suggerirti questi nutrizionisti: <NUTR>",
+				"Ti consiglio: <NUTR>",
+				"A <LOC> abbiamo trovato: <NUTR>",
+				"Nella tua città ci sono questi nutrizionisti: <NUTR>",
+				"Questo è l’elenco di tutte le nutrizioniste in zona: <NUTR>",
+				"Qui sono presenti tutti i contatti di nutrizioniste in zona: <NUTR>"
+			],
 			"context": {
 				"set": null,
 				"required": "citta_nutrizionista"
@@ -41,13 +176,36 @@
 		},
 		{
 			"name": "DietistaCittaIntent",
-			"samples": ["Lo vorrei a <LOC>", "Lo cerco a <LOC>", "A <LOC>","Sono di <LOC>","<LOC>"],
-			"responses": ["Questo potrebbe fare al caso tuo <DIET>"],
+			"samples": [
+				"Lo vorrei a <LOC>",
+				"Lo cerco a <LOC>",
+				"A <LOC>",
+				"Sono di <LOC>",
+				"<LOC>",
+				"in zona <LOC>",
+				"lo cerco in provincia di <LOC>",
+				"lo cerco nella provincia di <LOC>",
+				"Sto cercando una dietista nella zona di <LOC>"
+			],
+			"responses": [
+				"Questo potrebbe fare al caso tuo: <DIET>",
+				"Posso suggerirti questi dietisti: <DIET>",
+				"Ti consiglio: <DIET>",
+				"A <LOC> abbiamo trovato: <DIET>",
+				"Nella tua città ci sono questi dietisti: <DIET>",
+				"Questo è l’elenco di tutte le dietiste in questa zona: <DIET>",
+				"Ecco un elenco con tutte le dietiste della zona di <LOC> : <DIET>"
+			],
 			"context": {
 				"set": null,
 				"required": "citta_dietista"
 			}
 		}
 	],
-	"defaults": ["Non ho capito", "Scusa, non ho capito", "Potresti ripetere la domanda?", "Scusa, forse cercavi un nutrizionista?", "stai cercando un nutrizionista?", "stai cercando un dietista?", "stai cercando un dietologo?"]
+	"defaults": ["Non ho capito",
+		"Potresti ripetere la domanda?",
+		"Scusa, forse cercavi un nutrizionista?",
+		"stai cercando un nutrizionista?",
+		"stai cercando un dietista?"
+	]
 }
