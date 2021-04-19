@@ -95,7 +95,7 @@ def conversation():
 
     return render_template('conversation.html', conversation=conversation)
 
-@app.route('/conversazioni/<string:id>',methods=['GET'])
+@app.route('/conversazioni/<int:id>',methods=['GET'])
 def delete_conv(id):
     db = db_connect()
     cursor = db.cursor()
