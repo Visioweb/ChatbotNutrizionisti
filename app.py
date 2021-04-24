@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify, render_template, redirect, url_for, s
 from chatbot import Chatbot
 from flask_cors import CORS
 from actions import *
+import json
+
 
 app = Flask(__name__)
 CORS(app)
@@ -80,6 +82,15 @@ def logout():
    # Redirect to login page
    return redirect(url_for('login'))
 
+@app.route('/corpus')
+def corpora():
+    # Opening JSON file
+    f = open('corpus_with_context.json', )
+    data = json.load(f)
+    # Closing file
+    f.close()
+
+    return render_template('corpus.html', data=data)
 
 
 @app.route('/conversazioni')
