@@ -87,7 +87,10 @@ def corpora():
     # Opening JSON file
     f = open('corpus_with_context.json', )
     data = json.load(f)
-    return render_template('corpus.html', dati=data)
+    # Closing file
+    f.close()
+
+    return render_template('corpus.html', data=data)
 
 
 @app.route('/conversazioni')
