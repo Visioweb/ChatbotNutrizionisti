@@ -6,21 +6,11 @@
 <h2>Corpus</h2>
 <div>
     <p>Questo è il corpus su cui è stato addestrato il chatbot:</p>
-
-    <table>
-   <tr>
-       {% for key in data[0] %}
-       <th>{{ key }}</th>
+    {% for dict_item in data %}
+       {% for key, value in dict_item.items() %}
+          <h1>Key: {{key}}</h1>
+          <h2>Value: {{value}}</h2>
        {% endfor %}
-   </tr>
-
-   {% for intent in data %}
-   <tr>
-       {% for key in intent %}
-       <td>{{ intent[key] }}</td>
-       {% endfor %}
-   </tr>
-   {% endfor %}
-</table>
+    {% endfor %}
 </div>
 {% endblock %}
