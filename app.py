@@ -92,6 +92,11 @@ def corpora():
 
     return render_template('corpus.html', data=data)
 
+@app.route('/addestra/<str:corpus>/<float:sensitivity>',methods=['GET'])
+def addestra():
+    result = addestraCorpus(corpus_name, sensitivity)
+
+    return render_template('addestra.html', result=result)
 
 @app.route('/conversazioni')
 def conversation():

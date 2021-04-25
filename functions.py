@@ -5,7 +5,6 @@ import csv #serve per la function insertConversation
 from datetime import datetime #serve per la function insertConversation
 
 
-
 def db_connect():
   # questa funzione ci permette
   # di collegarci al db mysql
@@ -20,6 +19,9 @@ def db_connect():
     return connection
   except Error as e:
       print(e)
+
+
+
 
 
 # questa addestra
@@ -133,6 +135,12 @@ def estraiTestoImg(doc):
             print('\033[94m' + item["Text"] + '\033[0m')
     '''
     return response
+
+
+def addestraCorpus(corpus_name, sensitivity):
+    chatbot = Chatbot(sensitivity=sensitivity)
+    chatbot.train(corpus_name)
+    return true;
 
 
 
