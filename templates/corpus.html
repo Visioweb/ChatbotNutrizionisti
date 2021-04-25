@@ -6,18 +6,19 @@
 <h2>Corpus</h2>
 <div>
     <p>Questo è il corpus su cui è stato addestrato il chatbot:</p>
+
             <ul>
-                <li>{{ intent['name'] }}</li>
-                <li>{{ intent['samples'] }}
+                <li>{{ data['name'] }}</li>
+                <li>{{ data['samples'] }}
                     <ul>
                         <li></li>
                     </ul>
                 </li>
-                <li>{{ intent['responses'] }}
+                <li>{{ data['responses'] }}
                     <ul>
                         <li></li>
                     </ul>
                 </li>
-    </table>
+{{data}}
 </div>
 {% endblock %}
