@@ -18,7 +18,7 @@
 				"buonasera, cosa posso fare per te ?",
 				"salve, io sono Dottor Lifebot. Sono qui per aiutarti. Dimmi tutto",
 				"buon pomeriggio, io sono Dottor Lifebot, in che modo posso aiutarti ?",
-				"Bentrovata, sono Dottor Lifebot, posso esserti di aiuto ?",
+				"Bentrovato/a, sono Dottor Lifebot, posso esserti di aiuto ?",
 				"Ciao, posso fare qualcosa per te ?",
 				"Io sono Dottor Lifebot, dimmi cosa posso fare per te",
 				"Mi chiamo Lifebot e sono sicuro che posso fare qualcosa per aiutarti",
@@ -37,7 +37,6 @@
 				"Ci sentiamo presto",
 				"ci sentiamo prossimamente",
 				"Ciao buon proseguimento",
-				"Ciao",
 				"Buon proseguimento di giornata",
 				"A risentirci"
 			],
@@ -65,11 +64,14 @@
             "samples":[
 				"Chi sei tu ?",
 				"Come ti chiami ?",
-				"Con chi sto parlando ?"
+				"Con chi sto parlando ?",
+				"cosa sei ?"
+				"dimmi chi sei"
 			],
             "responses":[
 				"Io sono Dottor LifeBot, l'assistente virtuale di Benessere è Vita, sono qui 24 ore su 24 per assisterti",
-				"Mi chiamo Dr.LifeBot, sono un'intelligenza artificiale sviluppata da Benessere è Vita per assistere ogni cliente"
+				"Mi chiamo Dottor LifeBot, sono un'intelligenza artificiale sviluppata da Benessere è Vita per assistere ogni cliente",
+				"Sono Dottor Lifebot, un chatbot intelligente per assisterti nelle tue ricerche sul portale"
 			]
         },
 		{
@@ -81,24 +83,55 @@
 				"A che servi?"
 			],
             "responses":[
-				"Posso aiutarti a cercare un nutrizionista nella tua città oppure con qualche problema che stai riscontrando, basta chiedere",
+				"Posso aiutarti a cercare un/una nutrizionista nella tua città oppure con qualche problema che stai riscontrando, basta chiedere",
+				"Posso aiutarti a cercare un/una dietista nella tua città oppure con qualche problema che stai riscontrando, basta chiedere",
 				"Posso suggerirti ricette, chiedimi pure una ricetta",
-				"posso aiutarti a cercare uno specialista per la tua dieta"
+				"posso aiutarti a cercare un/una dietista per la tua dieta",
+				"posso aiutarti a cercare un/una nutrizionista per la tua dieta",
+				"posso trovarti un/una dietista per dimagrire",
+				"posso trovarti un/una nutrizionista per aiutarti a dimagrire"
 			]
         },
 		{
             "name":"ComeFunzionaBev",
             "samples":[
 				"Come funziona la piattaforma ?",
-				"Come funziona la piattaforma?",
-				"Come funziona la piattaforma ?",
 				"Vorrei approfondimenti sulla piattaforma"
+				"A cosa serve questo sito ?"
+				"A che serve benessere è vita ?"
+				"Che posso fare su questo portale ?"
 			],
             "responses":[
-				"Benessere è Vita unisce gli appassionati del viver Sano ai professionisti del settore benessere. Puoi cercare uno di essi attraverso la ricerca sulla home o chiedere a me qui in chat. Per altri dettagli chiedimi di approfondire",
-				"Su questa piattaforma puoi registrarti ed accedere ad un'area riservata, completare il tuo profilo ed avere tutto sotto controllo: le tue diete, i tuoi articoli preferiti, la tua spesa e tanto altro. Inoltre ci sono subito degli sconti per te su tutti i servizi della piattaforma (diete, prodotti, etc)"
-			]
-        },
+				"Benessere è Vita unisce gli appassionati del viver Sano ai professionisti del settore benessere. Puoi cercare uno di essi attraverso la ricerca sulla home o chiedere a me qui in chat. Per altri dettagli chiedimi di approfondire.",
+				"Su questa piattaforma puoi registrarti ed accedere ad un'area riservata, completare il tuo profilo ed avere tutto sotto controllo: le tue diete, i tuoi articoli preferiti, la tua spesa e tanto altro. Chiedimi di  più sul portale.",
+				"Puoi cercare nutrizionisti/e o dietisti/e nella tua zona. Chiedimi come"
+			],
+			"context": {
+				"set": "approfondisci_bev",
+				"required": null
+			}
+		},
+		{
+			"name": "ApprofondisciBevIntent",
+			"samples": [
+				"Dimmi di più",
+				"Voglio sapere di più sul portale",
+				"Ok approfondisci l'argomento",
+				"Come ?",
+				"Come posso cercarli ?",
+				"Come posso trovarli ?",
+				"Spiegami meglio"
+			],
+			"responses": [
+				"Su questo portale puoi cercare nutrizionisti/e o dietisti/e della tua zona e contattarli chiedendogli un appuntamento o un consulto online.",
+				"Benessere è Vita è stato creato per aiutarti ad avere i professionisti della nutrizione a portata di click.",
+				"Puoi trovare tutti i professionisti della nutrizione semplicemente da una ricerca o chiedendoli a me"
+			],
+			"context": {
+				"set": null,
+				"required": "approfondisci_bev"
+			}
+		},
 		{
 			"name": "CercaNutrizionistaIntent",
 			"samples": [
