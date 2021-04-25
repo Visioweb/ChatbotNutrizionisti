@@ -140,7 +140,7 @@ def estraiTestoImg(doc):
 def addestraCorpus(corpus_name, sensitivity):
     chatbot = Chatbot(sensitivity=sensitivity)
     chatbot.train(corpus_name)
-    return true;
+    return true
 
 
 
