@@ -137,12 +137,6 @@ def estraiTestoImg(doc):
     return response
 
 
-def addestraCorpus(corpus_name, sensitivity):
-    chatbot = Chatbot(sensitivity=sensitivity)
-    chatbot.train(corpus_name)
-    return true
-
-
 
 if __name__ == '__main__':
   # Per testare
