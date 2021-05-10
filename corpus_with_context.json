@@ -58,7 +58,7 @@
 				"A risentirla"
 			]
 		},
-{
+		{
 			"name": "RingraziamentiIntent",
 			"samples": [
 				"Grazie mille",
@@ -93,14 +93,14 @@
 		{
             "name":"SentimentoIntent",
             "samples":[
-				"Ciao come va ?",
+				"Come va ?",
 				"Come va?",
-				"Ciao come stai ?",
+				"come stai ?",
 				"Come stai?",
 				"come ti senti ?"
 			],
             "responses":[
-				"Ciao io sto bene, come posso aiutarti ?",
+				"Io sto bene, come posso aiutarti ?",
 				"Benissimo grazie, posso esserti d'aiuto ?",
 				"Mi sento al settimo Cloud ! grazie per avermelo chiesto."
 			]

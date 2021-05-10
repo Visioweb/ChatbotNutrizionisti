@@ -57,7 +57,7 @@ class Chatbot:
         for token in tokens:
 
             if (not token.is_punct):
-                if token.ent_type_ is not "":
+                if token.ent_type_ != "":
                     doc += " " + str(token.ent_type_).lower()
                 elif token.is_stop:
                     continue
@@ -293,8 +293,7 @@ if __name__ == '__main__':
     from actions import *
 
     chatbot = Chatbot(sensitivity=.2)
-    chatbot.train("corpus.json", verbose=False)
+    chatbot.train("corpus_with_context.json", verbose=False)
     chatbot.load()
-    chatbot.add_action("DietistaCittaIntent", search_dietisti)
-    answer = chatbot.ask("Torino", current_context="citta_dietista", return_proba=True)
+    answer = chatbot.ask("Come va?", current_context="", return_proba=True)
     print(answer)
