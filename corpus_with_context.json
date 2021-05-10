@@ -9,7 +9,6 @@
 				"Buongiorno",
 				"Buonasera",
 				"buon pomeriggio",
-				"Come butta",
 				"Ue",
 				"caio"
 			],
@@ -59,6 +58,88 @@
 				"A risentirla"
 			]
 		},
+{
+			"name": "RingraziamentiIntent",
+			"samples": [
+				"Grazie mille",
+				"ti ringrazio",
+				"grazie",
+				"molto gentile",
+				"sei stato molto utile",
+				"grazie per la risposta",
+				"infinite grazie",
+				"grazie di tutto",
+				"ti sono grato",
+				"grazie di cuore",
+				"ti sono davvero riconoscente",
+				"grazie davvero"
+			],
+			"responses": [
+				"Figurati",
+				"sono qui per questo",
+				"grazie a te",
+				"non c’è di che",
+				"a buon rendere",
+				"è il mio lavoro",
+				"quando vuoi",
+				"felice di averti aiutato",
+				"è sempre un piacere",
+				"nessun problema",
+				"ci mancherebbe altro",
+				"nessun dovere",
+				"è solo un piacere"
+			]
+		},
+		{
+            "name":"SentimentoIntent",
+            "samples":[
+				"Ciao come va ?",
+				"Come va?",
+				"Ciao come stai ?",
+				"Come stai?",
+				"come ti senti ?"
+			],
+            "responses":[
+				"Ciao io sto bene, come posso aiutarti ?",
+				"Benissimo grazie, posso esserti d'aiuto ?",
+				"Mi sento al settimo Cloud ! grazie per avermelo chiesto."
+			]
+        },
+		{
+            "name":"HelpIntent",
+            "samples":[
+				"Mi serve aiuto",
+				"Ho bisogno di assistenza",
+				"aiutatemi",
+				"mi aiuti ?"
+			],
+            "responses":[
+				"Sarà lieto di assisterti ! Come posso aiutarti ?",
+				"Sono qui per aiutarti, dimmi come posso esserti utile."
+			]
+        }, {
+            "name":"BadIntent",
+            "samples":[
+				"Fai schifo",
+				"Vai a farti friggere",
+				"Sei totalmente inutile",
+				"questo chatbot funziona veramente male",
+				"Funzioni di merda",
+				"Che schifezza",
+				"E questo sarebbe intelligenza artificiale ?",
+				"Sei addestrato malissimo",
+				"Manco una risposta sai dare ?",
+				"tutte risposte sbagliate",
+				"non servi a nulla"
+			],
+            "responses":[
+				"Mi dispiace molto di non averti soddisfatto, come posso rimediare ?",
+				"Sono spiacente di sentirtelo dire, posso rimediare in qualche modo ?",
+				"Chiedo venia, sono ancora in fase beta, ma il tuo feedback mi aiuterà a crescere e migliorare",
+				"Scusami, migliorerò sicuramente grazie anche al tuo feedback",
+				"Perdonami, mi stanno migliorando ancora"
+			]
+        },
 		{
             "name":"ChiseiIntent",
             "samples":[
@@ -93,6 +174,19 @@
 			]
         },
 		{
+            "name":"GenderIntent",
+            "samples":[
+				"Sei un essere umano ?",
+				"Sei una donna ?",
+				"Sei un'uomo ?",
+				"Sei una donna ?"
+			],
+            "responses":[
+				"Sono un'intelligenza artificiale sviluappata da un team di ricercatori umani nei laboratori BEV",
+				"Sono un Assistente Conversazionale creato per aiutarti nella ricerca dei professionisti del benessere"
+			]
+        },
+		{
             "name":"ComeFunzionaBev",
             "samples":[
 				"Come funziona la piattaforma ?",
@@ -123,7 +217,7 @@
 				"Spiegami meglio"
 			],
 			"responses": [
-				"Su questo portale puoi cercare nutrizionisti/e o dietisti/e della tua zona e contattarli chiedendogli un appuntamento o un consulto online.",
+				"Su questo portale puoi cercare nutrizionisti/e o dietisti/e o dietologi/he della tua zona e contattarli chiedendogli un appuntamento o un consulto online.",
 				"Benessere è Vita è stato creato per aiutarti ad avere i professionisti della nutrizione a portata di click.",
 				"Puoi trovare tutti i professionisti della nutrizione semplicemente da una ricerca o chiedendoli a me"
 			],
@@ -157,6 +251,33 @@
 			}
 		},
 		{
+			"name": "NutrizionistaCittaIntent",
+			"samples": [
+				"Lo vorrei a <LOC>",
+				"Lo cerco a <LOC>",
+				"A <LOC>",
+				"Sono di <LOC>",
+				"<LOC>",
+				"in zona <LOC>",
+				"lo cerco in provincia di <LOC>",
+				"lo cerco nella provincia di <LOC>",
+				"Vorrei una nutrizionista in zona <LOC>"
+			],
+			"responses": [
+				"Questo potrebbe fare al caso tuo: <NUTR>",
+				"Posso suggerirti questi nutrizionisti: <NUTR>",
+				"Ti consiglio: <NUTR>",
+				"abbiamo trovato: <NUTR>",
+				"Nella tua città ci sono questi nutrizionisti: <NUTR>",
+				"Questo è l’elenco di tutte le nutrizioniste in zona: <NUTR>",
+				"Qui sono presenti tutti i contatti di nutrizioniste in zona: <NUTR>"
+			],
+			"context": {
+				"set": null,
+				"required": "citta_nutrizionista"
+			}
+		},
+		{
 			"name": "CercaDietistaIntent",
 			"samples": [
 				"cerco un dietista",
@@ -182,33 +303,6 @@
 			}
 		},
 		{
-			"name": "NutrizionistaCittaIntent",
-			"samples": [
-				"Lo vorrei a <LOC>",
-				"Lo cerco a <LOC>",
-				"A <LOC>",
-				"Sono di <LOC>",
-				"<LOC>",
-				"in zona <LOC>",
-				"lo cerco in provincia di <LOC>",
-				"lo cerco nella provincia di <LOC>",
-				"Vorrei una nutrizionista in zona <LOC>"
-			],
-			"responses": [
-				"Questo potrebbe fare al caso tuo: <NUTR>",
-				"Posso suggerirti questi nutrizionisti: <NUTR>",
-				"Ti consiglio: <NUTR>",
-				"A <LOC> abbiamo trovato: <NUTR>",
-				"Nella tua città ci sono questi nutrizionisti: <NUTR>",
-				"Questo è l’elenco di tutte le nutrizioniste in zona: <NUTR>",
-				"Qui sono presenti tutti i contatti di nutrizioniste in zona: <NUTR>"
-			],
-			"context": {
-				"set": null,
-				"required": "citta_nutrizionista"
-			}
-		},
-		{
 			"name": "DietistaCittaIntent",
 			"samples": [
 				"Lo vorrei a <LOC>",
@@ -225,21 +319,71 @@
 				"Questo potrebbe fare al caso tuo: <DIET>",
 				"Posso suggerirti questi dietisti: <DIET>",
 				"Ti consiglio: <DIET>",
-				"A <LOC> abbiamo trovato: <DIET>",
+				"abbiamo trovato: <DIET>",
 				"Nella tua città ci sono questi dietisti: <DIET>",
 				"Questo è l’elenco di tutte le dietiste in questa zona: <DIET>",
-				"Ecco un elenco con tutte le dietiste della zona di <LOC> : <DIET>"
+				"Ecco un elenco con tutte le dietiste della tua città : <DIET>"
 			],
 			"context": {
 				"set": null,
 				"required": "citta_dietista"
 			}
+		},
+		{
+			"name": "CercaDietologoIntent",
+			"samples": [
+				"cerco un dietologo",
+				"Voglio un dietologo",
+				"Vorrei un dietologo",
+				"avrei bisogno di una dietologo",
+				"Buongiorno, vorrei contattare una dietologa",
+				"Buongiorno, vorrei contattare un dietologo",
+				"Buonasera, vorrei prendere un appuntamento con un bravo dietologo",
+				"Vorrei un elenco di dietologi"
+			],
+			"responses": [
+				"Ok, un dietologo, in che città ?",
+				"Certo in che zona ?",
+				"In che città ?",
+				"In quale città ?",
+				"Ottimo, di quale provincia ?",
+				"In che zona cerchi una dietologa ?",
+				"Dove vorresti trovare una dietologa ?"
+			],
+			"context": {
+				"set": "citta_dietologo",
+				"required": null
+			}
+		},
+		{
+			"name": "DietologoCittaIntent",
+			"samples": [
+				"Lo vorrei a <LOC>",
+				"Lo cerco a <LOC>",
+				"A <LOC>",
+				"Sono di <LOC>",
+				"<LOC>",
+				"in zona <LOC>",
+				"lo cerco in provincia di <LOC>",
+				"lo cerco nella provincia di <LOC>",
+				"Sto cercando una dietologa nella zona di <LOC>"
+			],
+			"responses": [
+				"Questo potrebbe fare al caso tuo: <DIGO>",
+				"Posso suggerirti questi dietologi: <DIGO>",
+				"Ti consiglio: <DIGO>",
+				"abbiamo trovato: <DIGO>",
+				"Nella tua città ci sono questi dietologi: <DIGO>",
+				"Questo è l’elenco di tutte le dietologhe in questa zona: <DIGO>",
+				"Ecco un elenco con tutte le dietologhe della tua città : <DIGO>"
+			],
+			"context": {
+				"set": null,
+				"required": "citta_dietologo"
+			}
 		}
 	],
 	"defaults": ["Non ho capito",
-		"Potresti ripetere la domanda?",
-		"Scusa, forse cercavi un nutrizionista?",
-		"stai cercando un nutrizionista?",
-		"stai cercando un dietista?"
+		"Potresti ripetere la domanda?"
 	]
 }

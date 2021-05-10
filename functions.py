@@ -128,17 +128,19 @@ def estraiTestoImg(doc):
                             aws_secret_access_key=aws_secret_access_key, region_name=region_name)
     # Call Amazon Textract
     response = textract.detect_document_text(Document={'Bytes': imageBytes})
-    '''
+    testo = ''
     # Print detected text
     for item in response["Blocks"]:
         if item["BlockType"] == "LINE":
+            stringa = '\033[94m' + item["Text"] + '\033[0m'
+            testo  = ', '.join(stringa)
             print('\033[94m' + item["Text"] + '\033[0m')
-    '''
-    return response
+
+    return testo
 
 
 
 if __name__ == '__main__':
   # Per testare
-  vars = creaCorpusDaDatabase()
+  vars = estraiTestoImg('babbonew2.jpeg')
   print(vars)
