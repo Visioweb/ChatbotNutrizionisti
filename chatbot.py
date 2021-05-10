@@ -57,7 +57,7 @@ class Chatbot:
         for token in tokens:
 
             if (not token.is_punct):
-                if token.ent_type_ != "":
+                if token.ent_type_ is not "":
                     doc += " " + str(token.ent_type_).lower()
                 elif token.is_stop:
                     continue
@@ -245,6 +245,7 @@ class Chatbot:
         model = Sequential()
         model.add(Dense(12, activation="relu", input_dim=X.shape[1]))
         model.add(Dense(8, activation="relu"))
+        model.add(Dense(4, activation="relu"))
         model.add(Dense(y.shape[1], activation="softmax"))
         model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
 
@@ -292,8 +293,8 @@ class Chatbot:
 if __name__ == '__main__':
     from actions import *
 
-    chatbot = Chatbot(sensitivity=.2)
-    chatbot.train("corpus_with_context.json", verbose=False)
+    chatbot = Chatbot(sensitivity=.4)
+    chatbot.train("corpus_with_context.json", verbose=true)
     chatbot.load()
     answer = chatbot.ask("Come va?", return_proba=True)
     print(answer)
