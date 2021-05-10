@@ -67,7 +67,7 @@ class Chatbot:
                     doc += " " + token
         
         doc = doc.strip()
-        print("DOC: "+"'"+str(doc)+"'")
+        print("DOC: "+"'"+str(doc)+"' QUESTION: "+"'"+str(question)+"'")
 
         x = self._bow.transform([doc])
 
@@ -196,6 +196,7 @@ class Chatbot:
 
                 for token in tokens:
                     if (not token.is_punct and not token.is_stop):
+                        print("LEMMA: "+token.lemma_)
                         doc += " " + token.lemma_  # otteniamo il lemma
                         dictionary.add(token.lemma_)  # aggiungiamo al dizionario
                 if (len(doc) > 0):
@@ -245,7 +246,6 @@ class Chatbot:
         model = Sequential()
         model.add(Dense(12, activation="relu", input_dim=X.shape[1]))
         model.add(Dense(8, activation="relu"))
-        model.add(Dense(4, activation="relu"))
         model.add(Dense(y.shape[1], activation="softmax"))
         model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=['accuracy'])
 
