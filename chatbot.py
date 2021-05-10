@@ -296,5 +296,5 @@ if __name__ == '__main__':
     chatbot = Chatbot(sensitivity=.4)
     chatbot.train("corpus_with_context.json", verbose=False)
     chatbot.load()
-    answer = chatbot.ask("grazie mille", return_proba=True)
+    answer = chatbot.ask("come va?", return_proba=True)
     print(answer)
