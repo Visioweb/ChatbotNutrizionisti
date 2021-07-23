@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Clienti {% endblock %}
+
+
+
+{% block body %}
+
+
+<section class="content" style="margin-top: 50px;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+                {% with messages = get_flashed_messages() %}
+
+                {% if messages %}
+
+                {% for message in messages %}
+
+                <div class="alert alert-success alert-dismissable" role="alert">
+
+                    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+
+                        <span aria-hidden="true">x</span>
+
+                    </button>
+
+
+                {{message}}
+
+
+                </div>
+
+
+                {% endfor %}
+
+                {% endif %}
+                {% endwith %}
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title" style="width: 100%;">Clienti Attuali <button type="button"  class="btn btn-success float-right"
+                data-toggle="modal" data-target="#mymodal">Aggiungi Nuovi Clienti</button></h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>codCliente</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>dataCheckIn</th>
+                    <th>dataCheckOut</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                   {% for row in employees %}
+                    <tr>
+                        <td>{{row.codCliente}}</td>
+                        <td>{{row.nome}}</td>
+                        <td>{{row.cognome}}</td>
+                        <td>{{row.dataCheckIn}}</td>
+                         <td>{{row.dataCheckOut}}</td>
+                        <td>
+                            <a href="/clienti/update/{{row.id}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit{{row.id}}"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="/clienti/delete/{{row.id}}" class="btn btn-danger btn-xs" onclick="return confirm('Are You Sure To Delete ?')"><i class="fas fa-times"></i></a>
+
+
+                        </td>
+
+                    </tr>
+
+
+                  <!-- Modal Edit Employee-->
+<div id="modaledit{{row.id}}" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+
+
+      <div class="modal-content">
+
+
+         <div class="modal-header">
+
+
+            <h4 class="modal-title">Aggiorna Informazioni</h4>
+
+
+         </div>
+
+
+         <div class="modal-body">
+
+
+            <form action="{{url_for('updateClienti')}}" method="POST">
+
+
+               <div class="form-group">
+
+
+                  <label>Codice Cliente:</label>
+                   <input type="hidden"  name="id" value="{{row.id}}">
+
+                  <input type="text" class="form-control" name="codCliente" value="{{row.codCliente}}">
+
+
+               </div>
+
+               <div class="form-group">
+
+
+                  <label>Nome:</label>
+
+                  <input type="text" class="form-control" name="nome" value="{{row.nome}}">
+
+
+               </div>
+
+
+               <div class="form-group">
+
+
+                  <label>Cognome:</label>
+
+                  <input type="text" class="form-control" name="cognome" value="{{row.cognome}}">
+
+
+               </div>
+
+
+               <div class="form-group">
+
+
+                  <label>Data Check-IN:</label>
+
+                  <input type="text" class="form-control" name="dataCheckIn" value="{{row.dataCheckIn}}">
+
+
+               </div>
+
+               <div class="form-group">
+
+
+                  <label>Data Check-OUT:</label>
+
+                  <input type="text" class="form-control" name="dataCheckOut" value="{{row.dataCheckOut}}">
+
+
+               </div>
+
+               <div class="form-group">
+
+
+                  <label> Note:</label>
+
+                   <textarea class="form-control" name="note" value="{{row.note}}">{{row.note}}</textarea>
+
+
+               </div>
+
+
+
+               <div class="form-group">
+
+
+                  <button class="btn btn-primary" type="submit">Aggiorna</button>
+
+
+               </div>
+
+
+            </form>
+
+
+         </div>
+
+
+         <div class="modal-footer">
+
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+
+
+         </div>
+
+
+      </div>
+
+
+   </div>
+
+</div>
+
+
+                    {% endfor %}
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>codCliente</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>dataCheckIn</th>
+                    <th>dataCheckOut</th>
+                    <th>Action</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+</div>
+
+
+
+
+                  <!-- Modal Add Employee-->
+
+
+<div id="mymodal" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+
+            <h4 class="modal-title">Aggiungi Cliente</h4>
+         </div>
+         <div class="modal-body">
+
+            <form action="{{url_for('insertClienti')}}" method="POST">
+
+
+               <div class="form-group">
+
+                  <label>Codice Cliente:</label>
+                  <input type="text" class="form-control" name="codCliente" required="1">
+
+
+               </div>
+
+
+                <div class="form-group">
+
+
+                  <label>Nome:</label>
+                  <input type="text" class="form-control" name="nome" required="1">
+
+
+               </div>
+
+                <div class="form-group">
+
+
+                  <label>Cognome:</label>
+                  <input type="text" class="form-control" name="cognome" required="1">
+
+
+               </div>
+
+                <div class="form-group">
+
+
+                  <label>Data Check-In:</label>
+                  <input type="datetime-local" class="form-control" name="dataCheckIn" required="1">
+
+
+               </div>
+
+                <div class="form-group">
+
+
+                  <label>Data Check-Out:</label>
+                  <input type="datetime-local" class="form-control" name="dataCheckOut" required="1">
+
+
+               </div>
+
+
+                <div class="form-group">
+
+
+                  <label>Note:</label>
+                    <textarea class="form-control" name="note" required="1"></textarea>
+
+
+               </div>
+
+
+
+               <div class="form-group">
+
+
+                  <button class="btn btn-primary" type="submit">Aggiungi Cliente</button>
+
+
+               </div>
+
+
+            </form>
+
+
+         </div>
+
+
+         <div class="modal-footer">
+
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+
+
+         </div>
+
+
+      </div>
+         </div>
+
+
+      </div>
+
+
+   </div>
+</section>
+
+
+
+
+{% endblock %}
