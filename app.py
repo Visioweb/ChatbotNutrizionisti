@@ -1,18 +1,13 @@
-from flask import Flask, request, jsonify, render_template, redirect, url_for, session, flash
+from flask import Flask, request, jsonify, render_template, redirect, url_for, session
 from chatbot import Chatbot
+from flask_cors import CORS
 from actions import *
 import json
 
 
-
 app = Flask(__name__)
-app.secret_key = "Secret Key"
+CORS(app)
 
-#SqlAlchemy Database Configuration With Mysql
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://benessere:Callcenter1983@if7141-001.dbaas.ovh.net:35421/benessereevita'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db = SQLAlchemy(app)
 
 
 @app.route('/ask', methods=["GET", "POST"])
@@ -40,7 +35,3 @@ def ask():
     return jsonify({"answer": str(answer[0]),
                     "new_context": str(answer[1]),
                     "probability": str(answer[2])}), 200
-
-
-
-
