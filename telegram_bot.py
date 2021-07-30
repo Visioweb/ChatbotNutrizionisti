@@ -5,10 +5,11 @@ from chatbot import Chatbot
 
 
 def bot_ask(update:Update,context:CallbackContext):
-    print(update.effective_message.text)
+    print('Messaggio ricevuto:',update.effective_message.text)
+    print('Context attuale:',context.chat_data.get('context'))
     chatbot = Chatbot(sensitivity=0.4)
     chatbot.load()
-    response,_,new_context = chatbot.ask(update.effective_message.text, current_context=context.chat_data.get('context'), return_proba=True)
+    response,new_context,_ = chatbot.ask(update.effective_message.text, current_context=context.chat_data.get('context'), return_proba=True)
     context.chat_data['context']=new_context
     update.effective_message.reply_text(response)
 
