@@ -27,9 +27,11 @@ def ask():
 
     chatbot = Chatbot(sensitivity=0.4)
     chatbot.load()
+    '''
     chatbot.add_action("NutrizionistaCittaIntent", search_nutritionists)
     chatbot.add_action("DietistaCittaIntent", search_dietisti)
     chatbot.add_action("DietologoCittaIntent", search_dietologi)
+    '''
     answer = chatbot.ask(data["message"], current_context=current_context, return_proba=True)
 
     return jsonify({"answer": str(answer[0]),
