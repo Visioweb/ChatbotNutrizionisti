@@ -1,0 +1,426 @@
+{
+	"intents": [{
+			"name": "Manutenzione",
+			"samples": [
+				"Il condizionatore non funziona",
+                                "Il condizionatore è rotto",
+                                "Il condizionatore non si accende",
+                                "Il condizionatore è guasto"
+			],
+			"responses": [
+				"Mi dispiace. Segnalo subito il problema e appena possibile verrà un tecnico. Posso fare altro?",
+                                "Informo subito un'addetto per risolvere il problema. Ha bisogno di altro?",
+                                "Mi scuso per il disagio, provvedo subito ad informare il tecnico"
+			],
+			"context": {
+				"set": "manut",
+				"required": null
+			}
+		},
+	     	{ 
+                         
+                         "name": "Manutenzione Escalation",
+			   "samples": [
+				"Vorrei sapere quando arriverà il tecnico",
+                                "Vorrei sapere quando arriverà il tecnico",
+				"Voglio sapere quando arriva il tecnico",
+				"Quando arriva il tecnico?",
+				"Il tecnico quando arriva?"
+			],
+			   "responses": [
+				"Non sono in grado di dirle un orario preciso, ma posso garantirle che la segnalazione è già partita. Mentre aspetta, posso suggerirle qualche località da visitare in zona?",
+                                "Non saprei dirle una certezza, ma la richiesta è stata fatta. Posso fare altro?",
+                                "Non conosco le tempistiche, ma di certo è stato informato sui fatti. Nel frattempo posso fare altro per lei?"
+			],
+			 "context": {
+				"set": null,
+				"required": "manut"
+			}
+		},                      
+		{
+
+			"name": "Housekeeping",
+			"samples": [
+				"Il bagno non è stato pulito bene",
+                                "Il bagno è sporco",
+                                "Ho ritrovato il bagno non pulito a dovere",
+                                "Il bagno non è stato pulito correttamente"
+			],
+			"responses": [
+				"Mi scuso per il disagio, provvedo subito ad informare il personale, nel frattempo posso fare altro per lei?",
+                                "Mi dispiace per l'inconveniente, informo subito gli addetti",
+                                "Provvedo subito per risolvere l'inconveniente",
+                                "Informo subito il personale per risolvere il disagio"
+			],
+			"context": {
+				"set": "housekee",
+				"required": null
+			}
+		},                      
+                {
+			"name": "Escursioni",
+			"samples": [
+				"Cosa c'è da fare in zona?",
+                                "Cosa si può fare in zona?",
+                                "Cosa c'è da visitare in zona?",
+                                "Cosa si può vedere in questa zona?"
+			],
+			"responses": [
+				"Posso consigliarle di visitare il centro storico di Castellabate oppure il Museo Archeologico di Paestum",
+                                "Le suggerisco di visitare il Muoseo Archeologico di Paestum oppure Il centro di Castellabate"
+			],
+			"context": {
+				"set": null,
+				"required": "housekee"
+			}
+		},
+		{
+			"name": "Servizi informazione",
+			"samples": [
+				"Salve, a che ora comincia la colazione?",
+                                "A che ora inizia la colazione?",
+                                "Qual'è l'orario utile per consumare la colazione?",
+                                "A che ora si può fare colazione?"
+			],
+			"responses": [
+				"La colazione nella nostra struttura, è servita dalle ore 08.00 alle ore 10.00. Posso fare altro?",
+                                "La colazione è servita dalle ore 8.00 alle ore 10.00. Ha bisogno di altro?",
+                                "La colazione può essere consumata dalle ore 8.00 alle ore 10.00"
+			],
+			"context": {
+				"set": "info",
+				"required": null
+			}
+		},
+		{ 
+                         
+                         "name": "Servizi informazioni",
+			   "samples": [
+				"Di quali servizi disponde la struttura?",
+                                "Quali servizi sono disponibili?",
+                                "Di quali servizi dispone la struttura?",
+                                "Quali sono i servizi utili all'interno della struttura?"
+			],
+			   "responses": [
+				"La struttura dispone di vari servizi usufruibili gratuitamente, quali il servizio spa, area fitness all’aperto, piscina, area giochi per bambini",
+                                "All'interno della struttura può trovare diversi servizi come la mini spa, la piscina, vasca idromassaggio, area fitness all'aperto"
+			],
+			 "context": {
+				"set": null,
+				"required": "info"
+			}
+		},
+		{
+			"name": "Manutenzione",
+			"samples": [
+				"La tv della camera non si accende",
+                                "La tv è rotta",
+                                "La tv non funziona",
+                                "La tv non si vede"
+			],
+			"responses": [
+				"Mi dispiace. Informo subito il tecnico per risolvere quanto prima. Posso fare altro?",
+                                "Provvedo subito ad informare il tecnico. Ha bisogno di altro?",
+                                "Comunico il problema al tecnico per risolvere il prima possibile"
+			],
+			"context": {
+				"set": "manut",
+				"required": null
+			}
+		},
+		{ 
+                         
+                         "name": "Housekeeping",
+			   "samples": [
+				"il frigo bar è vuoto",
+                                "Il frigo non contiene le bibite",
+                                "Nel frigo non c'è niente"
+			],
+			   "responses": [
+				"Mi scuso per l'inconveniente, provvedo ad informare un'addetta. Se ha bisogno, sono sempre qui. Arrivederci.",
+                                "Provvedo ad informare gli addetti. Necessità di altro?"
+			],
+			 "context": {
+				"set": null,
+				"required": "manut"
+			}
+		},
+		{
+			"name": "Escursioni turistiche",
+			"samples": [
+				"Vorrei visitare le spiagge più belle, a chi posso rivolgermi?",
+                                "Per visite alle spiagge a chi posso rivolgermi?",
+                                "Mi piacerebbe fare delle escursioni, mi sa dire come fare?"
+			],
+			"responses": [
+				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
+			],
+			"context": {
+				"set": "escurs",
+				"required": null
+			}
+		},
+		{                         
+                        "name": "Escursioni turistiche",
+			   "samples": [
+				"Per un tour in zona a chi posso contattare?",
+                                "Come posso fare per fare un tour della zona?",
+                                "Mi picerebbe visitare la zona, a chi posso rivolgermi?"
+			],
+			   "responses": [
+				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303?"
+			],
+			 "context": {
+				"set": null,
+				"required": "escurs"
+			}
+		},
+		{
+			"name": "Servizi informazioni",
+			"samples": [
+				"Quali servizi offrite?",
+                                "Quali sono i servizi della struttura?",
+                                "Di quali servizi posso usufruire?"
+			],
+			"responses": [
+				"Offriamo una vasta gamma di servizi, dalle camere al centro benessere, fino alle sale per conferenze ed eventi!",
+                                "Nella struttura sono presenti diversi servizi come la rete WI_FI, il centro benessere, il bar e sale per eventi"
+			],
+			"context": {
+				"set": "info",
+				"required": null
+			}
+		},
+
+		     { 
+                         
+                         "name": "Servizi informazioni",
+			   "samples": [
+				"Vorrei informazioni sul servizio spa.",
+                                "Come funziona il servizio spa",
+                                "Come posso fare per utilizzare la spa"
+			],
+			   "responses": [
+				"Il servizio spa, è gratuito per i nostri clienti, ma è necessaria una prenotazione. Posso fare altro per lei?"
+			],
+			 "context": {
+				"set": null,
+				"required": "info"
+			}
+		},
+                {              
+                         "name": "Servizi prenotazioni",
+			   "samples": [
+				"Come posso fare per prenotare il servizio spa."
+			],
+			   "responses": [
+				"Se vuole usufruire del servizio spa, la prenotazione è gratuita in slot orari di 30 minuti. Se ha bisogno di altro, non esiti a contattare"
+			]
+		
+		},
+		{
+			"name": "Manutenzione",
+			"samples": [
+				"Il frigo è rotto, non funziona",
+                                "Il frigorifero è rotto",
+                                "Il frigo non si accende"
+			],
+			"responses": [
+				"Segnalo subito il guasto e appena possibile un tecnico verrà a risolvere il problema. Posso fare altro?",
+                                "Comunico subito il problema al tecnico. Ha bisogno di altro?",
+                                "Informo subito il tecnico per il problema riscontrato. Necessita di altro?"
+
+
+			],
+			"context": {
+				"set": "manut",
+				"required": null
+			}
+		},
+		{                        
+                         "name": "Manutenzione Escalation",
+			   "samples": [
+				"Il tecnico non è ancora arrivato."
+			],
+			   "responses": [
+				"Non sono in grado di dirle quando arriverà, ma posso assicurarle che la segnalazione è stata fatta. Se posso essere utile in altro modo, non esiti a contattarmi"
+			],
+			 "context": {
+				"set": null,
+				"required": "manut"
+			}
+		},
+		{
+			"name": "Escursioni",
+			"samples": [
+				"Cosa posso visitare in zona?"
+			],
+			"responses": [
+				"Le consiglio di visitare gli Scavi Archeologici di Velia-Elea oppure Può fare un'escursione con la barca col fondo di vetro, la organizzano alla Rosa dei Venti, ecco il numero: 3347209417. Spero di aver soddisfatto la sua richiesta, ha bisogno di altro?"
+			],
+			"context": {
+				"set": "escurs",
+				"required": null
+			}
+		},
+		{                       
+                        "name": "Info prenotazioni",
+			   "samples": [
+				"Vorrei prenotare la cena al ristorante per questa sera ore 21.00 per due persone",
+                                "Voglio prenotare la cena per questa sera",
+                                "Ho bisogno di prenotare la cena per stasera"
+                              
+			],
+			   "responses": [
+				"Perfetto. La sua prenotazione per la cena alle ore 21.00 è andata a buon fine. Se desidera altro, non esiti a contattare",
+                                "La sua prenotazione è confermata",
+                                "La prenotazione per la cena di questa sera è andata a buon fine"
+			],
+			
+			 "context": {
+				"set": null,
+				"required": "escurs"
+			}
+		},
+		{
+			"name": "Servizi informazione",
+			"samples": [
+				"Che servizi sono compresi nel soggiorno?",
+                                "Quali sono i servizi compresi nel soggiorno?",
+                                "Che servizi ho a disposizione?",
+                                "Di quali servizi posso usufruire?"
+			],
+			"responses": [
+				"La struttura dispone di vari servizi usufruibili gratuitamente, quali il servizio spa, area fitness all’aperto, piscina, area giochi per bambini Posso fare altro?",
+                                "Disponiamo di vari servizi gratuiti come la spa, l'area fitness all'aperto, la piscina"
+			],
+			"context": {
+				"set": "info",
+				"required": null
+			}
+		},
+		{                         
+                        "name": "Servizi informazioni",
+			   "samples": [
+				"Quali sono gli orari di apertura della piscina?",
+                                "A che ora apre la piscina?",
+                                "Da che ora è aperta la piscina?",
+                                "Da che ora posso andare in piscina?"
+			],
+			   "responses": [
+				"La piscina è aperta dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
+                                "Gli orari della piscina sono dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30"
+			],
+			 "context": {
+				"set": null,
+				"required": "info"
+			}
+		},
+                {                       
+                        "name": "Servizi informazioni",
+			   "samples": [
+				"L'ombrellone è comprezo nel prezzo?",
+                                "I lettini sono gratuiti?",
+                                "L'ombrellone ed i lettini sono inclusi nel prezzo?"
+			],
+			   "responses": [
+				"Ogni stanza ha diritto ad un ombrellone e due lettini assegnati casualmente, a meno che non decida di pagare un extra per la prima o la seconda fila. Ha bisogno di altro?",
+                                "L'ombrellone e i lettini sono compresi nel prezzo",
+                                "L'ombrellocon e due lettini sono assegnati casualmente ad ogni appartamento"
+			],
+			
+			 "context": {
+				"set": "info",
+				"required": null
+			}
+		},
+		{
+			"name": "Servizi informazione",
+			"samples": [
+				"Posso lasciare l'auto nel parcheggio?",
+                                "Il parcheggio è compreso?",
+                                "Il posto auto è gratuito?",
+                                "Il parcheggio si paga a parte?
+			],
+			"responses": [
+				"Ogni nostro cliente ha un posto auto nel parcheggio, non ci sono posti riservati. Se ha bisogno di altro sono qui",
+                                "Il parcheggio è compreso nel prezzo, dunque non ha costi aggiuntivi",
+                                "Il parcheggio è incluso nel prezzo"
+
+			],
+			"context": {
+				"set": null,
+				"required": "info",
+			}
+		},
+                {                       
+                        "name": "Servizi prenotazioni",
+			   "samples": [
+				"Come funziona per prenotare la colazione?",
+                                "Come si prenota la colazione?",
+                                "Come posso fare per prenotare la colazione?"
+			],
+			   "responses": [
+				"Può prenotare la colazione in ogni momento ed addebitarla alla camera. Posso esserle di aiuto in altro modo?",
+                                "La colazione può prenotarla quando vuole e addebitarla alla camera"
+			],
+			
+			 "context": {
+				"set": "prenot",
+				"required": null
+			}
+		},
+		{
+			"name": "Servizi informazione",
+			"samples": [
+				"Qual'è la password del WI-FI?"
+                                "Quali sono le credenziali per accedere al WI-FI?",
+                                "Come posso fare per avere il WI-FI?"
+			],
+			"responses": [
+				"Per connettersi alla rete WI-FI può cercare la rete Residence Baia Marticana digitando la password @Baiamarticana2012, il servizio è gratuito."
+			],
+			"context": {
+				"set": null
+				"required": "prenot"
+			}
+		},
+                {                       
+                        "name": "Servizi informazioni",
+			   "samples": [
+				"Come funziona per il servizio bar dell'hotel?",
+                                "Come funziona per il pagamento delle consumazioni al bar?"
+			],
+			   "responses": [
+				"Può prendere al bar ciò che desidera ed addebitarlo direttamente sul conto dell'appartamento. Se posso essere utile in altro, io sono qui",
+                                "Può usufruire del servizio bar e addebitare alla camera ciò che consuma",
+                                "Al bar può consumare ciò che desidera ed addebitare alla sua camera"
+			],
+			
+			 "context": {
+				"set": "info",
+				"required": null
+			}
+		},
+		{
+			"name": "Servizi informazione",
+			"samples": [
+				"Come posso fare per prenotare la vasca idromassaggio?",
+                                "Come si prenota la vasca idromassaggio?,
+                                "Come si fa per prenotare la vasca idromassaggio?"
+			],
+			"responses": [
+				"La vasca idromassaggio è aperta dalle 9.30 alle 13.30 e dalle 15.30 alle 19.30, l'utilizzo è gratuito, ma è necessaria la prenotazione per un tempo di 30 minuti",
+                                "L'utilizzo della vasca idromassaggio è gratuito, può prenotarla per un tempo di 30 minuti",
+                                "La vasca idromassaggio è aperta dalle 9.30 alle 13.30 e dalle 15.30 alle 19.30, può essere prenotata gratuitamente per un tempo di 30 minuti"
+			],
+			"context": {
+				"set": null,
+				"required": "info"
+			}
+		}
+	],
+	"defaults": ["Non ho capito",
+		"Potresti ripetere la domanda?"
+	]
+}
