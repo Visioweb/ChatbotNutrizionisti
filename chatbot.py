@@ -294,7 +294,7 @@ if __name__ == '__main__':
     from actions import *
 
     chatbot = Chatbot(sensitivity=.4)
-    chatbot.train("corpus_with_context.json", verbose=False)
+    chatbot.train("andrea_corpus.json", verbose=False)
     chatbot.load()
     answer = chatbot.ask("come va?", return_proba=True)
     print(answer)
