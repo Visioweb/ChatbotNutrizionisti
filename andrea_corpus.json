@@ -5,7 +5,14 @@
 				"Il condizionatore non funziona",
 				"Il condizionatore è rotto",
 				"Il condizionatore non si accende",
-				"Il condizionatore è guasto"
+				"Il condizionatore non so accende",
+				"Non mi funziona il climatizzatore",
+				"Il climatizzatore è rotto",
+				"L'aria condizionata non funziona",
+				"Il condizionatore è guasto",
+				"mi si è rotto il condizionatore",
+				"si è guastato il climatizzatore",
+				"Si è rotta l'aria condizionata"
 			],
 			"responses": [
 				"Mi dispiace. Segnalo subito il problema e appena possibile verrà un tecnico. Posso fare altro?",
@@ -24,12 +31,16 @@
 				"Vorrei sapere quando arriverà il tecnico",
 				"Voglio sapere quando arriva il tecnico",
 				"Quando arriva il tecnico?",
-				"Il tecnico quando arriva?"
+				"Il tecnico quando arriva?",
+				"quando mi mandate il tecnico?",
+				"a che ora arriva il tecnico?",
+				"il tecnico arriva subito?"
 			],
 			"responses": [
 				"Non sono in grado di dirle un orario preciso, ma posso garantirle che la segnalazione è già partita. Mentre aspetta, posso suggerirle qualche località da visitare in zona?",
 				"Non saprei dirle una certezza, ma la richiesta è stata fatta. Posso fare altro?",
 				"Non conosco le tempistiche, ma di certo è stato informato sui fatti. Nel frattempo posso fare altro per lei?"
+				"non so dirle, ma lo abbiamo avvisato ora, desidera altro?"
 			],
 			"context": {
 				"set": null,
@@ -41,6 +52,9 @@
 			"samples": [
 				"Il bagno non è stato pulito bene",
 				"Il bagno è sporco",
+				"c'è il water sporco",
+				"il bidet è putrido",
+				"il bagno fa schifo, non è stato lavato",
 				"Ho ritrovato il bagno non pulito a dovere",
 				"Il bagno non è stato pulito correttamente"
 			],
@@ -61,7 +75,11 @@
 				"Cosa c'è da fare in zona?",
 				"Cosa si può fare in zona?",
 				"Cosa c'è da visitare in zona?",
-				"Cosa si può vedere in questa zona?"
+				"Cosa si può vedere in questa zona?",
+				"cosa c'è nei dintorni?",
+				"si può fare qualcosa nei dintorni?",
+				"In zona cosa mi consiglia di vedere?",
+				"Consigli su cosa vedere nei dintorni?"
 			],
 			"responses": [
 				"Posso consigliarle di visitare il centro storico di Castellabate oppure il Museo Archeologico di Paestum",
@@ -78,7 +96,11 @@
 				"Salve, a che ora comincia la colazione?",
 				"A che ora inizia la colazione?",
 				"Qual'è l'orario utile per consumare la colazione?",
-				"A che ora si può fare colazione?"
+				"A che ora si può fare colazione?",
+				"Gli orari per la colazione?",
+				"gli orari della colazione?",
+				"a che ora c'è la colazione?",
+				"la colazione a che ora?"
 			],
 			"responses": [
 				"La colazione nella nostra struttura, è servita dalle ore 08.00 alle ore 10.00. Posso fare altro?",
@@ -94,10 +116,15 @@
 
 			"name": "Servizi informazioni",
 			"samples": [
-				"Di quali servizi disponde la struttura?",
+				"Di quali servizi dispone la struttura?",
 				"Quali servizi sono disponibili?",
 				"Di quali servizi dispone la struttura?",
-				"Quali sono i servizi utili all'interno della struttura?"
+				"Quali sono i servizi utili all'interno della struttura?",
+				"che servizi avete nella struttura?",
+				"che servizi ci sono nell'hotel?",
+				"che servizi ci sono nel bed & breakfast?",
+				"che servizi offre la vostra struttura?",
+				"quali servizi offre il vostro hotel?"
 			],
 			"responses": [
 				"La struttura dispone di vari servizi usufruibili gratuitamente, quali il servizio spa, area fitness all’aperto, piscina, area giochi per bambini",
@@ -114,7 +141,15 @@
 				"La tv della camera non si accende",
 				"La tv è rotta",
 				"La tv non funziona",
-				"La tv non si vede"
+				"La tv non si vede",
+				"il televisore è guasto",
+				"la tv è guasta",
+				"il televisore non si accende",
+				"non si accende il televisore",
+				"perchè non si accende la tv?",
+				"Ho la tv scassata",
+				"la televisione è scassata",
+				"la televisione non funziona"
 			],
 			"responses": [
 				"Mi dispiace. Informo subito il tecnico per risolvere quanto prima. Posso fare altro?",
@@ -132,7 +167,12 @@
 			"samples": [
 				"il frigo bar è vuoto",
 				"Il frigo non contiene le bibite",
-				"Nel frigo non c'è niente"
+				"Nel frigo non c'è niente",
+				"il frigorifero è vuoto",
+				"come mai non c'è nulla in frigo?",
+				"ma possibile che il frigobar sia vuoto?",
+				"perchè non ci sono bibite in frigo?",
+				"questo frigo è vuoto"
 			],
 			"responses": [
 				"Mi scuso per l'inconveniente, provvedo ad informare un'addetta. Se ha bisogno, sono sempre qui. Arrivederci.",
@@ -147,11 +187,11 @@
 			"name": "Escursioni turistiche",
 			"samples": [
 				"Vorrei visitare le spiagge più belle, a chi posso rivolgermi?",
-				"Per visite alle spiagge a chi posso rivolgermi?",
+				"Per visite le spiagge a chi posso rivolgermi?",
 				"Mi piacerebbe fare delle escursioni, mi sa dire come fare?"
 			],
 			"responses": [
-				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
+				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?",
 			],
 			"context": {
 				"set": "escurs",
@@ -162,6 +202,7 @@
 			"name": "Escursioni turistiche",
 			"samples": [
 				"Per un tour in zona a chi posso contattare?",
+				"Per un tour in zona chi posso contattare?",
 				"Come posso fare per fare un tour della zona?",
 				"Mi picerebbe visitare la zona, a chi posso rivolgermi?"
 			],
