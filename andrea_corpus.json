@@ -39,7 +39,7 @@
 			"responses": [
 				"Non sono in grado di dirle un orario preciso, ma posso garantirle che la segnalazione è già partita. Mentre aspetta, posso suggerirle qualche località da visitare in zona?",
 				"Non saprei dirle una certezza, ma la richiesta è stata fatta. Posso fare altro?",
-				"Non conosco le tempistiche, ma di certo è stato informato sui fatti. Nel frattempo posso fare altro per lei?"
+				"Non conosco le tempistiche, ma di certo è stato informato sui fatti. Nel frattempo posso fare altro per lei?",
 				"non so dirle, ma lo abbiamo avvisato ora, desidera altro?"
 			],
 			"context": {
@@ -191,7 +191,7 @@
 				"Mi piacerebbe fare delle escursioni, mi sa dire come fare?"
 			],
 			"responses": [
-				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?",
+				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": "escurs",
