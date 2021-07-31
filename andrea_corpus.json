@@ -1,5 +1,67 @@
 {
 	"intents": [{
+			"name": "SalutiIniziali",
+			"samples": [
+				"Ciao",
+				"Hey",
+				"Salve",
+				"Heyla",
+				"We",
+				"Weila",
+				"Ciao Andrea",
+				"Salve chatbot",
+				"Salve Concierge",
+				"Ciao chatbot",
+				"Ciao bot"
+			],
+			"responses": [
+				"Ciao",
+				"Hey",
+				"Salve",
+				"Heyla",
+				"We",
+				"Weila"
+			]
+		},
+		{
+			"name": "SalutiIniziali2",
+			"samples": [
+				"Buongiorno",
+				"Buonagiornata",
+				"Buon Giorno",
+				"Buona Giornata",
+				"Giorno",
+				"Giorno Chatbot",
+				"Buongiorno Andrea"
+			],
+			"responses": [
+				"Buongiorno",
+				"Buonagiornata",
+				"Buon Giorno",
+				"Buona Giornata",
+				"Giorno"
+			]
+		},
+		{
+			"name": "SalutiIniziali3",
+			"samples": [
+				"Buonasera",
+				"Buonaserata",
+				"Buona Sera",
+				"Buona Serata",
+				"Sera",
+				"Sera Chatbot",
+				"Buonasera Andrea"
+			],
+			"responses": [
+				"Buonasera",
+				"Buonaserata",
+				"Buona Sera",
+				"Buona Serata",
+				"Sera"
+			]
+		},
+		{
 			"name": "Manutenzione",
 			"samples": [
 				"Il condizionatore non funziona",
