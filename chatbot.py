@@ -32,7 +32,7 @@ class Chatbot:
 
     _actions_map = {}
 
-    def __init__(self, sensitivity=0.8):
+    def __init__(self, sensitivity=0.6):
         self._nlp = spacy.load("it_core_news_sm")
         self.SENSITIVITY = sensitivity
 
@@ -104,7 +104,7 @@ class Chatbot:
         return (response, new_context, y_proba_max) if return_proba else response
 
 
-    def train(self, corpus_file, epochs=700, verbose=True):
+    def train(self, corpus_file, epochs=500, verbose=True):
 
         with open(corpus_file) as f:
             self._corpus = json.loads(f.read())  # carichiamo il json in un dict
@@ -195,8 +195,15 @@ class Chatbot:
                 doc = ""
 
                 for token in tokens:
+                    print("LEMMA con stopwords: " + token.lemma_)
+                    f = open("stopwordsi.txt", "w+")
+                    f.write(token.lemma_)
+                    f.close()
                     if (not token.is_punct and not token.is_stop):
-                        print("LEMMA: "+token.lemma_)
+                        print("LEMMA senza stopwords: "+token.lemma_)
+                        f = open("stopwordno.txt", "w+")
+                        f.write(token.lemma_)
+                        f.close()
                         doc += " " + token.lemma_  # otteniamo il lemma
                         dictionary.add(token.lemma_)  # aggiungiamo al dizionario
                 if (len(doc) > 0):
