@@ -14,7 +14,8 @@ import re
 from datetime import datetime as dt
 from actions import *
 import numpy as np
-
+import it_core_news_lg
+nlp = en_core_web_sm.load()
 
 
 class Chatbot:
@@ -33,7 +34,9 @@ class Chatbot:
     _actions_map = {}
 
     def __init__(self, sensitivity=0.7):
-        self._nlp = spacy.load("it_core_news_lg")
+        #self._nlp = spacy.load("it_core_news_lg")
+        self._nlp = it_core_news_lg.load()
+
         self.SENSITIVITY = sensitivity
 
         if (not os.path.isdir(self.LOGS_FOLDER)):
