@@ -197,12 +197,12 @@ class Chatbot:
                 for token in tokens:
                     print("LEMMA con stopwords: " + token.lemma_)
                     f = open("stopwordsi.txt", "w+")
-                    f.write(token.lemma_)
+                    f.write(token.lemma_ + "\n")
                     f.close()
                     if (not token.is_punct and not token.is_stop):
                         print("LEMMA senza stopwords: "+token.lemma_)
-                        f = open("stopwordno.txt", "w+")
-                        f.write(token.lemma_)
+                        f = open("stopwordno.txt", "a+")
+                        f.write(token.lemma_ + "\n")
                         f.close()
                         doc += " " + token.lemma_  # otteniamo il lemma
                         dictionary.add(token.lemma_)  # aggiungiamo al dizionario
