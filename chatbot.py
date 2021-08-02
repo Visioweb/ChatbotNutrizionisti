@@ -32,7 +32,7 @@ class Chatbot:
 
     _actions_map = {}
 
-    def __init__(self, sensitivity=0.7):
+    def __init__(self, sensitivity=0.8):
         self._nlp = spacy.load("it_core_news_sm")
         self.SENSITIVITY = sensitivity
 
@@ -104,7 +104,7 @@ class Chatbot:
         return (response, new_context, y_proba_max) if return_proba else response
 
 
-    def train(self, corpus_file, epochs=1200, verbose=True):
+    def train(self, corpus_file, epochs=700, verbose=True):
 
         with open(corpus_file) as f:
             self._corpus = json.loads(f.read())  # carichiamo il json in un dict
