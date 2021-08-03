@@ -24,7 +24,7 @@
 			]
 		},
 		{
-			"name": "SalutiGiorno",
+			"name": "SalutiIniziali2",
 			"samples": [
 				"Buongiorno",
 				"Buonagiornata",
@@ -35,15 +35,15 @@
 				"Buongiorno Andrea"
 			],
 			"responses": [
-				"Buongiorno, sono Andrea, il concierge di Baia Marticana, come posso esserle utile?",
-				"Buonagiornata a lei",
-				"Buon Giorno, sono il concierge di Baia Marticana, come posso esserle utile?",
-				"Buona Giornata anche a lei",
-				"Giorno, sono Andrea, come posso aiutarla?"
+				"Buongiorno",
+				"Buonagiornata",
+				"Buon Giorno",
+				"Buona Giornata",
+				"Giorno"
 			]
 		},
 		{
-			"name": "SalutiNotte",
+			"name": "SalutiIniziali3",
 			"samples": [
 				"Buonasera",
 				"Buonaserata",
@@ -54,11 +54,11 @@
 				"Buonasera Andrea"
 			],
 			"responses": [
-				"Buonasera, come posso aiutarla?",
+				"Buonasera",
 				"Buonaserata",
 				"Buona Sera",
 				"Buona Serata",
-				"Sera, sono Andrea come posso esserle utile?"
+				"Sera"
 			]
 		},
 		{
@@ -67,7 +67,7 @@
 				"Il condizionatore non funziona",
 				"Il condizionatore è rotto",
 				"Il condizionatore non si accende",
-				"Il condizionatore non so accende",
+				"Il condizionatore non va bene",
 				"Non mi funziona il climatizzatore",
 				"Il climatizzatore è rotto",
 				"L'aria condizionata non funziona",
@@ -79,7 +79,10 @@
 			"responses": [
 				"Mi dispiace. Segnalo subito il problema e appena possibile verrà un tecnico. Posso fare altro?",
 				"Informo subito un'addetto per risolvere il problema. Ha bisogno di altro?",
-				"Mi scuso per il disagio, provvedo subito ad informare il tecnico"
+				"Mi scuso per il disagio, provvedo subito ad informare il tecnico",
+				"Mi spiace per l'inconveniente, appena possibile verrà il tecnico per risolvere",
+				"Informo il tecnico per risolvere il guasto"
+
 			],
 			"context": {
 				"set": "manut",
@@ -90,19 +93,25 @@
 			"name": "Manutenzione Escalation",
 			"samples": [
 				"Vorrei sapere quando arriverà il tecnico",
-				"Vorrei sapere quando arriverà il tecnico",
+				"Vorrei sapere quando verrà il tecnico",
 				"Voglio sapere quando arriva il tecnico",
 				"Quando arriva il tecnico?",
 				"Il tecnico quando arriva?",
 				"quando mi mandate il tecnico?",
 				"a che ora arriva il tecnico?",
-				"il tecnico arriva subito?"
+				"il tecnico arriva subito?",
+				"Tra quanto tempo arriva il tecnico?",
+				"Entro quanto arriva il tecnico?",
+				"Quanto tempo manca per l'arrivo del tecnico?"
 			],
 			"responses": [
 				"Non sono in grado di dirle un orario preciso, ma posso garantirle che la segnalazione è già partita. Mentre aspetta, posso suggerirle qualche località da visitare in zona?",
 				"Non saprei dirle una certezza, ma la richiesta è stata fatta. Posso fare altro?",
-				"Non conosco le tempistiche, ma di certo è stato informato sui fatti. Nel frattempo posso fare altro per lei?",
-				"non so dirle, ma lo abbiamo avvisato ora, desidera altro?"
+				"Non conosco le tempistiche, ma di certo è stato informato circa il problema. Nel frattempo posso fare altro per lei?",
+				"Non so dirle, ma lo abbiamo avvisato ora, desidera altro?",
+				"L'ho informato dell'inconveniente, arriverà appena possibile",
+				"Il tecnico è stato informato, sarà lì appena possibile",
+				"Non posso dirle un orario preciso, ma di certo arriverà appena sarà possibile"
 			],
 			"context": {
 				"set": null,
@@ -118,13 +127,23 @@
 				"il bidet è putrido",
 				"il bagno fa schifo, non è stato lavato",
 				"Ho ritrovato il bagno non pulito a dovere",
-				"Il bagno non è stato pulito correttamente"
+				"Il bagno non è stato pulito correttamente",
+				"La doccia è piena di capelli",
+				"Il lavandino è sporco",
+				"Il bagno non è stato pulito",
+				"Il bagno è completamente sporco",
+				"Il bagno non è pulito"
+
 			],
 			"responses": [
 				"Mi scuso per il disagio, provvedo subito ad informare il personale, nel frattempo posso fare altro per lei?",
 				"Mi dispiace per l'inconveniente, informo subito gli addetti",
 				"Provvedo subito per risolvere l'inconveniente",
-				"Informo subito il personale per risolvere il disagio"
+				"Informo subito il personale per risolvere il disagio",
+				"Mi scuso per l'inconveniente, informo subito gli addetti ai lavori",
+				"Mi spiace per il disagio, informo subito il personale",
+				"Informo subito gli addetti per risolvere il prima possibile, mi scuso per il disagio",
+				"Provvedo immediatamente ad informare il personale, mi scuso per l'inconveniente"
 			],
 			"context": {
 				"set": "housekee",
@@ -141,11 +160,15 @@
 				"cosa c'è nei dintorni?",
 				"si può fare qualcosa nei dintorni?",
 				"In zona cosa mi consiglia di vedere?",
-				"Consigli su cosa vedere nei dintorni?"
+				"Consigli su cosa vedere nei dintorni?",
+				"Cosa posso vedere in zona?",
+				"C'è qualcosa da vedere in zona?",
+				"Cosa c'è di bello da visitare?"
 			],
 			"responses": [
 				"Posso consigliarle di visitare il centro storico di Castellabate oppure il Museo Archeologico di Paestum",
-				"Le suggerisco di visitare il Museo Archeologico di Paestum oppure Il centro di Castellabate"
+				"Le suggerisco di visitare il Museo Archeologico di Paestum oppure Il centro di Castellabate",
+				"Potrebbe interessarle il Museo Archeologico di Paestum oppure il centro storico di Castellabate"
 			],
 			"context": {
 				"set": null,
@@ -162,12 +185,16 @@
 				"Gli orari per la colazione?",
 				"gli orari della colazione?",
 				"a che ora c'è la colazione?",
-				"la colazione a che ora?"
+				"la colazione a che ora?",
+				"A che ora posso fare colazione?",
+				"Quali sono gli orari della colazione?",
+				"Per che ora è possibile consumare la colazione?"
 			],
 			"responses": [
 				"La colazione nella nostra struttura, è servita dalle ore 08.00 alle ore 10.00. Posso fare altro?",
 				"La colazione è servita dalle ore 8.00 alle ore 10.00. Ha bisogno di altro?",
-				"La colazione può essere consumata dalle ore 8.00 alle ore 10.00"
+				"La colazione può essere consumata dalle ore 8.00 alle ore 10.00",
+				"I tempi utili per consumare la colazione sono dalle ore 8.00 alle ore 10.00"
 			],
 			"context": {
 				"set": "info",
@@ -182,15 +209,17 @@
 				"Quali servizi sono disponibili?",
 				"Di quali servizi dispone la struttura?",
 				"Quali sono i servizi utili all'interno della struttura?",
-				"che servizi avete nella struttura?",
-				"che servizi ci sono nell'hotel?",
-				"che servizi ci sono nel bed & breakfast?",
-				"che servizi offre la vostra struttura?",
-				"quali servizi offre il vostro hotel?"
+				"Che servizi avete nella struttura?",
+				"Che servizi ci sono nell'hotel?",
+				"Che servizi ci sono nel bed & breakfast?",
+				"Che servizi offre la vostra struttura?",
+				"Quali servizi offre il vostro hotel?",
+				"Quali sono i servizi di cui posso usufruire?"
 			],
 			"responses": [
 				"La struttura dispone di vari servizi usufruibili gratuitamente, quali il servizio spa, area fitness all’aperto, piscina, area giochi per bambini",
-				"All'interno della struttura può trovare diversi servizi come la mini spa, la piscina, vasca idromassaggio, area fitness all'aperto"
+				"All'interno della struttura può trovare diversi servizi come la mini spa, la piscina, vasca idromassaggio, area fitness all'aperto",
+				"Può usufruire di tutti i nostri servizi disponibili, come la piscina, la vasca idromassaggio, la spa, l'area fitness"
 			],
 			"context": {
 				"set": null,
@@ -211,7 +240,9 @@
 				"perchè non si accende la tv?",
 				"Ho la tv scassata",
 				"la televisione è scassata",
-				"la televisione non funziona"
+				"la televisione non funziona",
+				"La televisione ha un guasto",
+				"Il televisore non si vede"
 			],
 			"responses": [
 				"Mi dispiace. Informo subito il tecnico per risolvere quanto prima. Posso fare altro?",
@@ -231,10 +262,13 @@
 				"Il frigo non contiene le bibite",
 				"Nel frigo non c'è niente",
 				"il frigorifero è vuoto",
-				"come mai non c'è nulla in frigo?",
-				"ma possibile che il frigobar sia vuoto?",
-				"perchè non ci sono bibite in frigo?",
-				"questo frigo è vuoto"
+				"Come mai non c'è nulla in frigo?",
+				"Ma possibile che il frigobar sia vuoto?",
+				"Perchè non ci sono bibite in frigo?",
+				"Questo frigo è vuoto",
+				"In questo frigo non c'è nulla",
+				"Il frigo è troppo freddo",
+				"Il frigo è troppo caldo"
 			],
 			"responses": [
 				"Mi scuso per l'inconveniente, provvedo ad informare un'addetta. Se ha bisogno, sono sempre qui. Arrivederci.",
@@ -250,10 +284,17 @@
 			"samples": [
 				"Vorrei visitare le spiagge più belle, a chi posso rivolgermi?",
 				"Per visite le spiagge a chi posso rivolgermi?",
-				"Mi piacerebbe fare delle escursioni, mi sa dire come fare?"
+				"Mi piacerebbe fare delle escursioni, mi sa dire come fare?",
+				"Come posso fare per fare delle escursioni?",
+				"Quali escursioni posso fare?",
+				"Quali spiagge posso vedere?",
+				"Quali sono le spiagge belle da vedere?",
+				"Mi consigli spiagge da visitare?",
+				"Ci sono spiagge belle da vedere?"
 			],
 			"responses": [
-				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
+				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?",
+				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti"
 			],
 			"context": {
 				"set": "escurs",
@@ -266,10 +307,17 @@
 				"Per un tour in zona a chi posso contattare?",
 				"Per un tour in zona chi posso contattare?",
 				"Come posso fare per fare un tour della zona?",
-				"Mi picerebbe visitare la zona, a chi posso rivolgermi?"
+				"Mi picerebbe visitare la zona, a chi posso rivolgermi?",
+				"Per fare un tour in zona a chi posso rivolgermi?",
+				"Vorrei fare un tour della zona",
+				"Come posso fare per visitare la zona?",
+				"Mi piacerebbe fare il tour della zona, come posso fare?",
+				"Voglio fare il tour della zona, a chi posso rivolgermi?"
 			],
 			"responses": [
-				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303?"
+				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
+				"Per fare il tour della zona, può rivolgersi a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
+				"Per un tour della zona, si rivolga a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303"
 			],
 			"context": {
 				"set": null,
@@ -299,10 +347,29 @@
 			"samples": [
 				"Vorrei informazioni sul servizio spa.",
 				"Come funziona il servizio spa",
-				"Come posso fare per utilizzare la spa"
+				"Come posso fare per utilizzare la spa",
+				"Mi piacerebbe utilizzare il centro spa, come posso fare?",
+				"La spa è a pagamento?",
+				"Si paga il centro benessere?",
+				"L'utilizzo della spa è gratuito?",
+				"La spa è compresa nel prezzo?",
+				"Vorrei sapere se il servizio spa è a pagamento",
+				"Si paga per entrare nella spa?",
+				"Come funziona per entrare nel centro benessere?",
+				"Si paga per entrare nel centro benesere?",
+				"Il centro benessere è a pagamento?",
+				"Il servizio spa è compreso nel prezzo?",
+				"Come funziona il servizio spa?"
 			],
 			"responses": [
-				"Il servizio spa, è gratuito per i nostri clienti, ma è necessaria una prenotazione. Posso fare altro per lei?"
+				"Il servizio spa, è gratuito per i nostri clienti, ma è necessaria una prenotazione. Posso fare altro per lei?",
+				"I servizi del centro benessere sono compresi nel soggiorno",
+				"L'utilizzo della spa è gratuito",
+				"I nostri clienti, possono accedere gratuitamente al servizio spa, ma è necessaria la prenotazione",
+				"L'accesso al nostro centro benessere, è gratuito",
+				"L'ingresso nella spa non ha costi aggiuntivi, ha bisogno di altro?",
+				"Per accedere alla spa è necessaria solo ed esclusivamente la prenotazione",
+				"L'accesso alla nostra mini spa non ha costi aggiuntivi, ha bisogno di altre informazioni?"
 			],
 			"context": {
 				"set": null,
@@ -312,10 +379,15 @@
 		{
 			"name": "Servizi prenotazioni",
 			"samples": [
-				"Come posso fare per prenotare il servizio spa."
+				"Come posso fare per prenotare il servizio spa?",
+				"Vorrei prenotare l'ingresso nella spa",
+				"Come posso fare per prenotare l'ingresso nel centro benessere?",
+				"Vorrei prenotare l'ingresso al centro benessere",
+				"Vorrei usufruire del servizio spa"
 			],
 			"responses": [
-				"Se vuole usufruire del servizio spa, la prenotazione è gratuita in slot orari di 30 minuti. Se ha bisogno di altro, non esiti a contattare"
+				"Se vuole usufruire del servizio spa, la prenotazione è gratuita in slot orari di 30 minuti. Se ha bisogno di altro, non esiti a contattare",
+				"La prenotazione per l'accesso alla spa è gratuita in slot di orari di 30 minuti"
 			]
 
 		},
@@ -324,7 +396,13 @@
 			"samples": [
 				"Il frigo è rotto, non funziona",
 				"Il frigorifero è rotto",
-				"Il frigo non si accende"
+				"Il frigo non si accende",
+				"Il frigorifero non funziona",
+				"Il frigorifero funziona male",
+				"Il frigo è scassato",
+				"Il frigorifero non va bene",
+				"Il frigo non funziona affatto",
+				"Il frigorifero è rotto"
 			],
 			"responses": [
 				"Segnalo subito il guasto e appena possibile un tecnico verrà a risolvere il problema. Posso fare altro?",
@@ -354,7 +432,15 @@
 		{
 			"name": "Escursioni",
 			"samples": [
-				"Cosa posso visitare in zona?"
+				"Cosa posso visitare in zona?",
+				"Che cosa posso vedere?",
+				"Cosa c'è da vedere di interessante?",
+				"vorrei prenotare un'escursione",
+				"posso prenotare un'escursione in zona?",
+				"mi prenoti un'escursione per favore",
+				"Cosa posso vedere in questo posto?",
+				"Cosa mi consigli di vedere?",
+				"Vorrei vedere qualcosa di bello cosa mi consigli?"
 			],
 			"responses": [
 				"Le consiglio di visitare gli Scavi Archeologici di Velia-Elea oppure Può fare un'escursione con la barca col fondo di vetro, la organizzano alla Rosa dei Venti, ecco il numero: 3347209417. Spero di aver soddisfatto la sua richiesta, ha bisogno di altro?"
@@ -369,13 +455,17 @@
 			"samples": [
 				"Vorrei prenotare la cena al ristorante per questa sera ore 21.00 per due persone",
 				"Voglio prenotare la cena per questa sera",
-				"Ho bisogno di prenotare la cena per stasera"
+				"Ho bisogno di prenotare la cena per stasera",
+				"Vorrei prenotare un tavolo per cena",
+				"Devo prenotare un tavolo per la cena"
 
 			],
 			"responses": [
 				"Perfetto. La sua prenotazione per la cena alle ore 21.00 è andata a buon fine. Se desidera altro, non esiti a contattare",
 				"La sua prenotazione è confermata",
-				"La prenotazione per la cena di questa sera è andata a buon fine"
+				"La prenotazione per la cena di questa sera è andata a buon fine",
+				"Può prenotare ogni volta che desidera",
+				"La sua prenotazione è andata a buon fine"
 			],
 
 			"context": {
@@ -406,11 +496,23 @@
 				"Quali sono gli orari di apertura della piscina?",
 				"A che ora apre la piscina?",
 				"Da che ora è aperta la piscina?",
-				"Da che ora posso andare in piscina?"
+				"Da che ora posso andare in piscina?",
+				"A che ora posso andare in piscina?",
+				"Mi sa dire gli orari di apertura della piscina?",
+				"Quali sono gli orari della piscina?",
+				"A che ora chiude la piscina?",
+				"Fino a che ora resta aperta la piscina?",
+				"Fino a che ora si può andare in piscina?",
+				"Qual'è l'orario di chiusura della piscina?",
+				"A che ora apre e a che ora chiude la piscina?"
 			],
 			"responses": [
 				"La piscina è aperta dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
-				"Gli orari della piscina sono dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30"
+				"Gli orari della piscina sono dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
+				"L'accesso alla piscina è consentito dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
+				"Può usufruire della piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
+				"L'ingresso in piscina è possibile dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
+				"è possibile accederealla piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30"
 			],
 			"context": {
 				"set": null,
@@ -422,12 +524,19 @@
 			"samples": [
 				"L'ombrellone è comprezo nel prezzo?",
 				"I lettini sono gratuiti?",
-				"L'ombrellone ed i lettini sono inclusi nel prezzo?"
+				"L'ombrellone ed i lettini sono inclusi nel prezzo?",
+				"Quali sono i costi dei lettini?",
+				"Qual'è il costo dell'ombrellone?",
+				"Che costo ha l'ombrellone?",
+				"L'ombrellone e i lettini si pagano a parte?"
 			],
 			"responses": [
 				"Ogni stanza ha diritto ad un ombrellone e due lettini assegnati casualmente, a meno che non decida di pagare un extra per la prima o la seconda fila. Ha bisogno di altro?",
 				"L'ombrellone e i lettini sono compresi nel prezzo",
-				"L'ombrellocon e due lettini sono assegnati casualmente ad ogni appartamento"
+				"L'ombrellone con due lettini sono assegnati casualmente ad ogni appartamento",
+				"L'ombrellone ed i lettini, sono inclusi nel prezzo",
+				"L'utilizzo dell'ombrellone e dei lettini è compreso nel prezzo del soggiorno",
+				"L'ombrellone, è compreso nel prezzo di soggiorno, a meno che non decida di pagare un extra per la prima o la seconda fila"
 			],
 
 			"context": {
@@ -441,12 +550,19 @@
 				"Posso lasciare l'auto nel parcheggio?",
 				"Il parcheggio è compreso?",
 				"Il posto auto è gratuito?",
-				"Il parcheggio si paga a parte?"
+				"Il parcheggio si paga a parte?",
+				"Il parcheggio è compreso nel soggiorno?",
+				"Il parcheggio, ha costi aggiuntivi?",
+				"Il posto auto è compreso nel prezzo di soggiorno?",
+				"Il posto per l'auto è incluso nel prezzo?"
 			],
 			"responses": [
 				"Ogni nostro cliente ha un posto auto nel parcheggio, non ci sono posti riservati. Se ha bisogno di altro sono qui",
 				"Il parcheggio è compreso nel prezzo, dunque non ha costi aggiuntivi",
-				"Il parcheggio è incluso nel prezzo"
+				"Il parcheggio è incluso nel prezzo",
+				"Il posto auto è incluso nela prezzo di soggiorno, ha bisogno di altro?",
+				"Il parcheggio è compreso nel soggiorno",
+				"L'utilizzo del parcheggio non ha costi aggiuntivi"
 
 			],
 			"context": {
@@ -459,11 +575,16 @@
 			"samples": [
 				"Come funziona per prenotare la colazione?",
 				"Come si prenota la colazione?",
-				"Come posso fare per prenotare la colazione?"
+				"Come posso fare per prenotare la colazione?",
+				"Vorrei prenotare la colazione",
+				"Posso prenotare la colazione",
+				"Voglio prenotare la colazione"
 			],
 			"responses": [
 				"Può prenotare la colazione in ogni momento ed addebitarla alla camera. Posso esserle di aiuto in altro modo?",
-				"La colazione può prenotarla quando vuole e addebitarla alla camera"
+				"La colazione può prenotarla quando vuole e addebitarla alla camera",
+				"Può prenotare la colazione in ogni momento e lasciare l'addebito alla sua camera",
+				"Se vuole prenotare la colazione, può farlo in ogni momento"
 			],
 
 			"context": {
@@ -476,10 +597,16 @@
 			"samples": [
 				"Qual'è la password del WI-FI?",
 				"Quali sono le credenziali per accedere al WI-FI?",
-				"Come posso fare per avere il WI-FI?"
+				"Come posso fare per avere il WI-FI?",
+				"Posso accedere al WI-FI?",
+				"Mi può dare la password del WI-FI?",
+				"Avrei bisogno della password del WI-FI",
+				"Quali sono gli accessi per il WI-FI?"
 			],
 			"responses": [
-				"Per connettersi alla rete WI-FI può cercare la rete Residence Baia Marticana digitando la password @Baiamarticana2012, il servizio è gratuito."
+				"Per connettersi alla rete WI-FI può cercare la rete Residence Baia Marticana digitando la password @Baiamarticana2012, il servizio è gratuito.",
+				"Le credenziali della rete WI-FI sono le seguenti Residence Baia Marticana digitando la password @Baiamarticana2012",
+				"Per accedere al WI-FI inserisca le seguenti credenziali Residence Baia Marticana digitando la password @Baiamarticana2012"
 			],
 			"context": {
 				"set": null,
@@ -490,12 +617,15 @@
 			"name": "Servizi informazioni",
 			"samples": [
 				"Come funziona per il servizio bar dell'hotel?",
-				"Come funziona per il pagamento delle consumazioni al bar?"
+				"Come funziona per il pagamento delle consumazioni al bar?",
+				"Come funziona per le consumazioni del bar?"
+
 			],
 			"responses": [
 				"Può prendere al bar ciò che desidera ed addebitarlo direttamente sul conto dell'appartamento. Se posso essere utile in altro, io sono qui",
 				"Può usufruire del servizio bar e addebitare alla camera ciò che consuma",
-				"Al bar può consumare ciò che desidera ed addebitare alla sua camera"
+				"Al bar può consumare ciò che desidera ed addebitare alla sua camera",
+				"Può usufruire del bar ogni volta che desidera e addebitare le consumazioni alla camera"
 			],
 
 			"context": {
@@ -508,7 +638,10 @@
 			"samples": [
 				"Come posso fare per prenotare la vasca idromassaggio?",
 				"Come si prenota la vasca idromassaggio?",
-				"Come si fa per prenotare la vasca idromassaggio?"
+				"Come si fa per prenotare la vasca idromassaggio?",
+				"Vorrei prenotare l'idromassaggio",
+				"Voglio prenotare la vasca idromassaggio",
+				"Come posso fare per accedere alla vasca idromassaggio"
 			],
 			"responses": [
 				"La vasca idromassaggio è aperta dalle 9.30 alle 13.30 e dalle 15.30 alle 19.30, l'utilizzo è gratuito, ma è necessaria la prenotazione per un tempo di 30 minuti",
