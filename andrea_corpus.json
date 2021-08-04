@@ -132,6 +132,18 @@
 			}
 		},
 		{
+			"name": "NoIntent",
+			"samples": [
+				"no",
+				"No",
+				"non mi serve altro",
+				"no grazie"
+			],
+			"responses": [
+				"va bene se ha bisogno sono sempre qui, arrivederci"
+			]
+		},
+		{
 			"name": "EscursioninZona",
 			"samples": [
 				"Cosa c'è da fare in zona?",
