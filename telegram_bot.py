@@ -23,8 +23,8 @@ def bot_ask(update: Update, context: CallbackContext):
 
 def start(update: Update, context: CallbackContext):
     msgs = [
-        'Salve sono Andrea, il virtual Concierge di Baia Marticana.\nPosso darle informazioni sulla struttura o turistiche o prendere segnalazioni relative alla camera. Come posso aiutarla?',
-        'Salve sono Andrea, il virtual Concierge, le do il benvenuto in Baia Marticana.\nPuò chiedermi informazioni turistiche o sulla struttura e fare segnalazioni relative alla camera. Come posso essere utile?'
+        'Salve sono Andrea, il virtual Concierge di Baia Marticana.\nPosso darle informazioni sulla struttura, info turistiche o prendere segnalazioni relative alla camera. Come posso aiutarla?',
+        'Salve sono Andrea, il virtual Concierge, le do il benvenuto in Baia Marticana.\nPuò chiedermi informazioni turistiche, info sulla struttura e fare segnalazioni relative alla camera. Come posso essere utile?'
     ]
     update.effective_message.reply_text(
         choice(msgs)

@@ -13,9 +13,15 @@ def db_connect():
   except Error as e:
       print(e)
 
-def notifiche(vars):
-  print(vars)
+def notifiche():
+  sql = "INSERT INTO notifiche (text, orario) VALUES (%s, %s)"
+  val = ("testo", "2021-12-01 15:00:01")
+  mycursor.execute(sql, val)
 
+  mydb.commit()
+  return True
+
+'''
 def search_nutritionists(vars):
   db = db_connect()
   cursor = db.cursor()
@@ -71,11 +77,6 @@ def search_dietologi(vars):
       vars["DIGO"] = dietol[12]
 
   return vars
+'''
 
-
-
-if __name__ == '__main__':
-  # Per testare
-  vars = search_dietologi({"LOC":"napoli"})
-  print(vars["DIGO"])
 

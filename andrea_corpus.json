@@ -1,6 +1,5 @@
 {
-	"intents": [
-		{
+	"intents": [{
 			"name": "Manutenzione",
 			"samples": [
 				"Il condizionatore non funziona",
@@ -217,7 +216,7 @@
 				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti. Posso suggerirle qualche escursione?"
 			],
 			"context": {
-				"set": "escursSpiaggeSI",
+				"set": "escursSpiagge",
 				"required": null
 			}
 		},
@@ -240,7 +239,7 @@
 			],
 			"context": {
 				"set": null,
-				"required": "escursSpiaggeSI"
+				"required": "escursSpiagge"
 			}
 		},
 		{
@@ -257,7 +256,7 @@
 				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti. Posso suggerirle qualche escursione?"
 			],
 			"context": {
-				"set": "escursSpiaggeNO",
+				"set": "escursSpiagge",
 				"required": null
 			}
 		},
@@ -275,7 +274,7 @@
 			],
 			"context": {
 				"set": null,
-				"required": "escursSpiaggeNO"
+				"required": "escursSpiagge"
 			}
 		},
 		{
@@ -350,6 +349,16 @@
 			]
 		},
 		{
+			"name": "RisposteAlDefault",
+			"samples": [
+				"Info Turistiche",
+				"informazioni turistiche",
+				"Vorrei qualche informazione turistica"
+			],
+			"responses": [
+				"Vuole conoscere le escursioni da fare o le cose da visitare in zona? "
+			]
+		}, {
 			"name": "ServiziPrenotazioniSpa",
 			"samples": [
 				"Come posso fare per prenotare il servizio spa?",
