@@ -3,16 +3,17 @@ from telegram import Update
 from random import choice
 
 from chatbot import Chatbot
+from actions import *
 
 
 def bot_ask(update: Update, context: CallbackContext):
     print('Messaggio ricevuto:', update.effective_message.text)
     print('Context attuale:', context.chat_data.get('context'))
-    if context.chat_data.get('context') == 'Manutenzione':
-        print('Messaggio manutenzione: ', update.effective_message.text)
+
 
     chatbot = Chatbot(sensitivity = 0.4)
     chatbot.load()
+    chatbot.add_action("Manutenzione", notifiche)
     response, new_context, _ = chatbot.ask(update.effective_message.text,
                                            current_context = context.chat_data.get('context'),
                                            return_proba = True)

@@ -13,6 +13,8 @@ def db_connect():
   except Error as e:
       print(e)
 
+def notifiche(vars):
+  print(vars)
 
 def search_nutritionists(vars):
   db = db_connect()
