@@ -166,14 +166,11 @@ class Chatbot:
             # se c'è una action per l'intent
             # allora la eseguiamo e utilizziamo il dizionario ritornato
             # nella risposta
-            if intent["name"] === "Manutenzione":
-                response = response
-            else:
-                vars = self._actions_map[intent["name"]](entities)
+            vars = self._actions_map[intent["name"]](entities)
 
-                for var in vars:
-                    # sostituiamo i placeholders con il dizionario
-                    response = response.replace("<" + var + ">", vars[var])
+        for var in vars:
+            # sostituiamo i placeholders con il dizionario
+            response = response.replace("<" + var + ">", vars[var])
 
         return response, new_context
 
