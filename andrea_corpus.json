@@ -1,5 +1,6 @@
 {
-	"intents": [{
+	"intents": [
+		{
 			"name": "Manutenzione",
 			"samples": [
 				"Il condizionatore non funziona",
@@ -191,11 +192,9 @@
 				"Di quali servizi posso usufruire?"
 			],
 			"responses": [
-				"La struttura dispone di vari servizi usufruibili gratuitamente, quali il servizio spa, area fitness all’aperto, piscina, area giochi per bambini",
-				"All'interno della struttura può trovare diversi servizi come la mini spa, la piscina, vasca idromassaggio, area fitness all'aperto",
-				"Può usufruire di tutti i nostri servizi disponibili, come la piscina, la vasca idromassaggio, la spa, l'area fitness",
-				"Offriamo una vasta gamma di servizi, dalle camere al centro benessere, fino alle sale per conferenze ed eventi!",
-				"Nella struttura sono presenti diversi servizi come la rete WI_FI, il centro benessere, il bar e sale per eventi"
+				"La struttura offre vari servizi gratuiti: WiFi, spa, area fitness all’aperto, piscina, area giochi per bambini, sale per eventi. Ha bisogno di altro?",
+				"All'interno della struttura trova diversi servizi: WiFi, spa, piscina, vasca idromassaggio, area fitness, area giochi per bambini, sale riunioni. Posso aiutarla con altro?",
+				"Può usufruire di tutti i nostri servizi disponibili, come la piscina, la vasca idromassaggio, la spa, l'area fitness, l'area giochi per bambini. Vuole sapere altro?"
 			],
 			"context": {
 				"set": null,
@@ -232,10 +231,10 @@
 				"si"
 			],
 			"responses": [
-				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303, se ha bisogno d'altro mi trova sempre qui.",
-				"Per fare il tour della zona, può rivolgersi a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303, resto a sua disposizione.",
-				"Per un tour della zona, si rivolga a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303, resto comunque a disposizione per qualsiasi cosa.",
-				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
+				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303. Posso fare altro?",
+				"Per fare il tour della zona può rivolgersi a Masaniello Tourist al 335 5929643, oppure a LT trasporti al 339 482 0303. Ha bisogno di altro?",
+				"Le passo i dati di due agenzie che può contattare per un tour della zona: Masaniello Tourist - 335 5929643, oppure LT trasporti - 339 482 0303. Posso aiutarla con altro?",
+				"Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": null,
@@ -356,9 +355,11 @@
 				"Vorrei qualche informazione turistica"
 			],
 			"responses": [
-				"Vuole conoscere le escursioni da fare o le cose da visitare in zona? "
+				"Posso darle informazioni generiche sulla zona, o suggerirle qualche escursione. Cosa preferisce?",
+				"Vuole informazioni generiche sulla zona, o vorrebbe fare un'escursione?"
 			]
-		}, {
+		},
+		{
 			"name": "ServiziPrenotazioniSpa",
 			"samples": [
 				"Come posso fare per prenotare il servizio spa?",
@@ -368,7 +369,7 @@
 				"Vorrei usufruire del servizio spa"
 			],
 			"responses": [
-				"Se vuole usufruire del servizio spa, la prenotazione è gratuita in slot orari di 30 minuti. Se ha bisogno di altro, non esiti a contattare",
+				"Se vuole usufruire del servizio spa, la prenotazione è gratuita in slot orari di 30 minuti.",
 				"La prenotazione per l'accesso alla spa è gratuita in slot di orari di 30 minuti"
 			]
 		},
@@ -378,13 +379,14 @@
 				"Il tecnico non è ancora arrivato."
 			],
 			"responses": [
-				"Non sono in grado di dirle quando arriverà, ma posso assicurarle che la segnalazione è stata fatta. Se posso essere utile in altro modo, non esiti a contattarmi"
+				"Mando un'altra segnalazione non si preoccupi. Posso essere utile in altro modo?"
 			]
 		},
 		{
 			"name": "Escursioni",
 			"samples": [
 				"Cosa posso visitare in zona?",
+				"Vorrei informazioni generiche sulla zona",
 				"Che cosa posso vedere?",
 				"Cosa c'è da vedere di interessante?",
 				"vorrei prenotare un'escursione",
@@ -413,33 +415,15 @@
 
 			],
 			"responses": [
-				"Perfetto. La sua prenotazione per la cena alle ore 21.00 è andata a buon fine. Se desidera altro, non esiti a contattare",
-				"La sua prenotazione è confermata",
-				"La prenotazione per la cena di questa sera è andata a buon fine",
-				"Può prenotare ogni volta che desidera",
-				"La sua prenotazione è andata a buon fine"
+				"Perfetto. La sua prenotazione per la cena alle ore 21.00 è andata a buon fine. Ha bisogno di altro?",
+				"La sua prenotazione è confermata, ha bisogno di altro?",
+				"La prenotazione per la cena di questa sera è andata a buon fine, ha bisogno di altro?",
+				"Può prenotare ogni volta che desidera, ha bisogno di altro?",
+				"La sua prenotazione è andata a buon fine, ha bisogno di altro?"
 			],
-
 			"context": {
 				"set": null,
 				"required": "escurs"
-			}
-		},
-		{
-			"name": "Servizi informazione",
-			"samples": [
-				"Che servizi sono compresi nel soggiorno?",
-				"Quali sono i servizi compresi nel soggiorno?",
-				"Che servizi ho a disposizione?",
-				"Di quali servizi posso usufruire?"
-			],
-			"responses": [
-				"La struttura dispone di vari servizi usufruibili gratuitamente, quali il servizio spa, area fitness all’aperto, piscina, area giochi per bambini Posso fare altro?",
-				"Disponiamo di vari servizi gratuiti come la spa, l'area fitness all'aperto, la piscina"
-			],
-			"context": {
-				"set": "info",
-				"required": null
 			}
 		},
 		{
@@ -459,17 +443,13 @@
 				"A che ora apre e a che ora chiude la piscina?"
 			],
 			"responses": [
-				"La piscina è aperta dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
-				"Gli orari della piscina sono dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
-				"L'accesso alla piscina è consentito dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
-				"Può usufruire della piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
-				"L'ingresso in piscina è possibile dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30",
-				"è possibile accederealla piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30"
-			],
-			"context": {
-				"set": null,
-				"required": "info"
-			}
+				"La piscina è aperta dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
+				"Gli orari della piscina sono dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
+				"L'accesso alla piscina è consentito dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
+				"Può usufruire della piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
+				"L'ingresso in piscina è possibile dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
+				"è possibile accederealla piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?"
+			]
 		},
 		{
 			"name": "InfoOmbrellone",
@@ -484,13 +464,12 @@
 			],
 			"responses": [
 				"Ogni stanza ha diritto ad un ombrellone e due lettini assegnati casualmente, a meno che non decida di pagare un extra per la prima o la seconda fila. Ha bisogno di altro?",
-				"L'ombrellone e i lettini sono compresi nel prezzo",
-				"L'ombrellone con due lettini sono assegnati casualmente ad ogni appartamento",
-				"L'ombrellone ed i lettini, sono inclusi nel prezzo",
-				"L'utilizzo dell'ombrellone e dei lettini è compreso nel prezzo del soggiorno",
-				"L'ombrellone, è compreso nel prezzo di soggiorno, a meno che non decida di pagare un extra per la prima o la seconda fila"
+				"L'ombrellone e i lettini sono compresi nel prezzo. Ha bisogno di altro?",
+				"L'ombrellone con due lettini sono assegnati casualmente ad ogni appartamento. Ha bisogno di altro?",
+				"L'ombrellone ed i lettini, sono inclusi nel prezzo. Ha bisogno di altro?",
+				"L'utilizzo dell'ombrellone e dei lettini è compreso nel prezzo del soggiorno. Ha bisogno di altro?",
+				"L'ombrellone, è compreso nel prezzo di soggiorno, a meno che non decida di pagare un extra per la prima o la seconda fila. Ha bisogno di altro?"
 			],
-
 			"context": {
 				"set": "info",
 				"required": null
@@ -509,13 +488,12 @@
 				"Il posto per l'auto è incluso nel prezzo?"
 			],
 			"responses": [
-				"Ogni nostro cliente ha un posto auto nel parcheggio, non ci sono posti riservati. Se ha bisogno di altro sono qui",
-				"Il parcheggio è compreso nel prezzo, dunque non ha costi aggiuntivi",
-				"Il parcheggio è incluso nel prezzo",
+				"Ogni nostro cliente ha un posto auto nel parcheggio, non ci sono posti riservati. Ha bisogno di altro?",
+				"Il parcheggio è compreso nel prezzo, dunque non ha costi aggiuntivi. Ha bisogno di altro?",
+				"Il parcheggio è incluso nel prezzo. Ha bisogno di altro?",
 				"Il posto auto è incluso nela prezzo di soggiorno, ha bisogno di altro?",
-				"Il parcheggio è compreso nel soggiorno",
-				"L'utilizzo del parcheggio non ha costi aggiuntivi"
-
+				"Il parcheggio è compreso nel soggiorno. Ha bisogno di altro?",
+				"L'utilizzo del parcheggio non ha costi aggiuntivi. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": null,
@@ -534,11 +512,10 @@
 			],
 			"responses": [
 				"Può prenotare la colazione in ogni momento ed addebitarla alla camera. Posso esserle di aiuto in altro modo?",
-				"La colazione può prenotarla quando vuole e addebitarla alla camera",
-				"Può prenotare la colazione in ogni momento e lasciare l'addebito alla sua camera",
-				"Se vuole prenotare la colazione, può farlo in ogni momento"
+				"La colazione può prenotarla quando vuole e addebitarla alla camera. Ha bisogno di altro?",
+				"Può prenotare la colazione in ogni momento e lasciare l'addebito alla sua camera. Ha bisogno di altro?",
+				"Se vuole prenotare la colazione, può farlo in ogni momento. Ha bisogno di altro?"
 			],
-
 			"context": {
 				"set": "prenot",
 				"required": null
@@ -556,9 +533,9 @@
 				"Quali sono gli accessi per il WI-FI?"
 			],
 			"responses": [
-				"Per connettersi alla rete WI-FI può cercare la rete Residence Baia Marticana digitando la password @Baiamarticana2012, il servizio è gratuito.",
-				"Le credenziali della rete WI-FI sono le seguenti Residence Baia Marticana digitando la password @Baiamarticana2012",
-				"Per accedere al WI-FI inserisca le seguenti credenziali Residence Baia Marticana digitando la password @Baiamarticana2012"
+				"Per connettersi alla rete WI-FI può cercare la rete Residence Baia Marticana digitando la password @Baiamarticana2012, il servizio è gratuito. Ha bisogno di altro?",
+				"Le credenziali della rete WI-FI sono le seguenti Residence Baia Marticana digitando la password @Baiamarticana2012. Ha bisogno di altro?",
+				"Per accedere al WI-FI inserisca le seguenti credenziali Residence Baia Marticana digitando la password @Baiamarticana2012. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": null,
@@ -574,12 +551,11 @@
 
 			],
 			"responses": [
-				"Può prendere al bar ciò che desidera ed addebitarlo direttamente sul conto dell'appartamento. Se posso essere utile in altro, io sono qui",
-				"Può usufruire del servizio bar e addebitare alla camera ciò che consuma",
-				"Al bar può consumare ciò che desidera ed addebitare alla sua camera",
-				"Può usufruire del bar ogni volta che desidera e addebitare le consumazioni alla camera"
+				"Può prendere al bar ciò che desidera ed addebitarlo direttamente sul conto dell'appartamento. Posso essere utile in altro?",
+				"Può usufruire del servizio bar e addebitare alla camera ciò che consuma. Ha bisogno di altro?",
+				"Al bar può consumare ciò che desidera ed addebitare alla sua camera. Ha bisogno di altro?",
+				"Può usufruire del bar ogni volta che desidera e addebitare le consumazioni alla camera. Ha bisogno di altro?"
 			],
-
 			"context": {
 				"set": "info",
 				"required": null
@@ -596,9 +572,9 @@
 				"Come posso fare per accedere alla vasca idromassaggio"
 			],
 			"responses": [
-				"La vasca idromassaggio è aperta dalle 9.30 alle 13.30 e dalle 15.30 alle 19.30, l'utilizzo è gratuito, ma è necessaria la prenotazione per un tempo di 30 minuti",
-				"L'utilizzo della vasca idromassaggio è gratuito, può prenotarla per un tempo di 30 minuti",
-				"La vasca idromassaggio è aperta dalle 9.30 alle 13.30 e dalle 15.30 alle 19.30, può essere prenotata gratuitamente per un tempo di 30 minuti"
+				"La vasca idromassaggio è aperta dalle 9.30 alle 13.30 e dalle 15.30 alle 19.30, l'utilizzo è gratuito, ma è necessaria la prenotazione per un tempo di 30 minuti. Ha bisogno di altro?",
+				"L'utilizzo della vasca idromassaggio è gratuito, può prenotarla per un tempo di 30 minuti. Ha bisogno di altro?",
+				"La vasca idromassaggio è aperta dalle 9.30 alle 13.30 e dalle 15.30 alle 19.30, può essere prenotata gratuitamente per un tempo di 30 minuti. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": null,
