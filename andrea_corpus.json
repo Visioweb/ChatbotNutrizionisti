@@ -1,68 +1,7 @@
 {
-	"intents": [{
-			"name": "SalutiGenerici",
-			"samples": [
-				"Ciao",
-				"Hey",
-				"Salve",
-				"Heyla",
-				"We",
-				"Weila",
-				"Ciao Andrea",
-				"Salve chatbot",
-				"Salve Concierge",
-				"Ciao chatbot",
-				"Ciao bot"
-			],
-			"responses": [
-				"Ciao",
-				"Hey",
-				"Salve",
-				"Heyla",
-				"We",
-				"Weila"
-			]
-		},
+	"intents": [
 		{
-			"name": "SalutiGiorno",
-			"samples": [
-				"Buongiorno",
-				"Buonagiornata",
-				"Buon Giorno",
-				"Buona Giornata",
-				"Giorno",
-				"Giorno Chatbot",
-				"Buongiorno Andrea"
-			],
-			"responses": [
-				"Buongiorno",
-				"Buonagiornata",
-				"Buon Giorno",
-				"Buona Giornata",
-				"Giorno"
-			]
-		},
-		{
-			"name": "SalutiNotte",
-			"samples": [
-				"Buonasera",
-				"Buonaserata",
-				"Buona Sera",
-				"Buona Serata",
-				"Sera",
-				"Sera Chatbot",
-				"Buonasera Andrea"
-			],
-			"responses": [
-				"Buonasera",
-				"Buonaserata",
-				"Buona Sera",
-				"Buona Serata",
-				"Sera"
-			]
-		},
-		{
-			"name": "ManutenzioneCondizionatore",
+			"name": "Manutenzione",
 			"samples": [
 				"Il condizionatore non funziona",
 				"Il condizionatore è rotto",
@@ -71,24 +10,51 @@
 				"Non mi funziona il climatizzatore",
 				"Il climatizzatore è rotto",
 				"L'aria condizionata non funziona",
+				"L' aria condizionata non funziona",
 				"Il condizionatore è guasto",
 				"mi si è rotto il condizionatore",
 				"si è guastato il climatizzatore",
-				"Si è rotta l'aria condizionata"
+				"Si è rotta l'aria condizionata",
+				"La tv della camera non si accende",
+				"La tv è rotta",
+				"La tv non funziona",
+				"La tv non si vede",
+				"il televisore è guasto",
+				"la tv è guasta",
+				"il televisore non si accende",
+				"non si accende il televisore",
+				"perchè non si accende la tv?",
+				"Ho la tv scassata",
+				"la televisione è scassata",
+				"la televisione non funziona",
+				"La televisione ha un guasto",
+				"Il televisore non si vede",
+				"Il frigo è rotto, non funziona",
+				"Il frigorifero è rotto",
+				"Il frigo non si accende",
+				"Il frigorifero non funziona",
+				"Il frigorifero funziona male",
+				"Il frigo è scassato",
+				"Il frigorifero non va bene",
+				"Il frigo non funziona affatto",
+				"Il frigorifero è rotto"
 			],
 			"responses": [
 				"Mi dispiace. Segnalo subito il problema e appena possibile verrà un tecnico. Posso fare altro?",
 				"Informo subito un'addetto per risolvere il problema. Ha bisogno di altro?",
 				"Mi scuso per il disagio, provvedo subito ad informare il tecnico, cos'altro posso fare?",
-				"Mi spiace per l'inconveniente, appena possibile verrà il tecnico, vuole chiedermi altro?"
+				"Mi spiace per l'inconveniente, appena possibile verrà il tecnico, vuole chiedermi altro?",
+				"Mi dispiace. Informo subito il tecnico per risolvere quanto prima. Posso fare altro?",
+				"Provvedo subito ad informare il tecnico. Ha bisogno di altro?",
+				"Comunico il problema al tecnico per risolvere il prima possibile. Cos'altro posso fare per lei?"
 			],
 			"context": {
-				"set": "manutcond",
+				"set": "manut",
 				"required": null
 			}
 		},
 		{
-			"name": "ManutenzioneCondEscalation",
+			"name": "ManutenzioneEscalation",
 			"samples": [
 				"Vorrei sapere quando arriverà il tecnico",
 				"Vorrei sapere quando verrà il tecnico",
@@ -110,11 +76,11 @@
 			],
 			"context": {
 				"set": null,
-				"required": "manutcond"
+				"required": "manut"
 			}
 		},
 		{
-			"name": "HousekeepingBagno",
+			"name": "Housekeeping",
 			"samples": [
 				"Il bagno non è stato pulito bene",
 				"Il bagno è sporco",
@@ -127,20 +93,36 @@
 				"Il lavandino è sporco",
 				"Il bagno non è stato pulito",
 				"Il bagno è completamente sporco",
-				"Il bagno non è pulito"
+				"Il bagno non è pulito",
+				"il frigo bar è vuoto",
+				"Il frigo non contiene le bibite",
+				"Nel frigo non c'è niente",
+				"il frigorifero è vuoto",
+				"Come mai non c'è nulla in frigo?",
+				"Ma possibile che il frigobar sia vuoto?",
+				"Perchè non ci sono bibite in frigo?",
+				"Questo frigo è vuoto",
+				"In questo frigo non c'è nulla",
+				"Il frigo è troppo freddo",
+				"Il frigo è troppo caldo"
 			],
 			"responses": [
 				"Mi scuso per il disagio, provvedo subito ad informare il personale, nel frattempo posso fare altro per lei?",
-				"Mi dispiace per l'inconveniente, informo subito gli addetti",
-				"Provvedo subito per risolvere l'inconveniente",
-				"Informo subito il personale per risolvere il disagio",
-				"Mi scuso per l'inconveniente, informo subito gli addetti ai lavori",
-				"Mi spiace per il disagio, informo subito il personale",
-				"Informo subito gli addetti per risolvere il prima possibile, mi scuso per il disagio",
-				"Provvedo immediatamente ad informare il personale, mi scuso per l'inconveniente"
+				"Mi dispiace per l'inconveniente, informo subito gli addetti, cos'altro posso fare?",
+				"Provvedo subito per risolvere l'inconveniente. Necessita di altro?",
+				"Informo subito il personale per risolvere il disagio. Posso aiutarla in altro?",
+				"Mi scuso per l'inconveniente, informo subito gli addetti ai lavori. Desidera altro?",
+				"Mi spiace per il disagio, informo subito il personale. Nel mentre desidera altro?",
+				"Informo subito gli addetti per risolvere il prima possibile, mi scuso per il disagio. C'è altro che posso fare per lei?",
+				"Provvedo immediatamente ad informare il personale, mi scuso per l'inconveniente. Ha bisogno di altro?",
+				"Mi scuso per l'inconveniente, provvedo ad informare un'addetta. Ha bisogno d'altro?",
+				"Provvedo ad informare gli addetti. Necessita di altro?",
+				"Segnalo subito il guasto e appena possibile un tecnico verrà a risolvere il problema. Posso fare altro?",
+				"Comunico subito il problema al tecnico. Ha bisogno di altro?",
+				"Informo subito il tecnico per il problema riscontrato. Necessita di altro?"
 			],
 			"context": {
-				"set": "housekeebagno",
+				"set": "houseke",
 				"required": null
 			}
 		},
@@ -166,7 +148,7 @@
 			],
 			"context": {
 				"set": null,
-				"required": "housekeebagno"
+				"required": "houseke"
 			}
 		},
 		{
@@ -222,78 +204,26 @@
 			}
 		},
 		{
-			"name": "ManutenzioneTv",
-			"samples": [
-				"La tv della camera non si accende",
-				"La tv è rotta",
-				"La tv non funziona",
-				"La tv non si vede",
-				"il televisore è guasto",
-				"la tv è guasta",
-				"il televisore non si accende",
-				"non si accende il televisore",
-				"perchè non si accende la tv?",
-				"Ho la tv scassata",
-				"la televisione è scassata",
-				"la televisione non funziona",
-				"La televisione ha un guasto",
-				"Il televisore non si vede"
-			],
-			"responses": [
-				"Mi dispiace. Informo subito il tecnico per risolvere quanto prima. Posso fare altro?",
-				"Provvedo subito ad informare il tecnico. Ha bisogno di altro?",
-				"Comunico il problema al tecnico per risolvere il prima possibile"
-			],
-			"context": {
-				"set": "manutTv",
-				"required": null
-			}
-		},
-		{
-
-			"name": "HousekeepingFrigo",
-			"samples": [
-				"il frigo bar è vuoto",
-				"Il frigo non contiene le bibite",
-				"Nel frigo non c'è niente",
-				"il frigorifero è vuoto",
-				"Come mai non c'è nulla in frigo?",
-				"Ma possibile che il frigobar sia vuoto?",
-				"Perchè non ci sono bibite in frigo?",
-				"Questo frigo è vuoto",
-				"In questo frigo non c'è nulla",
-				"Il frigo è troppo freddo",
-				"Il frigo è troppo caldo"
-			],
-			"responses": [
-				"Mi scuso per l'inconveniente, provvedo ad informare un'addetta. Se ha bisogno, sono sempre qui. Arrivederci.",
-				"Provvedo ad informare gli addetti. Necessità di altro?"
-			],
-			"context": {
-				"set": null,
-				"required": "manutTv"
-			}
-		},
-		{
 			"name": "EscursioniSpiaggie",
 			"samples": [
 				"Vorrei visitare le spiagge più belle, a chi posso rivolgermi?",
 				"Per visite le spiagge a chi posso rivolgermi?",
 				"Quali spiagge posso vedere?",
-				"Quali sono le spiagge belle da vedere?",
-				"Mi consigli spiagge da visitare?",
+				"Quali sono le spiaggie belle da vedere?",
+				"Mi consigli spiaggie da visitare?",
 				"Ci sono spiagge belle da vedere?"
 			],
 			"responses": [
 				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti. Posso suggerirle qualche escursione?"
 			],
 			"context": {
-				"set": "escursSpiaggie",
+				"set": "escursSpiaggeSI",
+				"set": "escursSpiaggeNO",
 				"required": null
 			}
 		},
 		{
-			"name": "EscursioniSpiaggieEscalation",
+			"name": "EscursioniSpiaggeEscalation",
 			"samples": [
 				"Si grazie",
 				"va bene",
@@ -303,14 +233,14 @@
 				"si"
 			],
 			"responses": [
-				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
-				"Per fare il tour della zona, può rivolgersi a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
-				"Per un tour della zona, si rivolga a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
+				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303, se ha bisogno d'altro mi trova sempre qui.",
+				"Per fare il tour della zona, può rivolgersi a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303, resto a sua disposizione.",
+				"Per un tour della zona, si rivolga a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303, resto comunque a disposizione per qualsiasi cosa.",
 				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": null,
-				"required": "escursSpiaggie"
+				"required": "escursSpiaggeSI"
 			}
 		},
 		{
@@ -323,11 +253,11 @@
 			],
 			"responses": [
 				"Va bene, allora la saluto, resto a sua disposizione.",
-				"Ok se ha bisogno sono sempre qui"
+				"Ok se ha bisogno sono sempre qui."
 			],
 			"context": {
 				"set": null,
-				"required": "escursSpiaggie"
+				"required": "escursSpiaggeNO"
 			}
 		},
 		{
@@ -374,13 +304,31 @@
 			],
 			"responses": [
 				"Il servizio spa, è gratuito per i nostri clienti, ma è necessaria una prenotazione. Posso fare altro per lei?",
-				"I servizi del centro benessere sono compresi nel soggiorno",
+				"I servizi del centro benessere sono compresi nel soggiorno. Desidera altro?",
 				"L'utilizzo della spa è gratuito",
 				"I nostri clienti, possono accedere gratuitamente al servizio spa, ma è necessaria la prenotazione",
 				"L'accesso al nostro centro benessere, è gratuito",
 				"L'ingresso nella spa non ha costi aggiuntivi, ha bisogno di altro?",
 				"Per accedere alla spa è necessaria solo ed esclusivamente la prenotazione",
 				"L'accesso alla nostra mini spa non ha costi aggiuntivi, ha bisogno di altre informazioni?"
+			]
+		},
+		{
+			"name": "Ricevimento",
+			"samples": [
+				"Vorrei parlare con un operatore",
+				"Posso parlare con un umano?",
+				"Come posso parlare con una persona?",
+				"Voglio parlare con qualcuno",
+				"Voglio parlare con la reception",
+				"voglio parlare con la resepscion",
+				"devo parlare con un operatore umano",
+				"devo parlare con il ricevimento",
+				"fammi parlare con una persona"
+			],
+			"responses": [
+				"va bene la facciamo richiamare appena possibile, ha bisogno d'altro?",
+				"la faccio richiamare subito da un nostro operatore, desidera altro?"
 			]
 		},
 		{
@@ -395,26 +343,6 @@
 			"responses": [
 				"Se vuole usufruire del servizio spa, la prenotazione è gratuita in slot orari di 30 minuti. Se ha bisogno di altro, non esiti a contattare",
 				"La prenotazione per l'accesso alla spa è gratuita in slot di orari di 30 minuti"
-			]
-
-		},
-		{
-			"name": "ManutenzioneFrigo",
-			"samples": [
-				"Il frigo è rotto, non funziona",
-				"Il frigorifero è rotto",
-				"Il frigo non si accende",
-				"Il frigorifero non funziona",
-				"Il frigorifero funziona male",
-				"Il frigo è scassato",
-				"Il frigorifero non va bene",
-				"Il frigo non funziona affatto",
-				"Il frigorifero è rotto"
-			],
-			"responses": [
-				"Segnalo subito il guasto e appena possibile un tecnico verrà a risolvere il problema. Posso fare altro?",
-				"Comunico subito il problema al tecnico. Ha bisogno di altro?",
-				"Informo subito il tecnico per il problema riscontrato. Necessita di altro?"
 			]
 		},
 		{
@@ -651,7 +579,7 @@
 			}
 		}
 	],
-	"defaults": ["Non ho capito",
-		"Potresti ripetere la domanda?"
+	"defaults": ["Non ho capito, vuole fare una segnalazione o vuole informazioni?",
+		"Non sono sicuro di aver capito se ha bisogno di supporto o vuole informazioni?"
 	]
 }
