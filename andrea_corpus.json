@@ -218,7 +218,6 @@
 			],
 			"context": {
 				"set": "escursSpiaggeSI",
-				"set": "escursSpiaggeNO",
 				"required": null
 			}
 		},
@@ -241,6 +240,24 @@
 			"context": {
 				"set": null,
 				"required": "escursSpiaggeSI"
+			}
+		},
+		{
+			"name": "EscursioniSpiaggie",
+			"samples": [
+				"Vorrei visitare le spiagge più belle, a chi posso rivolgermi?",
+				"Per visite le spiagge a chi posso rivolgermi?",
+				"Quali spiagge posso vedere?",
+				"Quali sono le spiaggie belle da vedere?",
+				"Mi consigli spiaggie da visitare?",
+				"Ci sono spiagge belle da vedere?"
+			],
+			"responses": [
+				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti. Posso suggerirle qualche escursione?"
+			],
+			"context": {
+				"set": "escursSpiaggeNO",
+				"required": null
 			}
 		},
 		{
