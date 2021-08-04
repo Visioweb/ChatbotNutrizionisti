@@ -79,10 +79,8 @@
 			"responses": [
 				"Mi dispiace. Segnalo subito il problema e appena possibile verrà un tecnico. Posso fare altro?",
 				"Informo subito un'addetto per risolvere il problema. Ha bisogno di altro?",
-				"Mi scuso per il disagio, provvedo subito ad informare il tecnico",
-				"Mi spiace per l'inconveniente, appena possibile verrà il tecnico per risolvere",
-				"Informo il tecnico per risolvere il guasto"
-
+				"Mi scuso per il disagio, provvedo subito ad informare il tecnico, cos'altro posso fare?",
+				"Mi spiace per l'inconveniente, appena possibile verrà il tecnico, vuole chiedermi altro?"
 			],
 			"context": {
 				"set": "manutcond",
@@ -105,13 +103,10 @@
 				"Quanto tempo manca per l'arrivo del tecnico?"
 			],
 			"responses": [
-				"Non sono in grado di dirle un orario preciso, ma posso garantirle che la segnalazione è già partita. Mentre aspetta, posso suggerirle qualche località da visitare in zona?",
+				"Non sono in grado di darle un orario preciso, ma la segnalazione è già partita. Desidera altro?",
 				"Non saprei dirle una certezza, ma la richiesta è stata fatta. Posso fare altro?",
-				"Non conosco le tempistiche, ma di certo è stato informato circa il problema. Nel frattempo posso fare altro per lei?",
-				"Non so dirle, ma lo abbiamo avvisato ora, desidera altro?",
-				"L'ho informato dell'inconveniente, arriverà appena possibile",
-				"Il tecnico è stato informato, sarà lì appena possibile",
-				"Non posso dirle un orario preciso, ma di certo arriverà appena sarà possibile"
+				"L'ho informato dell'inconveniente, arriverà appena possibile, ha bisogno d'altro?",
+				"Il tecnico è stato informato, sarà lì appena possibile. Desidera altro?"
 			],
 			"context": {
 				"set": null,
@@ -133,7 +128,6 @@
 				"Il bagno non è stato pulito",
 				"Il bagno è completamente sporco",
 				"Il bagno non è pulito"
-
 			],
 			"responses": [
 				"Mi scuso per il disagio, provvedo subito ad informare il personale, nel frattempo posso fare altro per lei?",
@@ -178,13 +172,16 @@
 		{
 			"name": "ServiziColazione",
 			"samples": [
-				"Salve, a che ora comincia la colazione?",
+				"a che ora comincia la colazione?",
 				"A che ora inizia la colazione?",
 				"Qual'è l'orario utile per consumare la colazione?",
 				"A che ora si può fare colazione?",
 				"Gli orari per la colazione?",
 				"gli orari della colazione?",
 				"a che ora c'è la colazione?",
+				"a che ora finisce la colazione?",
+				"fino a che ora possiamo fare la colazione",
+				"fino a che ora c'è colazione?",
 				"la colazione a che ora?",
 				"A che ora posso fare colazione?",
 				"Quali sono gli orari della colazione?",
@@ -193,8 +190,7 @@
 			"responses": [
 				"La colazione nella nostra struttura, è servita dalle ore 08.00 alle ore 10.00. Posso fare altro?",
 				"La colazione è servita dalle ore 8.00 alle ore 10.00. Ha bisogno di altro?",
-				"La colazione può essere consumata dalle ore 8.00 alle ore 10.00",
-				"I tempi utili per consumare la colazione sono dalle ore 8.00 alle ore 10.00"
+				"La colazione può essere consumata dalle ore 8.00 alle ore 10.00, desidera altro?"
 			],
 			"context": {
 				"set": "infocol",
@@ -206,13 +202,8 @@
 			"samples": [
 				"Di quali servizi dispone la struttura?",
 				"Quali servizi sono disponibili?",
-				"Di quali servizi dispone la struttura?",
-				"Quali sono i servizi utili all'interno della struttura?",
 				"Che servizi avete nella struttura?",
-				"Che servizi ci sono nell'hotel?",
-				"Che servizi ci sono nel bed & breakfast?",
 				"Che servizi offre la vostra struttura?",
-				"Quali servizi offre il vostro hotel?",
 				"Quali sono i servizi di cui posso usufruire?",
 				"Quali servizi offrite?",
 				"Quali sono i servizi della struttura?",
@@ -294,11 +285,49 @@
 				"Ci sono spiagge belle da vedere?"
 			],
 			"responses": [
-				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti, ha bisogno di altro?"
+				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti. Posso suggerirle qualche escursione?",
 			],
 			"context": {
 				"set": "escursSpiaggie",
 				"required": null
+			}
+		},
+		{
+			"name": "EscursioniSpiaggieEscalation",
+			"samples": [
+				"Si grazie",
+				"va bene",
+				"ok",
+				"Vabbene",
+				"certo",
+				"si"
+			],
+			"responses": [
+				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
+				"Per fare il tour della zona, può rivolgersi a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
+				"Per un tour della zona, si rivolga a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
+				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
+			],
+			"context": {
+				"set": null,
+				"required": "escursSpiaggie"
+			}
+		},
+		{
+			"name": "EscursioniSpiaggieEscalationNegative",
+			"samples": [
+				"No grazie",
+				"No",
+				"non mi interessa",
+				"basta cosi"
+			],
+			"responses": [
+				"Va bene, allora la saluto, resto a sua disposizione.",
+				"Ok se ha bisogno sono sempre qui"
+			],
+			"context": {
+				"set": null,
+				"required": "escursSpiaggie"
 			}
 		},
 		{
@@ -322,11 +351,7 @@
 				"Per fare il tour della zona, può rivolgersi a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
 				"Per un tour della zona, si rivolga a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
 				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
-			],
-			"context": {
-				"set": null,
-				"required": "escursSpiaggie"
-			}
+			]
 		},
 		{
 			"name": "ServiziSpa",

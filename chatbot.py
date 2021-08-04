@@ -32,7 +32,7 @@ class Chatbot:
 
     _actions_map = {}
 
-    def __init__(self, sensitivity=0.75):
+    def __init__(self, sensitivity=0.8):
         self._nlp = spacy.load("it_core_news_sm")
         self.SENSITIVITY = sensitivity
 
