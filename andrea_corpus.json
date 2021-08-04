@@ -285,7 +285,7 @@
 				"Ci sono spiagge belle da vedere?"
 			],
 			"responses": [
-				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti. Posso suggerirle qualche escursione?",
+				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti. Posso suggerirle qualche escursione?"
 			],
 			"context": {
 				"set": "escursSpiaggie",
