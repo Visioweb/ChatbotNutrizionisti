@@ -30,9 +30,9 @@ def start(update: Update, context: CallbackContext):
 updater = Updater('1740966801:AAG1LokqUbSVAi0cKzIRvPFUY1kAVFaAYd8')
 dispatcher: Dispatcher = updater.dispatcher
 
-dispatcher.add_handler(MessageHandler(Filters.text & Filters.chat_type.private, bot_ask))
-
 dispatcher.add_handler(CommandHandler('start', start, Filters.chat_type.private))
+
+dispatcher.add_handler(MessageHandler(Filters.text & Filters.chat_type.private, bot_ask))
 
 updater.start_polling()
 updater.idle()
