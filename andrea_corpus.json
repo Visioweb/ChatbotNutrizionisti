@@ -1,6 +1,6 @@
 {
 	"intents": [{
-			"name": "SalutiIniziali",
+			"name": "SalutiGenerici",
 			"samples": [
 				"Ciao",
 				"Hey",
@@ -24,7 +24,7 @@
 			]
 		},
 		{
-			"name": "SalutiIniziali2",
+			"name": "SalutiGiorno",
 			"samples": [
 				"Buongiorno",
 				"Buonagiornata",
@@ -43,7 +43,7 @@
 			]
 		},
 		{
-			"name": "SalutiIniziali3",
+			"name": "SalutiNotte",
 			"samples": [
 				"Buonasera",
 				"Buonaserata",
@@ -62,7 +62,7 @@
 			]
 		},
 		{
-			"name": "Manutenzione",
+			"name": "ManutenzioneCondizionatore",
 			"samples": [
 				"Il condizionatore non funziona",
 				"Il condizionatore è rotto",
@@ -85,12 +85,12 @@
 
 			],
 			"context": {
-				"set": "manut",
+				"set": "manutcond",
 				"required": null
 			}
 		},
 		{
-			"name": "Manutenzione Escalation",
+			"name": "ManutenzioneCondEscalation",
 			"samples": [
 				"Vorrei sapere quando arriverà il tecnico",
 				"Vorrei sapere quando verrà il tecnico",
@@ -115,11 +115,11 @@
 			],
 			"context": {
 				"set": null,
-				"required": "manut"
+				"required": "manutcond"
 			}
 		},
 		{
-			"name": "Housekeeping",
+			"name": "HousekeepingBagno",
 			"samples": [
 				"Il bagno non è stato pulito bene",
 				"Il bagno è sporco",
@@ -146,12 +146,12 @@
 				"Provvedo immediatamente ad informare il personale, mi scuso per l'inconveniente"
 			],
 			"context": {
-				"set": "housekee",
+				"set": "housekeebagno",
 				"required": null
 			}
 		},
 		{
-			"name": "Escursioni",
+			"name": "EscursioninZona",
 			"samples": [
 				"Cosa c'è da fare in zona?",
 				"Cosa si può fare in zona?",
@@ -172,11 +172,11 @@
 			],
 			"context": {
 				"set": null,
-				"required": "housekee"
+				"required": "housekeebagno"
 			}
 		},
 		{
-			"name": "Servizi informazione",
+			"name": "ServiziColazione",
 			"samples": [
 				"Salve, a che ora comincia la colazione?",
 				"A che ora inizia la colazione?",
@@ -197,13 +197,12 @@
 				"I tempi utili per consumare la colazione sono dalle ore 8.00 alle ore 10.00"
 			],
 			"context": {
-				"set": "info",
+				"set": "infocol",
 				"required": null
 			}
 		},
 		{
-
-			"name": "Servizi informazioni",
+			"name": "ServiziGenerici",
 			"samples": [
 				"Di quali servizi dispone la struttura?",
 				"Quali servizi sono disponibili?",
@@ -214,20 +213,25 @@
 				"Che servizi ci sono nel bed & breakfast?",
 				"Che servizi offre la vostra struttura?",
 				"Quali servizi offre il vostro hotel?",
-				"Quali sono i servizi di cui posso usufruire?"
+				"Quali sono i servizi di cui posso usufruire?",
+				"Quali servizi offrite?",
+				"Quali sono i servizi della struttura?",
+				"Di quali servizi posso usufruire?"
 			],
 			"responses": [
 				"La struttura dispone di vari servizi usufruibili gratuitamente, quali il servizio spa, area fitness all’aperto, piscina, area giochi per bambini",
 				"All'interno della struttura può trovare diversi servizi come la mini spa, la piscina, vasca idromassaggio, area fitness all'aperto",
-				"Può usufruire di tutti i nostri servizi disponibili, come la piscina, la vasca idromassaggio, la spa, l'area fitness"
+				"Può usufruire di tutti i nostri servizi disponibili, come la piscina, la vasca idromassaggio, la spa, l'area fitness",
+				"Offriamo una vasta gamma di servizi, dalle camere al centro benessere, fino alle sale per conferenze ed eventi!",
+				"Nella struttura sono presenti diversi servizi come la rete WI_FI, il centro benessere, il bar e sale per eventi"
 			],
 			"context": {
 				"set": null,
-				"required": "info"
+				"required": "infocol"
 			}
 		},
 		{
-			"name": "Manutenzione",
+			"name": "ManutenzioneTv",
 			"samples": [
 				"La tv della camera non si accende",
 				"La tv è rotta",
@@ -250,13 +254,13 @@
 				"Comunico il problema al tecnico per risolvere il prima possibile"
 			],
 			"context": {
-				"set": "manut",
+				"set": "manutTv",
 				"required": null
 			}
 		},
 		{
 
-			"name": "Housekeeping",
+			"name": "HousekeepingFrigo",
 			"samples": [
 				"il frigo bar è vuoto",
 				"Il frigo non contiene le bibite",
@@ -276,34 +280,33 @@
 			],
 			"context": {
 				"set": null,
-				"required": "manut"
+				"required": "manutTv"
 			}
 		},
 		{
-			"name": "Escursioni turistiche",
+			"name": "EscursioniSpiaggie",
 			"samples": [
 				"Vorrei visitare le spiagge più belle, a chi posso rivolgermi?",
 				"Per visite le spiagge a chi posso rivolgermi?",
-				"Mi piacerebbe fare delle escursioni, mi sa dire come fare?",
-				"Come posso fare per fare delle escursioni?",
-				"Quali escursioni posso fare?",
 				"Quali spiagge posso vedere?",
 				"Quali sono le spiagge belle da vedere?",
 				"Mi consigli spiagge da visitare?",
 				"Ci sono spiagge belle da vedere?"
 			],
 			"responses": [
-				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?",
-				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti"
+				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti, ha bisogno di altro?"
 			],
 			"context": {
-				"set": "escurs",
+				"set": "escursSpiaggie",
 				"required": null
 			}
 		},
 		{
-			"name": "Escursioni turistiche",
+			"name": "EscursioniGeneriche",
 			"samples": [
+				"Mi piacerebbe fare delle escursioni, mi sa dire come fare?",
+				"Come posso fare per fare delle escursioni?",
+				"Quali escursioni posso fare?",
 				"Per un tour in zona a chi posso contattare?",
 				"Per un tour in zona chi posso contattare?",
 				"Come posso fare per fare un tour della zona?",
@@ -317,33 +320,16 @@
 			"responses": [
 				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
 				"Per fare il tour della zona, può rivolgersi a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
-				"Per un tour della zona, si rivolga a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303"
+				"Per un tour della zona, si rivolga a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
+				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": null,
-				"required": "escurs"
+				"required": "escursSpiaggie"
 			}
 		},
 		{
-			"name": "Servizi informazioni",
-			"samples": [
-				"Quali servizi offrite?",
-				"Quali sono i servizi della struttura?",
-				"Di quali servizi posso usufruire?"
-			],
-			"responses": [
-				"Offriamo una vasta gamma di servizi, dalle camere al centro benessere, fino alle sale per conferenze ed eventi!",
-				"Nella struttura sono presenti diversi servizi come la rete WI_FI, il centro benessere, il bar e sale per eventi"
-			],
-			"context": {
-				"set": "info",
-				"required": null
-			}
-		},
-
-		{
-
-			"name": "Servizi informazioni",
+			"name": "ServiziSpa",
 			"samples": [
 				"Vorrei informazioni sul servizio spa.",
 				"Come funziona il servizio spa",
@@ -370,14 +356,10 @@
 				"L'ingresso nella spa non ha costi aggiuntivi, ha bisogno di altro?",
 				"Per accedere alla spa è necessaria solo ed esclusivamente la prenotazione",
 				"L'accesso alla nostra mini spa non ha costi aggiuntivi, ha bisogno di altre informazioni?"
-			],
-			"context": {
-				"set": null,
-				"required": "info"
-			}
+			]
 		},
 		{
-			"name": "Servizi prenotazioni",
+			"name": "ServiziPrenotazioniSpa",
 			"samples": [
 				"Come posso fare per prenotare il servizio spa?",
 				"Vorrei prenotare l'ingresso nella spa",
@@ -392,7 +374,7 @@
 
 		},
 		{
-			"name": "Manutenzione",
+			"name": "ManutenzioneFrigo",
 			"samples": [
 				"Il frigo è rotto, non funziona",
 				"Il frigorifero è rotto",
@@ -408,26 +390,16 @@
 				"Segnalo subito il guasto e appena possibile un tecnico verrà a risolvere il problema. Posso fare altro?",
 				"Comunico subito il problema al tecnico. Ha bisogno di altro?",
 				"Informo subito il tecnico per il problema riscontrato. Necessita di altro?"
-
-
-			],
-			"context": {
-				"set": "manut",
-				"required": null
-			}
+			]
 		},
 		{
-			"name": "Manutenzione Escalation",
+			"name": "ManutenzioneTecnico",
 			"samples": [
 				"Il tecnico non è ancora arrivato."
 			],
 			"responses": [
 				"Non sono in grado di dirle quando arriverà, ma posso assicurarle che la segnalazione è stata fatta. Se posso essere utile in altro modo, non esiti a contattarmi"
-			],
-			"context": {
-				"set": null,
-				"required": "manut"
-			}
+			]
 		},
 		{
 			"name": "Escursioni",
@@ -451,7 +423,7 @@
 			}
 		},
 		{
-			"name": "Info prenotazioni",
+			"name": "PrenotazioneCena",
 			"samples": [
 				"Vorrei prenotare la cena al ristorante per questa sera ore 21.00 per due persone",
 				"Voglio prenotare la cena per questa sera",
@@ -491,7 +463,7 @@
 			}
 		},
 		{
-			"name": "Servizi informazioni",
+			"name": "InfoPiscina",
 			"samples": [
 				"Quali sono gli orari di apertura della piscina?",
 				"A che ora apre la piscina?",
@@ -520,7 +492,7 @@
 			}
 		},
 		{
-			"name": "Servizi informazioni",
+			"name": "InfoOmbrellone",
 			"samples": [
 				"L'ombrellone è comprezo nel prezzo?",
 				"I lettini sono gratuiti?",
@@ -545,7 +517,7 @@
 			}
 		},
 		{
-			"name": "Servizi informazione",
+			"name": "InfoParcheggio",
 			"samples": [
 				"Posso lasciare l'auto nel parcheggio?",
 				"Il parcheggio è compreso?",
@@ -571,7 +543,7 @@
 			}
 		},
 		{
-			"name": "Servizi prenotazioni",
+			"name": "PrenotazioneColazione",
 			"samples": [
 				"Come funziona per prenotare la colazione?",
 				"Come si prenota la colazione?",
@@ -593,7 +565,7 @@
 			}
 		},
 		{
-			"name": "Servizi informazione",
+			"name": "InfoWifi",
 			"samples": [
 				"Qual'è la password del WI-FI?",
 				"Quali sono le credenziali per accedere al WI-FI?",
@@ -614,7 +586,7 @@
 			}
 		},
 		{
-			"name": "Servizi informazioni",
+			"name": "InfoBar",
 			"samples": [
 				"Come funziona per il servizio bar dell'hotel?",
 				"Come funziona per il pagamento delle consumazioni al bar?",
@@ -634,7 +606,7 @@
 			}
 		},
 		{
-			"name": "Servizi informazione",
+			"name": "PrenotazioneIdromassaggio",
 			"samples": [
 				"Come posso fare per prenotare la vasca idromassaggio?",
 				"Come si prenota la vasca idromassaggio?",
