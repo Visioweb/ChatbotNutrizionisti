@@ -28,11 +28,21 @@ def start(update: Update, context: CallbackContext):
         choice(msgs)
     )
 
+def nointent(update: Update, context: CallbackContext):
+    messgs = [
+        'ok, qualunque cosa non esiti a contattarmi.',
+        'resto comunque a sua disposizione.'
+    ]
+    update.effective_message.reply_text(
+        choice(messgs)
+    )
 
 updater = Updater('1740966801:AAG1LokqUbSVAi0cKzIRvPFUY1kAVFaAYd8')
 dispatcher: Dispatcher = updater.dispatcher
 
 dispatcher.add_handler(CommandHandler('start', start, Filters.chat_type.private))
+
+dispatcher.add_handler(MessageHandler(Filters.chat_type.private&Filters.text("no"), nointent))
 
 dispatcher.add_handler(MessageHandler(Filters.text & Filters.chat_type.private, bot_ask))
 

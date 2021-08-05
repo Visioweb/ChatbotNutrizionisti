@@ -1,6 +1,5 @@
 {
-	"intents": [
-		{
+	"intents": [{
 			"name": "Manutenzione",
 			"samples": [
 				"Il condizionatore non funziona",
@@ -611,6 +610,16 @@
 				"set": null,
 				"required": "info"
 			}
+		},
+		{
+			"name": "Ringraziamenti",
+			"samples": [
+				"ok, grazie mille",
+				"ottimo, grazie"
+			],
+			"responses": [
+				"Prego, ha bisogno di altro?"
+			]
 		}
 	],
 	"defaults": ["Non ho capito, vuole fare una segnalazione o vuole informazioni?",
