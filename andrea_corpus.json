@@ -105,8 +105,8 @@
 				"In questo frigo non c'è nulla",
 				"Il frigo è troppo freddo",
 				"Il frigo è troppo caldo",
-				"Non mi hanno rifatto la camera?",
-				"Non hanno pulito la camera?",
+				"Non mi hanno rifatto la camera",
+				"Non hanno pulito la camera",
 				"non mi hanno rifatto il letto",
 				"la camera è sporca",
 				"il letto era sporco"
@@ -381,7 +381,9 @@
 			"samples": [
 				"Supporto",
 				"supporto",
-				"ho bisogno di supporto"
+				"ho bisogno di supporto",
+				"segnalazione",
+				"ho bisogno di fare una segnalazione"
 			],
 			"responses": [
 				"Vuole segnalare un guasto?",
@@ -520,7 +522,7 @@
 				"Ogni nostro cliente ha un posto auto nel parcheggio, non ci sono posti riservati. Ha bisogno di altro?",
 				"Il parcheggio è compreso nel prezzo, dunque non ha costi aggiuntivi. Ha bisogno di altro?",
 				"Il parcheggio è incluso nel prezzo. Ha bisogno di altro?",
-				"Il posto auto è incluso nela prezzo di soggiorno, ha bisogno di altro?",
+				"Il posto auto è incluso nel prezzo di soggiorno, ha bisogno di altro?",
 				"Il parcheggio è compreso nel soggiorno. Ha bisogno di altro?",
 				"L'utilizzo del parcheggio non ha costi aggiuntivi. Ha bisogno di altro?"
 			],
