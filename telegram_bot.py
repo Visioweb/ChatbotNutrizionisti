@@ -42,7 +42,7 @@ dispatcher: Dispatcher = updater.dispatcher
 
 dispatcher.add_handler(CommandHandler('start', start, Filters.chat_type.private))
 
-dispatcher.add_handler(MessageHandler(Filters.chat_type.private&Filters.text("no"), nointent))
+dispatcher.add_handler(MessageHandler(Filters.chat_type.private&Filters.text(["no", "No", "no grazie", "No Grazie", "No grazie"]), nointent))
 
 dispatcher.add_handler(MessageHandler(Filters.text & Filters.chat_type.private, bot_ask))
 
