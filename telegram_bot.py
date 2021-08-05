@@ -37,7 +37,7 @@ def nointent(update: Update, context: CallbackContext):
         choice(messgs)
     )
 
-updater = Updater('1740966801:AAG1LokqUbSVAi0cKzIRvPFUY1kAVFaAYd8')
+updater = Updater('1740966801:AAEdTnF2FQETbN8SO8i1Y67kO0QgYXPwc5k')
 dispatcher: Dispatcher = updater.dispatcher
 
 dispatcher.add_handler(CommandHandler('start', start, Filters.chat_type.private))
