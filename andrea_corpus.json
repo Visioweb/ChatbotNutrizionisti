@@ -39,13 +39,13 @@
 				"Il frigorifero è rotto"
 			],
 			"responses": [
-				"Mi dispiace. Segnalo subito il problema e appena possibile verrà un tecnico. Posso fare altro?",
+				"Mi dispiace. Segnalo subito il problema e appena possibile verrà un addetto. Posso fare altro?",
 				"Informo subito un'addetto per risolvere il problema. Ha bisogno di altro?",
-				"Mi scuso per il disagio, provvedo subito ad informare il tecnico, cos'altro posso fare?",
-				"Mi spiace per l'inconveniente, appena possibile verrà il tecnico, vuole chiedermi altro?",
+				"Mi scuso per il disagio, provvedo subito ad informare l'addetto, cos'altro posso fare?",
+				"Mi spiace per l'inconveniente, appena possibile verrà l'addetto, vuole chiedermi altro?",
 				"Mi dispiace. Informo subito il tecnico per risolvere quanto prima. Posso fare altro?",
-				"Provvedo subito ad informare il tecnico. Ha bisogno di altro?",
-				"Comunico il problema al tecnico per risolvere il prima possibile. Cos'altro posso fare per lei?"
+				"Provvedo subito ad informare l'addetto. Ha bisogno di altro?",
+				"Comunico il problema all'addetto per risolvere il prima possibile. Cos'altro posso fare per lei?"
 			],
 			"context": {
 				"set": "manut",
@@ -56,15 +56,18 @@
 			"name": "ManutenzioneEscalation",
 			"samples": [
 				"Vorrei sapere quando arriverà il tecnico",
-				"Vorrei sapere quando verrà il tecnico",
-				"Voglio sapere quando arriva il tecnico",
+				"Vorrei sapere quando verrà l'addetto",
+				"Voglio sapere quando arriva l'addetto",
+				"Quando arriva l'addetto?",
 				"Quando arriva il tecnico?",
 				"Il tecnico quando arriva?",
+				"l'addetto quando arriva?",
 				"quando mi mandate il tecnico?",
 				"a che ora arriva il tecnico?",
 				"il tecnico arriva subito?",
 				"Tra quanto tempo arriva il tecnico?",
 				"Entro quanto arriva il tecnico?",
+				"Entro quanto arriva l'addetto?",
 				"Quanto tempo manca per l'arrivo del tecnico?"
 			],
 			"responses": [
@@ -108,7 +111,20 @@
 				"Non hanno pulito la camera",
 				"non mi hanno rifatto il letto",
 				"la camera è sporca",
-				"il letto era sporco"
+				"il letto era sporco",
+				"avrei bisogno di una asciugamano",
+				"mancano le asciugamani",
+				"vorrei un'asciugamano",
+				"mi potete cambiare le lenzuola?",
+				"mi potete portare un cuscino più alto?",
+				"questo cuscino è troppo basso",
+				"avete cuscini antiacari?",
+				"avete cuscini anallergici?",
+				"vorrei un lezuolo pulito",
+				"avrei bisogno di un lenzuolo pulito",
+				"le lenzuola sono sporche, potete cambiarmele?",
+				"mancano gli asciugamani",
+				"non c'è l'asciugamano"
 			],
 			"responses": [
 				"Mi scuso per il disagio, provvedo subito ad informare il personale, nel frattempo posso fare altro per lei?",
@@ -121,26 +137,14 @@
 				"Provvedo immediatamente ad informare il personale, mi scuso per l'inconveniente. Ha bisogno di altro?",
 				"Mi scuso per l'inconveniente, provvedo ad informare un'addetta. Ha bisogno d'altro?",
 				"Provvedo ad informare gli addetti. Necessita di altro?",
-				"Segnalo subito il guasto e appena possibile un tecnico verrà a risolvere il problema. Posso fare altro?",
-				"Comunico subito il problema al tecnico. Ha bisogno di altro?",
-				"Informo subito il tecnico per il problema riscontrato. Necessita di altro?"
+				"Segnalo subito il guasto e appena possibile un addetto verrà a risolvere il problema. Posso fare altro?",
+				"Comunico subito il problema all'addetto. Ha bisogno di altro?",
+				"Informo subito il personale per il problema riscontrato. Necessita di altro?"
 			],
 			"context": {
 				"set": "houseke",
 				"required": null
 			}
-		},
-		{
-			"name": "NoIntent",
-			"samples": [
-				"no",
-				"No",
-				"non mi serve altro",
-				"no grazie"
-			],
-			"responses": [
-				"va bene se ha bisogno sono sempre qui, arrivederci"
-			]
 		},
 		{
 			"name": "EscursioninZona",
