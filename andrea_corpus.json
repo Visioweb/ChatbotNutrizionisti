@@ -124,7 +124,17 @@
 				"avrei bisogno di un lenzuolo pulito",
 				"le lenzuola sono sporche, potete cambiarmele?",
 				"mancano gli asciugamani",
-				"non c'è l'asciugamano"
+				"non c'è l'asciugamano",
+				"avete anche un cusino antiacaro",
+				"avete anche un cuscino antiacari?",
+				"avreste un cuscino antiacaro?",
+				"sono un soggetto allergico, avete cuscini anallergici?",
+				"sono un soggetto allergico, avete cusicni antiacari?",
+				"sono allergico agli acari, avete cuscini antiacari?",
+				"cuscini antiacari?",
+				"lenzuoli sporchi",
+				"lenzuola sporche",
+				"lenzuole pulite"
 			],
 			"responses": [
 				"Mi scuso per il disagio, provvedo subito ad informare il personale, nel frattempo posso fare altro per lei?",
