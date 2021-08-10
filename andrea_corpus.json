@@ -222,9 +222,9 @@
 				"Di quali servizi posso usufruire?"
 			],
 			"responses": [
-				"La struttura offre vari servizi gratuiti: WiFi, spa, area fitness all’aperto, piscina, area giochi per bambini, sale per eventi. Ha bisogno di altro?",
-				"All'interno della struttura trova diversi servizi: WiFi, spa, piscina, vasca idromassaggio, area fitness, area giochi per bambini, sale riunioni. Posso aiutarla con altro?",
-				"Può usufruire di tutti i nostri servizi disponibili, come la piscina, la vasca idromassaggio, la spa, l'area fitness, l'area giochi per bambini. Vuole sapere altro?"
+				"La struttura offre vari servizi gratuiti: WiFi, idromassaggio, area fitness all’aperto, piscina, area giochi per bambini, sale per eventi. Ha bisogno di altro?",
+				"All'interno della struttura trova diversi servizi: WiFi, idromassaggio, piscina, vasca idromassaggio, area fitness, area giochi per bambini, sale riunioni. Posso aiutarla con altro?",
+				"Può usufruire di tutti i nostri servizi disponibili, come la piscina, la vasca idromassaggio, l'area fitness, l'area giochi per bambini. Vuole sapere altro?"
 			],
 			"context": {
 				"set": null,
@@ -272,41 +272,6 @@
 			}
 		},
 		{
-			"name": "EscursioniSpiaggie",
-			"samples": [
-				"Vorrei visitare le spiagge più belle, a chi posso rivolgermi?",
-				"Per visite le spiagge a chi posso rivolgermi?",
-				"Quali spiagge posso vedere?",
-				"Quali sono le spiaggie belle da vedere?",
-				"Mi consigli spiaggie da visitare?",
-				"Ci sono spiagge belle da vedere?"
-			],
-			"responses": [
-				"Può visitare Punta Licosa, Palinuro e le spiagge adiacenti. Posso suggerirle qualche escursione?"
-			],
-			"context": {
-				"set": "escursSpiagge",
-				"required": null
-			}
-		},
-		{
-			"name": "EscursioniSpiaggieEscalationNegative",
-			"samples": [
-				"No grazie",
-				"No",
-				"non mi interessa",
-				"basta cosi"
-			],
-			"responses": [
-				"Va bene, allora la saluto, resto a sua disposizione.",
-				"Ok se ha bisogno sono sempre qui."
-			],
-			"context": {
-				"set": null,
-				"required": "escursSpiagge"
-			}
-		},
-		{
 			"name": "EscursioniGeneriche",
 			"samples": [
 				"Mi piacerebbe fare delle escursioni, mi sa dire come fare?",
@@ -323,40 +288,10 @@
 				"Voglio fare il tour della zona, a chi posso rivolgermi?"
 			],
 			"responses": [
-				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
-				"Per fare il tour della zona, può rivolgersi a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
-				"Per un tour della zona, si rivolga a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303",
+				"Per tour in zona può contattare Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303. Posso fare altro?",
+				"Per fare il tour della zona, può rivolgersi a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303. Ha bisogno d'altro?",
+				"Per un tour della zona, si rivolga a Masaniello Tourist al 335 5929643, oppure LT trasporti al 339 482 0303. Cos'altro posso fare per lei?",
 				"Benissimo!. Ci sono escursioni a Punta Licosa e all’isola omonima, e a Palinuro, che partono dal porticciolo accanto a noi. Può contattare Ma.Gi.Ca escursioni al 3319091421 per prenotare. Ha bisogno di altro?"
-			]
-		},
-		{
-			"name": "ServiziSpa",
-			"samples": [
-				"Vorrei informazioni sul servizio spa.",
-				"Come funziona il servizio spa",
-				"Come posso fare per utilizzare la spa",
-				"Mi piacerebbe utilizzare il centro spa, come posso fare?",
-				"La spa è a pagamento?",
-				"Si paga il centro benessere?",
-				"L'utilizzo della spa è gratuito?",
-				"La spa è compresa nel prezzo?",
-				"Vorrei sapere se il servizio spa è a pagamento",
-				"Si paga per entrare nella spa?",
-				"Come funziona per entrare nel centro benessere?",
-				"Si paga per entrare nel centro benesere?",
-				"Il centro benessere è a pagamento?",
-				"Il servizio spa è compreso nel prezzo?",
-				"Come funziona il servizio spa?"
-			],
-			"responses": [
-				"Il servizio spa, è gratuito per i nostri clienti, ma è necessaria una prenotazione. Posso fare altro per lei?",
-				"I servizi del centro benessere sono compresi nel soggiorno. Desidera altro?",
-				"L'utilizzo della spa è gratuito",
-				"I nostri clienti, possono accedere gratuitamente al servizio spa, ma è necessaria la prenotazione",
-				"L'accesso al nostro centro benessere, è gratuito",
-				"L'ingresso nella spa non ha costi aggiuntivi, ha bisogno di altro?",
-				"Per accedere alla spa è necessaria solo ed esclusivamente la prenotazione",
-				"L'accesso alla nostra mini spa non ha costi aggiuntivi, ha bisogno di altre informazioni?"
 			]
 		},
 		{
@@ -394,27 +329,16 @@
 			"samples": [
 				"Supporto",
 				"supporto",
+				"devo segnalare un guasto",
+				"devo riportare un guatsto",
 				"ho bisogno di supporto",
 				"segnalazione",
 				"ho bisogno di fare una segnalazione"
 			],
 			"responses": [
-				"Vuole segnalare un guasto?",
-				"Ha riscontrato un guasto?"
-			]
-		},
-		{
-			"name": "ServiziPrenotazioniSpa",
-			"samples": [
-				"Come posso fare per prenotare il servizio spa?",
-				"Vorrei prenotare l'ingresso nella spa",
-				"Come posso fare per prenotare l'ingresso nel centro benessere?",
-				"Vorrei prenotare l'ingresso al centro benessere",
-				"Vorrei usufruire del servizio spa"
-			],
-			"responses": [
-				"Se vuole usufruire del servizio spa, la prenotazione è gratuita in slot orari di 30 minuti.",
-				"La prenotazione per l'accesso alla spa è gratuita in slot di orari di 30 minuti"
+				"Cosa vuole segnalare?",
+				"Dica pure, come posso esserle utile?",
+				"Cosa si è guastato?"
 			]
 		},
 		{
@@ -462,7 +386,7 @@
 				"Perfetto. La sua prenotazione per la cena alle ore 21.00 è andata a buon fine. Ha bisogno di altro?",
 				"La sua prenotazione è confermata, ha bisogno di altro?",
 				"La prenotazione per la cena di questa sera è andata a buon fine, ha bisogno di altro?",
-				"Può prenotare ogni volta che desidera, ha bisogno di altro?",
+				"Può prenotare ogni volta che desidera, posso fare altro?",
 				"La sua prenotazione è andata a buon fine, ha bisogno di altro?"
 			],
 			"context": {
@@ -484,10 +408,12 @@
 				"Fino a che ora resta aperta la piscina?",
 				"Fino a che ora si può andare in piscina?",
 				"Qual'è l'orario di chiusura della piscina?",
-				"A che ora apre e a che ora chiude la piscina?"
+				"A che ora apre e a che ora chiude la piscina?",
+				"Vorrei sapere se c'è una piscina",
+				"avete anche una piscina?"
 			],
 			"responses": [
-				"La piscina è aperta dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
+				"La piscina è aperta dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, c'è altro che posso fare per lei?",
 				"Gli orari della piscina sono dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
 				"L'accesso alla piscina è consentito dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
 				"Può usufruire della piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
@@ -578,7 +504,7 @@
 			],
 			"responses": [
 				"Per connettersi alla rete WI-FI può cercare la rete Residence Baia Marticana digitando la password @Baiamarticana2012, il servizio è gratuito. Ha bisogno di altro?",
-				"Le credenziali della rete WI-FI sono le seguenti Residence Baia Marticana digitando la password @Baiamarticana2012. Ha bisogno di altro?",
+				"Le credenziali della rete WI-FI sono le seguenti Residence Baia Marticana digitando la password @Baiamarticana2012. Desidera altro?",
 				"Per accedere al WI-FI inserisca le seguenti credenziali Residence Baia Marticana digitando la password @Baiamarticana2012. Ha bisogno di altro?"
 			],
 			"context": {
@@ -617,7 +543,7 @@
 			],
 			"responses": [
 				"La vasca idromassaggio è aperta dalle 9.30 alle 13.30 e dalle 15.30 alle 19.30, l'utilizzo è gratuito, ma è necessaria la prenotazione per un tempo di 30 minuti. Ha bisogno di altro?",
-				"L'utilizzo della vasca idromassaggio è gratuito, può prenotarla per un tempo di 30 minuti. Ha bisogno di altro?",
+				"L'utilizzo della vasca idromassaggio è gratuito, può prenotarla per un tempo di 30 minuti. Posso fare altro?",
 				"La vasca idromassaggio è aperta dalle 9.30 alle 13.30 e dalle 15.30 alle 19.30, può essere prenotata gratuitamente per un tempo di 30 minuti. Ha bisogno di altro?"
 			],
 			"context": {
@@ -629,10 +555,15 @@
 			"name": "Ringraziamenti",
 			"samples": [
 				"ok, grazie mille",
-				"ottimo, grazie"
+				"ottimo, grazie",
+				"la ringrazio molto",
+				"grazie, gentilissimo",
+				"Mille grazie"
 			],
 			"responses": [
-				"Prego, ha bisogno di altro?"
+				"Prego, ha bisogno di altro?",
+				"Di nulla. Posso fare altro?",
+				"Si figuri, desidera altro?"
 			]
 		}
 	],

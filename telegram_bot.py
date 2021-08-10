@@ -47,7 +47,7 @@ def nointent(update: Update, context: CallbackContext):
     messgs = [
         'ok, qualunque cosa non esiti a contattarmi.',
         'resto comunque a sua disposizione.',
-        'va bene se ha bisogno sono sempre qui, arrivederci'
+        'va bene se ha bisogno sono sempre qui, arrivederci.'
     ]
     update.effective_message.reply_text(
         choice(messgs)
@@ -60,7 +60,10 @@ dispatcher: Dispatcher = updater.dispatcher
 dispatcher.add_handler(CommandHandler('start', start, Filters.chat_type.private))
 
 dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["no", "No", "no grazie", "No Grazie",
-                                                                                "No grazie", "non mi serve altro"]),
+                                                                                "No grazie", "non mi serve altro",
+                                                                                "Niente", "niente", "Non voglio fare niente",
+                                                                                "Non ho bisogno di nulla", "Non mi serve nient'altro",
+                                                                                "non ho bisogno di nulla", "non ho bisogno di null'altro"]),
                                       nointent))
 
 dispatcher.add_handler(MessageHandler(Filters.text & Filters.chat_type.private, bot_ask))
