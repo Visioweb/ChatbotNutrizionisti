@@ -95,12 +95,13 @@ dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text([
                                                                                 "non ho bisogno di nulla", "non ho bisogno di null'altro"]),
                                       nointent))
 
-dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["Ciao", "Salve", "Ciao Andrea", "Salve chatbot",
+dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["Ciao", "Salve", "salve Andrea", "Salve andrea", "Salve Andrea",
+                                                                                "Ciao Andrea", "Salve chatbot",
                                                                                 "Salve Concierge", "Ciao chatbot",
                                                                                 "Ciao bot"]),
                                       salutigenerici))
 
-dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["Buongiorno", "Buon Giorno", "Giorno", "Giorno Chatbot",
+dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["Buongiorno", "Buon Giorno", "Giorno", "Giorno Andrea", "Giorno Chatbot",
                                                                                 "Buongiorno Andrea"]),
                                       salutigiorno))
 
