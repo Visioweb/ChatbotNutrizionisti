@@ -565,50 +565,6 @@
 				"Di nulla. Posso fare altro?",
 				"Si figuri, desidera altro?"
 			]
-		},
-		{
-			"name": "SalutiGenerici",
-			"samples": [
-				"Ciao",
-				"Salve",
-				"Ciao Andrea",
-				"Salve chatbot",
-				"Salve Concierge",
-				"Ciao chatbot",
-				"Ciao bot"
-			],
-			"responses": [
-				"Salve, come posso esserle utile?"
-			]
-		},
-		{
-			"name": "SalutiGiorno",
-			"samples": [
-				"Buongiorno",
-				"Buonagiornata",
-				"Buon Giorno",
-				"Giorno",
-				"Giorno Chatbot",
-				"Buongiorno Andrea"
-			],
-			"responses": [
-				"Buongiorno, come posso aiutarla?"
-			]
-		},
-		{
-			"name": "SalutiNotte",
-			"samples": [
-				"Buonasera",
-				"Buonaserata",
-				"Buona Sera",
-				"Buona Serata",
-				"Sera",
-				"Sera Chatbot",
-				"Buonasera Andrea"
-			],
-			"responses": [
-				"Buonasera, come posso aiutarla?"
-			]
 		}
 	],
 	"defaults": ["Non ho capito, vuole fare una segnalazione o vuole informazioni?",
