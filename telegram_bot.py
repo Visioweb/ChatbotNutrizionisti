@@ -54,6 +54,35 @@ def nointent(update: Update, context: CallbackContext):
     )
 
 
+@typing()
+def salutigenerici(update: Update, context: CallbackContext):
+    messgs = [
+        'Salve, come posso esserle utile?'
+    ]
+    update.effective_message.reply_text(
+        choice(messgs)
+    )
+
+
+@typing()
+def salutigiorno(update: Update, context: CallbackContext):
+    messgs = [
+        'Buongiorno, come posso aiutarla?'
+    ]
+    update.effective_message.reply_text(
+        choice(messgs)
+    )
+
+
+@typing()
+def salutinotte(update: Update, context: CallbackContext):
+    messgs = [
+        'Buonasera, come posso aiutarla?'
+    ]
+    update.effective_message.reply_text(
+        choice(messgs)
+    )
+
 updater = Updater('1740966801:AAEdTnF2FQETbN8SO8i1Y67kO0QgYXPwc5k')
 dispatcher: Dispatcher = updater.dispatcher
 
