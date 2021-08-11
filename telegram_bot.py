@@ -54,35 +54,6 @@ def nointent(update: Update, context: CallbackContext):
     )
 
 
-@typing()
-def salutigenerici(update: Update, context: CallbackContext):
-    messgs = [
-        'Salve, come posso esserle utile?'
-    ]
-    update.effective_message.reply_text(
-        choice(messgs)
-    )
-
-
-@typing()
-def salutigiorno(update: Update, context: CallbackContext):
-    messgs = [
-        'Buongiorno, come posso aiutarla?'
-    ]
-    update.effective_message.reply_text(
-        choice(messgs)
-    )
-
-
-@typing()
-def salutinotte(update: Update, context: CallbackContext):
-    messgs = [
-        'Buonasera, come posso aiutarla?'
-    ]
-    update.effective_message.reply_text(
-        choice(messgs)
-    )
-
 updater = Updater('1740966801:AAEdTnF2FQETbN8SO8i1Y67kO0QgYXPwc5k')
 dispatcher: Dispatcher = updater.dispatcher
 
@@ -96,19 +67,6 @@ dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text([
                                                                                 "Nient'altro grazie", "nient'altro grazie"]),
                                       nointent))
 
-dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["Ciao", "Salve", "salve Andrea", "Salve andrea", "Salve Andrea",
-                                                                                "Ciao Andrea", "Salve chatbot",
-                                                                                "Salve Concierge", "Ciao chatbot",
-                                                                                "Ciao bot"]),
-                                      salutigenerici))
-
-dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["Buongiorno", "Buon Giorno", "Giorno", "Giorno Andrea", "Giorno Chatbot",
-                                                                                "Buongiorno Andrea"]),
-                                      salutigiorno))
-
-dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["Buonasera", "Buonaserata", "Buona Sera", "Buona Serata",
-                                                                                "Sera", "Sera Chatbot", "Buonasera Andrea"]),
-                                      salutinotte))
 
 dispatcher.add_handler(MessageHandler(Filters.text & Filters.chat_type.private, bot_ask))
 
