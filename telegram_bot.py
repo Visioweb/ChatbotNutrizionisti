@@ -92,7 +92,8 @@ dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text([
                                                                                 "No grazie", "non mi serve altro",
                                                                                 "Niente", "niente", "Non voglio fare niente",
                                                                                 "Non ho bisogno di nulla", "Non mi serve nient'altro",
-                                                                                "non ho bisogno di nulla", "non ho bisogno di null'altro"]),
+                                                                                "non ho bisogno di nulla", "non ho bisogno di null'altro",
+                                                                                "Nient'altro grazie", "nient'altro grazie"]),
                                       nointent))
 
 dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["Ciao", "Salve", "salve Andrea", "Salve andrea", "Salve Andrea",
