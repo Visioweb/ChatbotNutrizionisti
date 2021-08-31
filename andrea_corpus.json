@@ -124,6 +124,8 @@
 				"avrei bisogno di un lenzuolo pulito",
 				"le lenzuola sono sporche, potete cambiarmele?",
 				"mancano gli asciugamani",
+				"ho bisogno di un asciugamani",
+				"ho bisogno di un'asciugamani",
 				"non c'è l'asciugamano",
 				"avete anche un cusino antiacaro",
 				"avete anche un cuscino antiacari?",
@@ -147,7 +149,6 @@
 				"Provvedo immediatamente ad informare il personale, mi scuso per l'inconveniente. Ha bisogno di altro?",
 				"Mi scuso per l'inconveniente, provvedo ad informare un'addetta. Ha bisogno d'altro?",
 				"Provvedo ad informare gli addetti. Necessita di altro?",
-				"Segnalo subito il guasto e appena possibile un addetto verrà a risolvere il problema. Posso fare altro?",
 				"Comunico subito il problema all'addetto. Ha bisogno di altro?",
 				"Informo subito il personale per il problema riscontrato. Necessita di altro?"
 			],
@@ -550,6 +551,72 @@
 				"set": null,
 				"required": "info"
 			}
+		},
+		{
+			"name": "WalletBarGelato",
+			"samples": [
+				"Ho preso un gelato. Me lo segni sulla camera?",
+				"Ho preso un cornetto algida. Me lo segni sulla camera?",
+				"Ho preso un ghiacciolo. Me lo segni?"
+			],
+			"responses": [
+				"Certo, le segno il gelato sulla camera. Ha bisogno di altro?"
+			]
+		},
+		{
+			"name": "WalletBarPanini",
+			"samples": [
+				"Ho preso un panino. Lo metti in conto alla camera?",
+				"ho preso un saltinbocca. lo metti sul mio conto?"
+			],
+			"responses": [
+				"Ok, metto in conto un panino alla sua camera. Posso fare altro?"
+			]
+		},
+		{
+			"name": "WalletBarTramezzini",
+			"samples": [
+				"Mi metti in conto un tramezzino?"
+			],
+			"responses": [
+				"Sì, certo, provvedo subito. C’è altro?"
+			]
+		},
+		{
+			"name": "WalletBarBibite",
+			"samples": [
+				"Mi puoi addebitare una coca cola sulla camera?",
+				"Mi addebiti una fanta?"
+			],
+			"responses": [
+				"Sì, sarà fatto! Ha bisogno di qualcos’altro? "
+			]
+		},
+		{
+			"name": "NoIntent",
+			"samples": [
+				"no",
+				"No",
+				"no grazie",
+				"No Grazie",
+			    "No grazie",
+				"non mi serve altro",
+				"Niente",
+				"niente",
+				"nient'altro",
+				"Non voglio fare niente",
+				"Non ho bisogno di nulla",
+				"Non mi serve nient'altro",
+				"non ho bisogno di nulla",
+				"non ho bisogno di null'altro",
+				"Nient'altro grazie",
+				"nient'altro grazie"
+			],
+			"responses": [
+				"ok, qualunque cosa non esiti a contattarmi.",
+				"resto comunque a sua disposizione.",
+				"va bene se ha bisogno sono sempre qui, arrivederci."
+			]
 		},
 		{
 			"name": "Ringraziamenti",

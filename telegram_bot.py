@@ -41,7 +41,7 @@ def start(update: Update, context: CallbackContext):
         choice(msgs)
     )
 
-
+'''
 @typing()
 def nointent(update: Update, context: CallbackContext):
     messgs = [
@@ -52,7 +52,7 @@ def nointent(update: Update, context: CallbackContext):
     update.effective_message.reply_text(
         choice(messgs)
     )
-
+'''
 
 @typing()
 def salutigenerici(update: Update, context: CallbackContext):
@@ -88,14 +88,15 @@ dispatcher: Dispatcher = updater.dispatcher
 
 dispatcher.add_handler(CommandHandler('start', start, Filters.chat_type.private))
 
+'''
 dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["no", "No", "no grazie", "No Grazie",
                                                                                 "No grazie", "non mi serve altro",
-                                                                                "Niente", "niente", "Non voglio fare niente",
+                                                                                "Niente", "niente", "nient'altro", "Non voglio fare niente",
                                                                                 "Non ho bisogno di nulla", "Non mi serve nient'altro",
                                                                                 "non ho bisogno di nulla", "non ho bisogno di null'altro",
                                                                                 "Nient'altro grazie", "nient'altro grazie"]),
                                       nointent))
-
+'''
 
 dispatcher.add_handler(MessageHandler(Filters.text & Filters.chat_type.private, bot_ask))
 
