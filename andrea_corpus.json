@@ -592,20 +592,6 @@
 			]
 		},
 		{
-			"name": "Ringraziamenti",
-			"samples": [
-				"ok, grazie mille",
-				"ottimo, grazie",
-				"la ringrazio molto",
-				"grazie, gentilissimo",
-				"Mille grazie"
-			],
-			"responses": [
-				"Prego, ha bisogno d'altro?",
-				"Si figuri. Posso fare altro?"
-			]
-		},
-		{
 			"name": "NoIntent",
 			"samples": [
 				"no",
