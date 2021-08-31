@@ -104,7 +104,7 @@ class Chatbot:
         return (response, new_context, y_proba_max) if return_proba else response
 
 
-    def train(self, corpus_file, epochs=800, verbose=True):
+    def train(self, corpus_file, epochs=1000, verbose=True):
 
         with open(corpus_file) as f:
             self._corpus = json.loads(f.read())  # carichiamo il json in un dict

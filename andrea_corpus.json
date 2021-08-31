@@ -334,6 +334,9 @@
 				"devo riportare un guatsto",
 				"ho bisogno di supporto",
 				"segnalazione",
+				"Segnalazione",
+				"segnalazioni",
+				"Segnalazioni",
 				"ho bisogno di fare una segnalazione"
 			],
 			"responses": [
@@ -599,10 +602,12 @@
 				"no grazie",
 				"No Grazie",
 			    "No grazie",
+				"Non mi serve altro",
 				"non mi serve altro",
 				"Niente",
 				"niente",
 				"nient'altro",
+				"Nient'altro",
 				"Non voglio fare niente",
 				"Non ho bisogno di nulla",
 				"Non mi serve nient'altro",
