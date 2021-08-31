@@ -566,11 +566,10 @@
 		{
 			"name": "WalletBarPanini",
 			"samples": [
-				"Ho preso un panino. Lo metti in conto alla camera?",
-				"ho preso un saltinbocca. lo metti sul mio conto?"
+				"Ho preso un panino. Lo metti in conto alla camera?"
 			],
 			"responses": [
-				"Ok, metto in conto un panino alla sua camera. Posso fare altro?"
+				"Ok, metto un panino in conto  alla sua camera. Posso fare altro?"
 			]
 		},
 		{
@@ -590,6 +589,20 @@
 			],
 			"responses": [
 				"Sì, sarà fatto! Ha bisogno di qualcos’altro? "
+			]
+		},
+		{
+			"name": "Ringraziamenti",
+			"samples": [
+				"ok, grazie mille",
+				"ottimo, grazie",
+				"la ringrazio molto",
+				"grazie, gentilissimo",
+				"Mille grazie"
+			],
+			"responses": [
+				"Prego, ha bisogno d'altro?",
+				"Si figuri. Posso fare altro?"
 			]
 		},
 		{
@@ -613,13 +626,17 @@
 				"nient'altro grazie"
 			],
 			"responses": [
-				"ok, qualunque cosa non esiti a contattarmi.",
-				"resto comunque a sua disposizione.",
-				"va bene se ha bisogno sono sempre qui, arrivederci."
-			]
+				"Ok, qualunque cosa non esiti a contattarmi.",
+				"Va bene, resto comunque a sua disposizione.",
+				"Va bene se ha bisogno sono sempre qui, arrivederci."
+			],
+			"context": {
+				"set": "nointring",
+				"required": "info"
+			}
 		},
 		{
-			"name": "Ringraziamenti",
+			"name": "RingraziamentiNoInt",
 			"samples": [
 				"ok, grazie mille",
 				"ottimo, grazie",
@@ -628,10 +645,14 @@
 				"Mille grazie"
 			],
 			"responses": [
-				"Prego, ha bisogno di altro?",
-				"Di nulla. Posso fare altro?",
-				"Si figuri, desidera altro?"
-			]
+				"Prego, a risentirla.",
+				"Di nulla. A presto.",
+				"Si figuri, alla prossima."
+			],
+			"context": {
+				"set": null,
+				"required": "nointring"
+			}
 		}
 	],
 	"defaults": ["Non ho capito, vuole fare una segnalazione o vuole informazioni?",
