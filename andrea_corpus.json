@@ -632,7 +632,7 @@
 			],
 			"context": {
 				"set": "nointring",
-				"required": "info"
+				"required": null
 			}
 		},
 		{
