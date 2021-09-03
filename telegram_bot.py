@@ -34,8 +34,7 @@ def bot_ask(update: Update, context: CallbackContext):
 @typing()
 def start(update: Update, context: CallbackContext):
     msgs = [
-        'Salve sono Andrea, il virtual Concierge di Baia Marticana.\nPosso darle informazioni sulla struttura, info turistiche o prendere segnalazioni relative alla camera. Come posso aiutarla?',
-        'Salve sono Andrea, il virtual Concierge, le do il benvenuto in Baia Marticana.\nPuò chiedermi informazioni turistiche, info sulla struttura e fare segnalazioni relative alla camera. Come posso essere utile?'
+        'Salve, sono Andrea, il concierge virtuale di Baia Marticana. Le do il benvenuto! Per accedere al servizio e continuare a chattare, ho bisogno del codice di prenotazione. E’ un numero di 6 cifre, che dovrebbe aver ricevuto via email. Per favore, lo scriva a continuazione. '
     ]
     update.effective_message.reply_text(
         choice(msgs)

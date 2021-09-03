@@ -1,5 +1,47 @@
 {
 	"intents": [{
+			"name": "NoCodice",
+			"samples": [
+				"Non trovo il numero",
+				"Non ho ricevuto l’email",
+				"Non ce l’ho il numero",
+				"Non ce l’ho il codice",
+				"Non ho nessun codice",
+				"Non ho nessun numero",
+				"Io non ce l’ho il numero, come facciamo?",
+				"Io non ce l’ho il codice, come facciamo?",
+				"Dove lo trovo?",
+				"Non ce l’ho sottomano",
+				"Non ce l’ho",
+				"Non possiamo continuare senza il codice?"
+			],
+			"responses": [
+				"Se non ha il numero, possiamo andare avanti comunque con nome, cognome e email",
+				"Se non trova il codice, avrò bisogno di  nome, cognome e email",
+				"Se no ha il codice, mi può scrivere  nome, cognome e email"
+			],
+			"context": {
+				"set": "nocod",
+				"required": null
+			}
+		},
+		{
+			"name": "NoCodEscalation",
+			"samples": [
+				"Mi chiamo [PER]",
+				"Sono [PER]"
+			],
+			"responses": [
+				"Perfetto! Ora mi dica come posso essere utile",
+				"Ottimo! Sono al suo servizio: come posso esserle utile?",
+				"Benissimo, possiamo cominciare. Cosa posso fare per lei?"
+			],
+			"context": {
+				"set": null,
+				"required": "nocod"
+			}
+		},
+		{
 			"name": "Manutenzione",
 			"samples": [
 				"Il condizionatore non funziona",
@@ -82,7 +124,7 @@
 			}
 		},
 		{
-			"name": "Housekeeping",
+			"name": "HousekeepingLamentele",
 			"samples": [
 				"Il bagno non è stato pulito bene",
 				"Il bagno è sporco",
@@ -102,7 +144,7 @@
 				"il frigorifero è vuoto",
 				"Come mai non c'è nulla in frigo?",
 				"Ma possibile che il frigobar sia vuoto?",
-				"Perchè non ci sono bibite in frigo?",
+				"Perché non ci sono bibite in frigo?",
 				"Questo frigo è vuoto",
 				"In questo frigo non c'è nulla",
 				"Il frigo è troppo freddo",
@@ -112,46 +154,18 @@
 				"non mi hanno rifatto il letto",
 				"la camera è sporca",
 				"il letto era sporco",
-				"avrei bisogno di una asciugamano",
-				"mancano le asciugamani",
-				"vorrei un'asciugamano",
-				"mi potete cambiare le lenzuola?",
-				"mi potete portare un cuscino più alto?",
-				"questo cuscino è troppo basso",
-				"avete cuscini antiacari?",
-				"avete cuscini anallergici?",
-				"vorrei un lezuolo pulito",
-				"avrei bisogno di un lenzuolo pulito",
-				"le lenzuola sono sporche, potete cambiarmele?",
 				"mancano gli asciugamani",
-				"ho bisogno di un asciugamani",
-				"ho bisogno di un'asciugamani",
+				"mancano le asciugamano”,
+				"avrei bisogno di una asciugamano",
 				"non c'è l'asciugamano",
-				"avete anche un cusino antiacaro",
-				"avete anche un cuscino antiacari?",
-				"avreste un cuscino antiacaro?",
-				"sono un soggetto allergico, avete cuscini anallergici?",
-				"sono un soggetto allergico, avete cusicni antiacari?",
-				"sono allergico agli acari, avete cuscini antiacari?",
-				"cuscini antiacari?",
 				"lenzuoli sporchi",
-				"lenzuola sporche",
-				"lenzuole pulite"
+				"lenzuola sporche"
 			],
 			"responses": [
-				"Mi scuso per il disagio, provvedo subito ad informare il personale, nel frattempo posso fare altro per lei?",
-				"Mi dispiace per l'inconveniente, informo subito gli addetti, cos'altro posso fare?",
-				"Provvedo subito per risolvere l'inconveniente. Necessita di altro?",
-				"Informo subito il personale per risolvere il disagio. Posso aiutarla in altro?",
-				"Mi scuso per l'inconveniente, informo subito gli addetti ai lavori. Desidera altro?",
-				"Mi spiace per il disagio, informo subito il personale. Nel mentre desidera altro?",
-				"Informo subito gli addetti per risolvere il prima possibile, mi scuso per il disagio. C'è altro che posso fare per lei?",
-				"Provvedo immediatamente ad informare il personale, mi scuso per l'inconveniente. Ha bisogno di altro?",
-				"Mi scuso per l'inconveniente, provvedo ad informare un'addetta. Ha bisogno d'altro?",
-				"Provvedo ad informare gli addetti. Necessita di altro?",
-				"Comunico subito il problema all'addetto. Ha bisogno di altro?",
-				"Informo subito il personale per il problema riscontrato. Necessita di altro?"
-			],
+				"Mi dispiace per l’inconveniente. Informo subito il personale, che provvederà al più presto. C'è altro che posso fare per lei?",
+				"Mi scuso per l’inconveniente. Invio la segnalazione a un’addetta che provvederà al più presto. Ha bisogno d’altro?",
+				"Grazie per la segnalazione e scusi per l’inconveniente. Avviso subito chi di dovere e un’addetta provvederà al più presto. Ha bisogno d’altro?"
+		],
 			"context": {
 				"set": "houseke",
 				"required": null
@@ -181,6 +195,27 @@
 				"set": null,
 				"required": "houseke"
 			}
+		},
+		{
+			"name": "HousekeepingRichieste",
+			"samples": [
+				"vorrei un'asciugamano",
+				"mi potete cambiare le lenzuola?",
+				"mi potete portare un cuscino più alto?",
+				"questo cuscino è troppo basso",
+				"vorrei un lenzuolo pulito",
+				"avrei bisogno di un lenzuolo pulito",
+				"le lenzuola sono sporche, potete cambiarmele?",
+				"ho bisogno di un asciugamani",
+				"ho bisogno di un'asciugamani",
+				"lenzuole pulite"
+			],
+			"responses": [
+				"Informo subito il personale, che provvederà al più presto. C'è altro che posso fare per lei?",
+				"Provvedo immediatamente ad informare il personale. Ha bisogno di altro?",
+				"Provvedo ad informare gli addetti. Necessita di altro?",
+				"Mando subito la segnalazione e un addetto provvederà appena possibile. Posso fare altro?",
+			]
 		},
 		{
 			"name": "ServiziColazione",
@@ -556,6 +591,20 @@
 			}
 		},
 		{
+			"name": "WalletBarColazione",
+			"samples": [
+				"Ho preso un cornetto me lo segna in camera?,",
+				"Ho preso un caffè me lo segna in camera?,",
+				"Ho preso un caffè e un cornetto. Me lo segni?",
+				"Ho preso un caffè e una graffa. Me lo segni?",
+				"Un caffè e una treccia. Me lo segna sulla camera?",
+				"Un cornetto e un cappuccino da segnare in camera"
+			],
+			"responses": [
+				"Certo, le segno la colazione sulla camera. Ha bisogno di altro?"
+			]
+		},
+		{
 			"name": "WalletBarGelato",
 			"samples": [
 				"Ho preso un gelato. Me lo segni sulla camera?",
@@ -578,7 +627,10 @@
 		{
 			"name": "WalletBarTramezzini",
 			"samples": [
-				"Mi metti in conto un tramezzino?"
+				"Mi metti in conto un tramezzino?",
+				"Mi segna un tramezzino sul conto della camera?",
+				"mi segni sul conto un tramezzino",
+				"sul conto della camera mi segni un tramezzino"
 			],
 			"responses": [
 				"Sì, certo, provvedo subito. C’è altro?"
