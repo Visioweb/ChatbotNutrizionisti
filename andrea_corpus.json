@@ -109,12 +109,10 @@
 			],
 			"responses": [
 				"Mi dispiace. Segnalo subito il problema e appena possibile verrà un addetto. Posso fare altro?",
-				"Informo subito un'addetto per risolvere il problema. Ha bisogno di altro?",
-				"Mi scuso per il disagio, provvedo subito ad informare l'addetto, cos'altro posso fare?",
-				"Mi spiace per l'inconveniente, appena possibile verrà l'addetto, vuole chiedermi altro?",
-				"Mi dispiace. Informo subito il tecnico per risolvere quanto prima. Posso fare altro?",
-				"Provvedo subito ad informare l'addetto. Ha bisogno di altro?",
-				"Comunico il problema all'addetto per risolvere il prima possibile. Cos'altro posso fare per lei?"
+				"Informo subito un addetto. Ha bisogno di altro?",
+				"Mi scuso per il disagio, provvedo subito ad informare l'addetto. Posso fare altro?",
+				"Mi spiace per l'inconveniente, appena possibile verrà un tecnico. Vuole chiedermi altro?",
+				"Comunico subito il problema e il prima possibile verrà un addetto. Ha bisogno di qualcos'altro?"
 			],
 			"context": {
 				"set": "manut",
@@ -141,8 +139,8 @@
 			],
 			"responses": [
 				"Non sono in grado di darle un orario preciso, ma la segnalazione è già partita. Desidera altro?",
-				"Non saprei dirle una certezza, ma la richiesta è stata fatta. Posso fare altro?",
-				"L'ho informato dell'inconveniente, arriverà appena possibile, ha bisogno d'altro?",
+				"La richiesta è stata inviata, verrà appena possibile. Posso fare altro?",
+				"L'ho informato dell'inconveniente, arriverà appena possibile. Ha bisogno d'altro?",
 				"Il tecnico è stato informato, sarà lì appena possibile. Desidera altro?"
 			],
 			"context": {
@@ -214,7 +212,7 @@
 				"Cosa c'è di bello da visitare?"
 			],
 			"responses": [
-				"Posso consigliarle di visitare il centro storico di Castellabate oppure il Museo Archeologico di Paestum",
+				"Posso consigliarle di visitare il centro storico di Castellabate, oppure il Museo Archeologico di Paestum",
 				"Le suggerisco di visitare il Museo Archeologico di Paestum oppure Il centro di Castellabate",
 				"Potrebbe interessarle il Museo Archeologico di Paestum oppure il centro storico di Castellabate"
 			],
@@ -452,7 +450,6 @@
 				"Perfetto. La sua prenotazione per la cena alle ore 21.00 è andata a buon fine. Ha bisogno di altro?",
 				"La sua prenotazione è confermata, ha bisogno di altro?",
 				"La prenotazione per la cena di questa sera è andata a buon fine, ha bisogno di altro?",
-				"Può prenotare ogni volta che desidera, posso fare altro?",
 				"La sua prenotazione è andata a buon fine, ha bisogno di altro?"
 			],
 			"context": {
@@ -479,12 +476,12 @@
 				"avete anche una piscina?"
 			],
 			"responses": [
-				"La piscina è aperta dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, c'è altro che posso fare per lei?",
-				"Gli orari della piscina sono dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
-				"L'accesso alla piscina è consentito dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
-				"Può usufruire della piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
+				"La piscina è aperta dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30. C'è altro che posso fare per lei?",
+				"Gli orari della piscina sono: dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30. Ha bisogno di altro?",
+				"L'accesso alla piscina è consentito dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30. Ha bisogno di altro?",
+				"Può usufruire della piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30. Ha bisogno di altro?",
 				"L'ingresso in piscina è possibile dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?",
-				"è possibile accederealla piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?"
+				"E' possibile accedere alla piscina dalle 9.30 alle 13.30 e poi dalle 15.00 alle 19.30, ha bisogno di altro?"
 			]
 		},
 		{
@@ -499,12 +496,10 @@
 				"L'ombrellone e i lettini si pagano a parte?"
 			],
 			"responses": [
-				"Ogni stanza ha diritto ad un ombrellone e due lettini assegnati casualmente, a meno che non decida di pagare un extra per la prima o la seconda fila. Ha bisogno di altro?",
+				"L’ombrellone viene assegnato con la prenotazione della camera automaticamente in terza o quarta fila. Per la fila è richiesto extra di 10€ al giorno, per la seconda fila di 6€ al giorno."
+				"Ogni stanza ha diritto ad un ombrellone e due lettini assegnati casualmente, a meno che non decida di pagare un extra giornaliero di 10€ per la prima e 6€ per la seconda. Ha bisogno di altro?",
 				"L'ombrellone e i lettini sono compresi nel prezzo. Ha bisogno di altro?",
-				"L'ombrellone con due lettini sono assegnati casualmente ad ogni appartamento. Ha bisogno di altro?",
-				"L'ombrellone ed i lettini, sono inclusi nel prezzo. Ha bisogno di altro?",
-				"L'utilizzo dell'ombrellone e dei lettini è compreso nel prezzo del soggiorno. Ha bisogno di altro?",
-				"L'ombrellone, è compreso nel prezzo di soggiorno, a meno che non decida di pagare un extra per la prima o la seconda fila. Ha bisogno di altro?"
+				"L'utilizzo dell'ombrellone e dei lettini è compreso nel prezzo del soggiorno. C'è un extra di 10€ al giorno per ombrelloni in prima fila, e di 6€ al giorno per la seconda fila. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": "info",
@@ -525,10 +520,10 @@
 			],
 			"responses": [
 				"Ogni nostro cliente ha un posto auto nel parcheggio, non ci sono posti riservati. Ha bisogno di altro?",
-				"Il parcheggio è compreso nel prezzo, dunque non ha costi aggiuntivi. Ha bisogno di altro?",
-				"Il parcheggio è incluso nel prezzo. Ha bisogno di altro?",
-				"Il posto auto è incluso nel prezzo di soggiorno, ha bisogno di altro?",
-				"Il parcheggio è compreso nel soggiorno. Ha bisogno di altro?",
+				"Il parcheggio è compreso nel prezzo. Ha bisogno di altro?",
+				"Il parcheggio è incluso nel prezzo. Posso fare altro?",
+				"Il posto auto è incluso nel prezzo di soggiorno. Desidera qualcos'altro?",
+				"Il parcheggio è compreso nel soggiorno. Vuole chiedermi altro?",
 				"L'utilizzo del parcheggio non ha costi aggiuntivi. Ha bisogno di altro?"
 			],
 			"context": {
@@ -548,9 +543,7 @@
 			],
 			"responses": [
 				"Può prenotare la colazione in ogni momento ed addebitarla alla camera. Posso esserle di aiuto in altro modo?",
-				"La colazione può prenotarla quando vuole e addebitarla alla camera. Ha bisogno di altro?",
-				"Può prenotare la colazione in ogni momento e lasciare l'addebito alla sua camera. Ha bisogno di altro?",
-				"Se vuole prenotare la colazione, può farlo in ogni momento. Ha bisogno di altro?"
+				"Può prenotare la colazione quando lo desidera e lasciare l'addebito alla sua camera. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": "prenot",
@@ -570,8 +563,8 @@
 			],
 			"responses": [
 				"Per connettersi alla rete WI-FI può cercare la rete Residence Baia Marticana digitando la password @Baiamarticana2012, il servizio è gratuito. Ha bisogno di altro?",
-				"Le credenziali della rete WI-FI sono le seguenti Residence Baia Marticana digitando la password @Baiamarticana2012. Desidera altro?",
-				"Per accedere al WI-FI inserisca le seguenti credenziali Residence Baia Marticana digitando la password @Baiamarticana2012. Ha bisogno di altro?"
+				"Le credenziali della rete WI-FI sono le seguenti: Residence Baia Marticana digitando la password @Baiamarticana2012. Desidera altro?",
+				"Per accedere al WI-FI inserisca le seguenti credenziali: Residence Baia Marticana digitando la password @Baiamarticana2012. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": null,
@@ -590,7 +583,7 @@
 				"Può prendere al bar ciò che desidera ed addebitarlo direttamente sul conto dell'appartamento. Posso essere utile in altro?",
 				"Può usufruire del servizio bar e addebitare alla camera ciò che consuma. Ha bisogno di altro?",
 				"Al bar può consumare ciò che desidera ed addebitare alla sua camera. Ha bisogno di altro?",
-				"Può usufruire del bar ogni volta che desidera e addebitare le consumazioni alla camera. Ha bisogno di altro?"
+				"Può usufruire del bar ogni volta che lo desidera e addebitare le consumazioni alla camera. Ha bisogno di altro?"
 			],
 			"context": {
 				"set": "info",
