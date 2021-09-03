@@ -1,5 +1,26 @@
 {
 	"intents": [{
+			"name": "SiCodice",
+			"samples": [
+				"Il mio codice è 123456",
+				"123456",
+				"Eccolo 123456",
+				"eccolo: 123456",
+				"Questo è il codice: 123456",
+				"il codice 123456",
+				"Di seguito il codice: 123456",
+				"eccoti il codice 123456",
+				"è questo? 123456",
+				"può verificare se il codice è questo: 123456?",
+				"può verificare se il codice è questo: 123456 ?"
+			],
+			"responses": [
+				"Perfetto! Ora mi dica come posso essere utile",
+				"Ottimo! Sono al suo servizio: come posso esserle utile?",
+				"Benissimo, possiamo cominciare. Cosa posso fare per lei?"
+			]
+		},
+		{
 			"name": "NoCodice",
 			"samples": [
 				"Non trovo il numero",
@@ -17,8 +38,8 @@
 			],
 			"responses": [
 				"Se non ha il numero, possiamo andare avanti comunque con nome, cognome e email",
-				"Se non trova il codice, avrò bisogno di  nome, cognome e email",
-				"Se no ha il codice, mi può scrivere  nome, cognome e email"
+				"Se non trova il codice, avrò bisogno di nome, cognome e email",
+				"Se no ha il codice, mi può scrivere nome, cognome e email"
 			],
 			"context": {
 				"set": "nocod",
@@ -28,13 +49,19 @@
 		{
 			"name": "NoCodEscalation",
 			"samples": [
-				"Mi chiamo [PER]",
-				"Sono [PER]"
+				"Mi chiamo Francesco Ingrosso e la mia email è info@visioweb.it",
+				"Sono Francesco Ingrosso e la mia email è info@visioweb.it",
+				"Francesco Ingrosso info@visioweb.it",
+				"Ingrosso Francesco info@visioweb.it",
+				"francesco ingosso info@visioweb.it",
+				"nome Francesco, cognome Ingrosso, mail info@visioweb.it",
+				"Francesco ingrosso mail: info@visioweb.it",
+				"Nome: Francesco, cognome: Ingrosso, mail: info@visioweb.it"
 			],
 			"responses": [
-				"Perfetto! Ora mi dica come posso essere utile",
-				"Ottimo! Sono al suo servizio: come posso esserle utile?",
-				"Benissimo, possiamo cominciare. Cosa posso fare per lei?"
+				"Perfetto! Il suo codice è 123456. Ora mi dica come posso essere utile",
+				"Ottimo! Il suo codice è 123456. Come posso esserle utile?",
+				"Benissimo,  Il suo codice è 123456. Cosa posso fare per lei?"
 			],
 			"context": {
 				"set": null,
