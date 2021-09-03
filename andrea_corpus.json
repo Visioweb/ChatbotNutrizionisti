@@ -155,7 +155,7 @@
 				"la camera è sporca",
 				"il letto era sporco",
 				"mancano gli asciugamani",
-				"mancano le asciugamano”,
+				"mancano le asciugamano",
 				"avrei bisogno di una asciugamano",
 				"non c'è l'asciugamano",
 				"lenzuoli sporchi",
@@ -165,7 +165,7 @@
 				"Mi dispiace per l’inconveniente. Informo subito il personale, che provvederà al più presto. C'è altro che posso fare per lei?",
 				"Mi scuso per l’inconveniente. Invio la segnalazione a un’addetta che provvederà al più presto. Ha bisogno d’altro?",
 				"Grazie per la segnalazione e scusi per l’inconveniente. Avviso subito chi di dovere e un’addetta provvederà al più presto. Ha bisogno d’altro?"
-		],
+			],
 			"context": {
 				"set": "houseke",
 				"required": null
@@ -214,7 +214,7 @@
 				"Informo subito il personale, che provvederà al più presto. C'è altro che posso fare per lei?",
 				"Provvedo immediatamente ad informare il personale. Ha bisogno di altro?",
 				"Provvedo ad informare gli addetti. Necessita di altro?",
-				"Mando subito la segnalazione e un addetto provvederà appena possibile. Posso fare altro?",
+				"Mando subito la segnalazione e un addetto provvederà appena possibile. Posso fare altro?"
 			]
 		},
 		{
@@ -653,7 +653,7 @@
 				"No",
 				"no grazie",
 				"No Grazie",
-			    "No grazie",
+				"No grazie",
 				"Non mi serve altro",
 				"non mi serve altro",
 				"Niente",
