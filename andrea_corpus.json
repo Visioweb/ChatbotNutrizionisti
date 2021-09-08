@@ -190,14 +190,10 @@
 				"Mi dispiace per l’inconveniente. Informo subito il personale, che provvederà al più presto. C'è altro che posso fare per lei?",
 				"Mi scuso per l’inconveniente. Invio la segnalazione a un’addetta che provvederà al più presto. Ha bisogno d’altro?",
 				"Grazie per la segnalazione e scusi per l’inconveniente. Avviso subito chi di dovere e un’addetta provvederà al più presto. Ha bisogno d’altro?"
-			],
-			"context": {
-				"set": "houseke",
-				"required": null
-			}
+			]
 		},
 		{
-			"name": "EscursioninZona",
+			"name": "FareinZona",
 			"samples": [
 				"Cosa c'è da fare in zona?",
 				"Cosa si può fare in zona?",
@@ -215,11 +211,7 @@
 				"Posso consigliarle di visitare il centro storico di Castellabate, oppure il Museo Archeologico di Paestum",
 				"Le suggerisco di visitare il Museo Archeologico di Paestum oppure Il centro di Castellabate",
 				"Potrebbe interessarle il Museo Archeologico di Paestum oppure il centro storico di Castellabate"
-			],
-			"context": {
-				"set": null,
-				"required": "houseke"
-			}
+			]
 		},
 		{
 			"name": "HousekeepingRichieste",
