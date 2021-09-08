@@ -430,32 +430,7 @@
 			],
 			"responses": [
 				"Le consiglio di visitare gli Scavi Archeologici di Velia-Elea oppure può fare un'escursione con la barca col fondo di vetro, la organizzano alla Rosa dei Venti, ecco il numero: 3347209417. Spero di aver soddisfatto la sua richiesta, ha bisogno di altro?"
-			],
-			"context": {
-				"set": "escurs",
-				"required": null
-			}
-		},
-		{
-			"name": "PrenotazioneCena",
-			"samples": [
-				"Vorrei prenotare la cena al ristorante per questa sera ore 21.00 per due persone",
-				"Voglio prenotare la cena per questa sera",
-				"Ho bisogno di prenotare la cena per stasera",
-				"Vorrei prenotare un tavolo per cena",
-				"Devo prenotare un tavolo per la cena"
-
-			],
-			"responses": [
-				"Perfetto. La sua prenotazione per la cena alle ore 21.00 è andata a buon fine. Ha bisogno di altro?",
-				"La sua prenotazione è confermata, ha bisogno di altro?",
-				"La prenotazione per la cena di questa sera è andata a buon fine, ha bisogno di altro?",
-				"La sua prenotazione è andata a buon fine, ha bisogno di altro?"
-			],
-			"context": {
-				"set": null,
-				"required": "escurs"
-			}
+			]
 		},
 		{
 			"name": "InfoPiscina",
