@@ -208,9 +208,9 @@
 				"Cosa c'è di bello da visitare?"
 			],
 			"responses": [
-				"Posso consigliarle di visitare il centro storico di Castellabate, oppure il Museo Archeologico di Paestum",
-				"Le suggerisco di visitare il Museo Archeologico di Paestum oppure Il centro di Castellabate",
-				"Potrebbe interessarle il Museo Archeologico di Paestum oppure il centro storico di Castellabate"
+				"Posso consigliarle di visitare il centro storico di Castellabate, oppure il Museo Archeologico di Paestum. Posso fare altro?",
+				"Le suggerisco di visitare il Museo Archeologico di Paestum oppure Il centro di Castellabate. Desidera altro?",
+				"Potrebbe interessarle il Museo Archeologico di Paestum oppure il centro storico di Castellabate. Ha bisogno di altro?"
 			]
 		},
 		{
