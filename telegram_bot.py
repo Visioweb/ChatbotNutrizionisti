@@ -1,6 +1,6 @@
 from apt.auth import update
 from telegram.ext import Updater, CallbackContext, Filters, Dispatcher, MessageHandler, CommandHandler
-from telegram import Update, ChatAction, ParseMode
+from telegram import Update, ChatAction, ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 from random import choice
 from time import sleep
 from chatbot import Chatbot
@@ -39,7 +39,8 @@ def bot_ask(update: Update, context: CallbackContext):
                 1002946854,
                 f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\nQuesta è la sua conv: \n\n'
                 f'{ultimeConvUtente(update.effective_user.id)}',
-                parse_mode=ParseMode.HTML
+                parse_mode=ParseMode.HTML,
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('Aiuta l\'utente', url=f'tg://user?id={update.effective_user.id}')]])
             )
         else:
             context.chat_data['intent_sconosciuto'] = context.chat_data.get('intent_sconosciuto', 0)+1
