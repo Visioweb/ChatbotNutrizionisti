@@ -32,7 +32,7 @@ def bot_ask(update: Update, context: CallbackContext):
         update.effective_message.reply_text('Ti passo un operatore')
         context.bot.send_message(
             1002946854,
-            f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\n{update.effective_message.text}',
+            f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\n{update.effective_message.text_html}',
             parse_mode=ParseMode.HTML
         )
 
