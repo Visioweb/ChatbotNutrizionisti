@@ -24,11 +24,15 @@ def bot_ask(update: Update, context: CallbackContext):
 
     chatbot = Chatbot(sensitivity=0.4)
     chatbot.load()
-    response, new_context, _ = chatbot.ask(update.effective_message.text,
+    response, new_context, _, intent = chatbot.ask(update.effective_message.text,
                                            current_context=context.chat_data.get('context'),
                                            return_proba=True)
+    query_db(intent, update.effective_message.text)
     context.chat_data['context'] = new_context
     update.effective_message.reply_text(response)
+
+def query_db(intent, text):
+    print(intent, text)
 
 
 @typing()

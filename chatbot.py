@@ -73,6 +73,7 @@ class Chatbot:
 
         y_proba = self._model.predict([x])[0]
         y_sorted = np.argsort(y_proba)[::-1]
+        y_sorted = np.argsort(y_proba)[::-1]
 
         response = None
         new_context = None
@@ -101,7 +102,7 @@ class Chatbot:
         self._save_conv_db(question, response, intent, y_proba_max, errore, new_context)
         self._save_log(question, response, intent, y_proba_max)
 
-        return (response, new_context, y_proba_max) if return_proba else response
+        return (response, new_context, y_proba_max, intent) if return_proba else response
 
 
     def train(self, corpus_file, epochs=1000, verbose=True):
