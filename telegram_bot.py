@@ -1,6 +1,6 @@
 from apt.auth import update
 from telegram.ext import Updater, CallbackContext, Filters, Dispatcher, MessageHandler, CommandHandler
-from telegram import Update, ChatAction
+from telegram import Update, ChatAction, ParseMode
 from random import choice
 from time import sleep
 from chatbot import Chatbot
@@ -32,7 +32,8 @@ def bot_ask(update: Update, context: CallbackContext):
         update.effective_message.reply_text('Ti passo un operatore')
         context.bot.send_message(
             1002946854,
-            f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\n{update.effective_message.text}'
+            f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\n{update.effective_message.text}',
+            parse_mode=ParseMode.HTML
         )
 
     else:
