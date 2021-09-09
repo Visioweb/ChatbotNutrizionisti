@@ -8,7 +8,7 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-# token per pushare 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
+# token per pushare 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
 
 @app.route('/ask', methods=["GET", "POST"])
 def ask():

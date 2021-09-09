@@ -20,29 +20,43 @@ def typing(secs: int = 1):
 
 @typing()
 def bot_ask(update: Update, context: CallbackContext):
-    print('Messaggio ricevuto:', update.effective_message.text)
-    print('Context attuale:', context.chat_data.get('context'))
+    #print('Messaggio ricevuto:', update.effective_message.text)
+    #print('Context attuale:', context.chat_data.get('context'))
 
     chatbot = Chatbot(sensitivity=0.4)
     chatbot.load()
+    #
     response, new_context, _, intent = chatbot.ask(update.effective_message.text,
                                            current_context=context.chat_data.get('context'),
                                            return_proba=True)
-    if intent=='Sconosciuto':
-        update.effective_message.reply_text('Ti passo un operatore')
-        context.bot.send_message(
-            1002946854,
-            f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\n{update.effective_message.text_html}',
-            parse_mode=ParseMode.HTML
-        )
 
+    query_db(update.effective_user.id, intent, update.effective_message.text)
+
+    if intent=='Sconosciuto':
+        if context.chat_data.get('intent_sconosciuto', 0)==1:
+            update.effective_message.reply_text('Ti passo un operatore')
+            context.bot.send_message(
+                1002946854,
+                f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\nQuesta è la sua conv: \n\n'
+                f'{ultimeConvUtente(update.effective_user.id)}',
+                parse_mode=ParseMode.HTML
+            )
+        else:
+            context.chat_data['intent_sconosciuto'] = context.chat_data.get('intent_sconosciuto', 0)+1
+            context.chat_data['context'] = new_context
+            update.effective_message.reply_text(response)
     else:
-        query_db(intent, update.effective_message.text)
         context.chat_data['context'] = new_context
         update.effective_message.reply_text(response)
+        context.chat_data['intent_sconosciuto'] = 0
 
-def query_db(intent, text):
-    print(intent, text)
+def query_db(userid, intent, text):
+    print(userid, intent, text) #qui inserire o selezionare i vari intent
+
+
+def ultimeConvUtente(userid):
+    print(userid)
+    #query ultimi 5 records dell utente userid mi deve restituire una stringa non un'array dove c'è la conversazione
 
 
 @typing()
