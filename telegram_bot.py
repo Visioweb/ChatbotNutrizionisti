@@ -1,3 +1,4 @@
+from apt.auth import update
 from telegram.ext import Updater, CallbackContext, Filters, Dispatcher, MessageHandler, CommandHandler
 from telegram import Update, ChatAction
 from random import choice
@@ -27,9 +28,17 @@ def bot_ask(update: Update, context: CallbackContext):
     response, new_context, _, intent = chatbot.ask(update.effective_message.text,
                                            current_context=context.chat_data.get('context'),
                                            return_proba=True)
-    query_db(intent, update.effective_message.text)
-    context.chat_data['context'] = new_context
-    update.effective_message.reply_text(response)
+    if intent=='Sconosciuto':
+        update.effective_message.reply_text('Ti passo un operatore')
+        context.bot.send_message(
+            1002946854,
+            f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\n{update.effective_message.text}'
+        )
+
+    else:
+        query_db(intent, update.effective_message.text)
+        context.chat_data['context'] = new_context
+        update.effective_message.reply_text(response)
 
 def query_db(intent, text):
     print(intent, text)
