@@ -58,8 +58,9 @@ def query_db(userid, intent, text):
     formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
     contesto = None
     risposta = "Non ho capito"
-    sql = "INSERT INTO conversations (telegram_id, domanda, risposta, intent, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
-    val = (userid, text, risposta, intent, contesto, formatted_date)
+    codCliente = ''
+    sql = "INSERT INTO conversations (telegram_id, codCliente, domanda, risposta, intent, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    val = (userid, codCliente, text, risposta, intent, contesto, formatted_date)
     cursor.execute(sql, val)
 
     db.commit()
