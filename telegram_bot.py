@@ -74,6 +74,17 @@ def query_db(userid, intent, text):
 def ultimeConvUtente(userid):
     print(userid)
     #query ultimi 5 records dell utente userid mi deve restituire una stringa non un'array dove c'è la conversazione
+    db = db_connect()
+    cursor = db.cursor()
+    cursor.execute("SELECT domanda, risposta FROM conversations WHERE telegram_id = '%s' ORDER BY id DESC LIMIT 5" % userid)
+    result = cursor.fetchall()
+
+    if (cursor.rowcount == 0):
+        conv = "nessuno"
+    else:
+        for convers in result:
+            print(convers)
+
 
 
 @typing()
