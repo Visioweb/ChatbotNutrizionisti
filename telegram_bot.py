@@ -80,10 +80,10 @@ def ultimeConvUtente(userid):
     result = cursor.fetchall()
 
     if (cursor.rowcount == 0):
-        conv = "nessuno"
+        conve = "nessuno"
     else:
-        for convers in result:
-            print(convers)
+        conve = help(result.join)
+    return conve
 
 
 
