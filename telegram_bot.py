@@ -82,7 +82,7 @@ def ultimeConvUtente(userid):
     if (cursor.rowcount == 0):
         conve = "nessuno"
     else:
-        conve = riga[0]+"\n"+riga[1] for riga in result
+        conve = [riga[0]+"\n"+riga[1] for riga in result]
 
 
     return conve
