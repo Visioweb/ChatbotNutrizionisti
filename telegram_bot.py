@@ -82,7 +82,7 @@ def ultimeConvUtente(userid):
     if (cursor.rowcount == 0):
         conve = "nessuno"
     else:
-        conve = '\n\n'.join([f'{riga[0]}\n{riga[1]}' for riga in result])
+        conve = '\n\n'.join([f'L\'utente ha scritto: {riga[0]}\nIl chatbot ha risposto: {riga[1]}' for riga in result])
 
 
     return conve
