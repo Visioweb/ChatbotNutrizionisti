@@ -82,7 +82,9 @@ def ultimeConvUtente(userid):
     if (cursor.rowcount == 0):
         conve = "nessuno"
     else:
-        conve = "\n\n".join("Utente: "+result[0]+"\nChatbot: "+result[1])
+        st = ''.join(map(str, result))
+        conve = "\n\n".join(st)
+
 
     return conve
 
