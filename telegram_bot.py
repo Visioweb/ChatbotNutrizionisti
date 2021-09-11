@@ -61,8 +61,11 @@ def query_db(userid, intent, text):
     contesto = None
     risposta = "Non ho capito"
     codCliente = ''
-    sql = "INSERT INTO conversations (telegram_id, codCliente, domanda, risposta, intent, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-    val = (userid, codCliente, text, risposta, intent, contesto, formatted_date)
+    probabilita = 0
+    errore = 1
+
+    sql = "INSERT INTO conversations (telegram_id, codCliente, domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    val = (userid, codCliente, text, risposta, intent, probabilita, errore, contesto, formatted_date)
     cursor.execute(sql, val)
 
     db.commit()
