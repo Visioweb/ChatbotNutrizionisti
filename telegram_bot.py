@@ -5,6 +5,8 @@ from random import choice
 from time import sleep
 from chatbot import Chatbot
 from actions import db_connect
+from datetime import datetime as dt
+
 
 
 def typing(secs: int = 1):
