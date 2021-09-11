@@ -4,6 +4,7 @@ from telegram import Update, ChatAction, ParseMode, InlineKeyboardMarkup, Inline
 from random import choice
 from time import sleep
 from chatbot import Chatbot
+from actions import db_connect
 
 
 def typing(secs: int = 1):
@@ -39,8 +40,7 @@ def bot_ask(update: Update, context: CallbackContext):
                 1002946854,
                 f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\nQuesta è la sua conv: \n\n'
                 f'{ultimeConvUtente(update.effective_user.id)}',
-                parse_mode=ParseMode.HTML,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('Aiuta l\'utente', url=f'tg://user?id={update.effective_user.id}')]])
+                parse_mode=ParseMode.HTML
             )
         else:
             context.chat_data['intent_sconosciuto'] = context.chat_data.get('intent_sconosciuto', 0)+1
@@ -53,6 +53,16 @@ def bot_ask(update: Update, context: CallbackContext):
 
 def query_db(userid, intent, text):
     print(userid, intent, text) #qui inserire o selezionare i vari intent
+    db = db_connect()
+    cursor = db.cursor()
+    formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
+    contesto = None
+    risposta = "Non ho capito"
+    sql = "INSERT INTO conversations (telegram_id, domanda, risposta, intent, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s)"
+    val = (userid, text, risposta, intent, contesto, formatted_date)
+    cursor.execute(sql, val)
+
+    db.commit()
 
 
 def ultimeConvUtente(userid):
@@ -70,18 +80,6 @@ def start(update: Update, context: CallbackContext):
         choice(msgs)
     )
 
-'''
-@typing()
-def nointent(update: Update, context: CallbackContext):
-    messgs = [
-        'ok, qualunque cosa non esiti a contattarmi.',
-        'resto comunque a sua disposizione.',
-        'va bene se ha bisogno sono sempre qui, arrivederci.'
-    ]
-    update.effective_message.reply_text(
-        choice(messgs)
-    )
-'''
 
 @typing()
 def salutigenerici(update: Update, context: CallbackContext):
@@ -117,15 +115,6 @@ dispatcher: Dispatcher = updater.dispatcher
 
 dispatcher.add_handler(CommandHandler('start', start, Filters.chat_type.private))
 
-'''
-dispatcher.add_handler(MessageHandler(Filters.chat_type.private & Filters.text(["no", "No", "no grazie", "No Grazie",
-                                                                                "No grazie", "non mi serve altro",
-                                                                                "Niente", "niente", "nient'altro", "Non voglio fare niente",
-                                                                                "Non ho bisogno di nulla", "Non mi serve nient'altro",
-                                                                                "non ho bisogno di nulla", "non ho bisogno di null'altro",
-                                                                                "Nient'altro grazie", "nient'altro grazie"]),
-                                      nointent))
-'''
 
 dispatcher.add_handler(MessageHandler(Filters.text & Filters.chat_type.private, bot_ask))
 
