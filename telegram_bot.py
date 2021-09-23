@@ -72,7 +72,7 @@ def query_db(userid, intent, text):
 
         db.commit()
         '''
-    else if intent=='NoCodEscalation':
+    elif intent=='NoCodEscalation':
         match = re.search(r'[\w\.-]+@[\w\.-]+', text)
         email_address = match.group(0)
         print(email_address)
