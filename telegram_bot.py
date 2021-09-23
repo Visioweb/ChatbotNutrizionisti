@@ -6,6 +6,7 @@ from time import sleep
 from chatbot import Chatbot
 from actions import db_connect
 from datetime import datetime as dt
+import re
 
 
 
@@ -28,7 +29,7 @@ def bot_ask(update: Update, context: CallbackContext):
 
     chatbot = Chatbot(sensitivity=0.4)
     chatbot.load()
-    #
+
     response, new_context, _, intent = chatbot.ask(update.effective_message.text,
                                            current_context=context.chat_data.get('context'),
                                            return_proba=True)
@@ -37,7 +38,7 @@ def bot_ask(update: Update, context: CallbackContext):
 
     if intent=='Sconosciuto':
         if context.chat_data.get('intent_sconosciuto', 0)==1:
-            update.effective_message.reply_text('Ti passo un operatore')
+            update.effective_message.reply_text('Attenda un secondo le passo l\'operatore...')
             context.bot.send_message(
                 1002946854,
                 f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\nQuesta è la sua conv: \n\n'
@@ -60,7 +61,22 @@ def query_db(userid, intent, text):
     formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
     contesto = None
     risposta = "Non ho capito"
-    codCliente = ''
+
+    if intent=='SiCodice':
+        codCliente = [int(temp)for temp in text if temp.isdigit()]
+        print(codCliente)
+        '''
+        sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
+        valco = (userid, codCliente, formatted_date)
+        cursor.execute(sqlco, valco)
+
+        db.commit()
+        '''
+    else if intent=='NoCodEscalation':
+        match = re.search(r'[\w\.-]+@[\w\.-]+', text)
+        email_address = match.group(0)
+        print(email_address)
+
     probabilita = 0
     errore = 1
 
