@@ -77,15 +77,18 @@ def query_db(userid, intent, text):
         email_address = match.group(0)
         print(email_address)
 
+    else:
+        print("altri intent")
+
     probabilita = 0
     errore = 1
-
+    '''
     sql = "INSERT INTO conversations (telegram_id, codCliente, domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
     val = (userid, codCliente, text, risposta, intent, probabilita, errore, contesto, formatted_date)
     cursor.execute(sql, val)
 
     db.commit()
-
+    '''
 
 def ultimeConvUtente(userid):
     print(userid)
