@@ -54,7 +54,7 @@ def bot_ask(update: Update, context: CallbackContext):
         update.effective_message.reply_text(response)
         context.chat_data['intent_sconosciuto'] = 0
 
-def query_db(userid, intent, text, idconve=None, vars=None):
+def query_db(userid, intent, text, idconve=None):
     print(userid, intent, text) #qui inserire o selezionare i vari intent
     db = db_connect()
     cursor = db.cursor()
