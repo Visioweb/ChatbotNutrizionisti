@@ -61,16 +61,14 @@ def query_db(userid, intent, text):
     formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
     contesto = None
     risposta = "Non ho capito"
-
     if intent=='SiCodice':
         codCliente = ''.join([str(temp) for temp in text if temp.isdigit()])
         print(codCliente)
-
         sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
         valco = (userid, codCliente, formatted_date)
         cursor.execute(sqlco, valco)
         db.commit()
-
+        idconversazioni = connection.insert_id()
         cursor.execute(
             "SELECT nome, cognome FROM clienti WHERE codCliente = '%s'" % userid)
         result = cursor.fetchall()
@@ -103,8 +101,8 @@ def query_db(userid, intent, text):
     probabilita = 0
     errore = 1
 
-    sql = "INSERT INTO conversations (telegram_id, codCliente, domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-    val = (userid, codCliente, text, risposta, intent, probabilita, errore, contesto, formatted_date)
+    sql = "INSERT INTO conversations (idConversazioni, telegram_id, codCliente, domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    val = (idconversazioni, userid, codCliente, text, risposta, intent, probabilita, errore, contesto, formatted_date)
     cursor.execute(sql, val)
 
     db.commit()
