@@ -171,8 +171,7 @@ class Chatbot:
             # allora la eseguiamo e utilizziamo il dizionario ritornato
             # nella risposta
             vars = self._actions_map[intent["name"]](entities)
-        else:
-            vars =
+
 
         for var in vars:
             # sostituiamo i placeholders con il dizionario
