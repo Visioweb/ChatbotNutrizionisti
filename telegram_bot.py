@@ -61,6 +61,7 @@ def query_db(userid, intent, text, idconve=None, vars=None):
     formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
     contesto = None
     risposta = "Non ho capito"
+    vars = {}
     if intent=='SiCodice':
         codCliente = ''.join([str(temp) for temp in text if temp.isdigit()])
         print(codCliente)
