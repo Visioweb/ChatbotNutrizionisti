@@ -31,6 +31,7 @@ class Chatbot:
     _corpus = None
 
     _actions_map = {}
+    _query_db = {}
 
     def __init__(self, sensitivity=0.8):
         self._nlp = spacy.load("it_core_news_sm")
@@ -43,6 +44,8 @@ class Chatbot:
 
     def add_action(self, intent, action):
         self._actions_map[intent] = action
+
+
 
     def ask(self, question, current_context=None, return_proba=False):
 
@@ -168,6 +171,8 @@ class Chatbot:
             # allora la eseguiamo e utilizziamo il dizionario ritornato
             # nella risposta
             vars = self._actions_map[intent["name"]](entities)
+        else:
+            vars =
 
         for var in vars:
             # sostituiamo i placeholders con il dizionario

@@ -107,6 +107,7 @@ def query_db(userid, intent, text, idconve=None, vars=None):
     cursor.execute(sql, val)
 
     db.commit()
+    return vars
 
 
 def ultimeConvUtente(userid):
