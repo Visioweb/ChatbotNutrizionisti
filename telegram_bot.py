@@ -62,6 +62,7 @@ def query_db(userid, intent, text, idconve=None):
     contesto = None
     risposta = "Non ho capito"
     vars = {}
+    var = {}
     if intent=='SiCodice':
         codCliente = ''.join([str(temp) for temp in text if temp.isdigit()])
         print(codCliente)
