@@ -68,8 +68,8 @@ def query_db(userid, intent, text):
         valco = (userid, codCliente, formatted_date)
         cursor.execute(sqlco, valco)
         db.commit()
-        idconversazioni = cursor.lastrowid
-        print(idconversazioni)
+        idconve = cursor.lastrowid
+        print(idconve)
         cursor.execute(
             "SELECT nome, cognome FROM clienti WHERE codCliente = '%s'" % userid)
         result = cursor.fetchall()
@@ -103,7 +103,7 @@ def query_db(userid, intent, text):
     errore = 1
 
     sql = "INSERT INTO conversations (idConversazioni, telegram_id, codCliente, domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-    val = (idconversazioni, userid, codCliente, text, risposta, intent, probabilita, errore, contesto, formatted_date)
+    val = (idconve, userid, codCliente, text, risposta, intent, probabilita, errore, contesto, formatted_date)
     cursor.execute(sql, val)
 
     db.commit()
