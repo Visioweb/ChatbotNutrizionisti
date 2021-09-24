@@ -77,9 +77,10 @@ def query_db(userid, intent, text, idconve=None):
         result = cursor.fetchall()
 
         if (cursor.rowcount == 0):
-            var['NominativoCliente'] = ""
+            var['NominativoCliente'] = "Sconosciuto"
         else:
             var['NominativoCliente'] = ' '.join([riga[0] + ' ' + riga[1] for riga in result])
+            print(var['NominativoCliente'])
 
         return vars
 
