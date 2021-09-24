@@ -63,7 +63,7 @@ def query_db(userid, intent, text):
     risposta = "Non ho capito"
 
     if intent=='SiCodice':
-        codCliente = str([temp for temp in text if temp.isdigit()])
+        codCliente = str("",join([temp for temp in text if temp.isdigit()]))
         print(codCliente)
         '''
         sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
