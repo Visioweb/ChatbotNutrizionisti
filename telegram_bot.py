@@ -68,7 +68,8 @@ def query_db(userid, intent, text):
         valco = (userid, codCliente, formatted_date)
         cursor.execute(sqlco, valco)
         db.commit()
-        idconversazioni = connection.insert_id()
+        idconversazioni = cursor.lastrowid
+        print(idconversazioni)
         cursor.execute(
             "SELECT nome, cognome FROM clienti WHERE codCliente = '%s'" % userid)
         result = cursor.fetchall()
