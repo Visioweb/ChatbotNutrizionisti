@@ -65,31 +65,50 @@ def query_db(userid, intent, text):
     if intent=='SiCodice':
         codCliente = ''.join([str(temp) for temp in text if temp.isdigit()])
         print(codCliente)
-        '''
+
         sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
         valco = (userid, codCliente, formatted_date)
         cursor.execute(sqlco, valco)
-
         db.commit()
-        '''
+
+        cursor.execute(
+            "SELECT nome, cognome FROM clienti WHERE codCliente = '%s'" % userid)
+        result = cursor.fetchall()
+
+        if (cursor.rowcount == 0):
+            var['NominativoCliente'] = ""
+        else:
+            var['NominativoCliente'] = ' '.join([{riga[0]} {riga[1]} for riga in result])
+
+        return vars
+
     elif intent=='NoCodEscalation':
         match = re.search(r'[\w\.-]+@[\w\.-]+', text)
         email_address = match.group(0)
         print(email_address)
         #fare query select per prelevare codCliente
+        cursor.execute(
+            "SELECT codCliente FROM clienti WHERE email = '%s'" % email_address)
+        result = cursor.fetchall()
 
+        if (cursor.rowcount == 0):
+            var['codCliente'] = ""
+        else:
+            var['codCliente'] = ''.join([{riga[0]} for riga in result])
+
+        return vars
     else:
         print("altri intent")
 
     probabilita = 0
     errore = 1
-    '''
+
     sql = "INSERT INTO conversations (telegram_id, codCliente, domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
     val = (userid, codCliente, text, risposta, intent, probabilita, errore, contesto, formatted_date)
     cursor.execute(sql, val)
 
     db.commit()
-    '''
+
 
 def ultimeConvUtente(userid):
     print(userid)

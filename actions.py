@@ -8,7 +8,7 @@ def db_connect():
                   port=35421,
                   user="benessere",
                   password="Callcenter1983",
-                  db="benessereevita")
+                  db="Hotel")
     return connection
   except Error as e:
       print(e)

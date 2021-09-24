@@ -3,21 +3,21 @@
 			"name": "SiCodice",
 			"samples": [
 				"Il mio codice è 123456",
-				"123456",
-				"Eccolo 123456",
-				"eccolo: 123456",
-				"Questo è il codice: 123456",
-				"il codice 123456",
-				"Di seguito il codice: 123456",
-				"eccoti il codice 123456",
-				"è questo? 123456",
-				"può verificare se il codice è questo: 123456?",
-				"può verificare se il codice è questo: 123456 ?"
+				"345698",
+				"Eccolo 875466",
+				"eccolo: 874541",
+				"Questo è il codice: 111222",
+				"il codice 112233",
+				"Di seguito il codice: 345687",
+				"eccoti il codice 989898",
+				"è questo? 222222",
+				"può verificare se il codice è questo: 747433?",
+				"può verificare se il codice è questo: 666859 ?"
 			],
 			"responses": [
-				"Perfetto! Ora mi dica come posso essere utile",
-				"Ottimo! Sono al suo servizio: come posso esserle utile?",
-				"Benissimo, possiamo cominciare. Cosa posso fare per lei?"
+				"Perfetto! Sig. <NominativoCliente> Ora mi dica come posso essere utile",
+				"Ottimo! Sig. <NominativoCliente> sono al suo servizio: come posso esserle utile?",
+				"Benissimo, Sig. <NominativoCliente> possiamo cominciare. Cosa posso fare per lei?"
 			]
 		},
 		{
@@ -59,9 +59,9 @@
 				"Nome: Francesco, cognome: Ingrosso, mail: info@visioweb.it"
 			],
 			"responses": [
-				"Perfetto! Il suo codice è 123456. Ora mi dica come posso essere utile",
-				"Ottimo! Il suo codice è 123456. Come posso esserle utile?",
-				"Benissimo,  Il suo codice è 123456. Cosa posso fare per lei?"
+				"Perfetto! Il suo codice è <codCliente>. Ora mi dica come posso essere utile",
+				"Ottimo! Il suo codice è <codCliente>. Come posso esserle utile?",
+				"Benissimo,  Il suo codice è <codCliente>. Cosa posso fare per lei?"
 			],
 			"context": {
 				"set": null,
