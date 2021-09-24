@@ -63,7 +63,7 @@ def query_db(userid, intent, text):
     risposta = "Non ho capito"
 
     if intent=='SiCodice':
-        codCliente = ''.join([int(temp)for temp in text if temp.isdigit()])
+        codCliente = str([temp for temp in text if temp.isdigit()])
         print(codCliente)
         '''
         sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
@@ -76,6 +76,7 @@ def query_db(userid, intent, text):
         match = re.search(r'[\w\.-]+@[\w\.-]+', text)
         email_address = match.group(0)
         print(email_address)
+        #fare query select per prelevare codCliente
 
     else:
         print("altri intent")
