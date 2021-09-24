@@ -10,7 +10,7 @@ import re
 
 
 
-def typing(secs: int = 1):
+def typing(secs: int = 0.5):
     def decorator(func):
         def wrapper(update: Update, context: CallbackContext):
             context.bot.send_chat_action(update.effective_chat.id, ChatAction.TYPING)
@@ -54,7 +54,7 @@ def bot_ask(update: Update, context: CallbackContext):
         update.effective_message.reply_text(response)
         context.chat_data['intent_sconosciuto'] = 0
 
-def query_db(userid, intent, text):
+def query_db(userid, intent, text, idconve=None, vars=None):
     print(userid, intent, text) #qui inserire o selezionare i vari intent
     db = db_connect()
     cursor = db.cursor()
