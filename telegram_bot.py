@@ -73,7 +73,7 @@ def query_db(userid, intent, text, idconve=None):
         idconve = cursor.lastrowid
         print(idconve)
         cursor.execute(
-            "SELECT nome, cognome FROM clienti WHERE codCliente = '%s'" % userid)
+            "SELECT nome, cognome FROM clienti WHERE codCliente = '%s'" % codCliente)
         result = cursor.fetchall()
 
         if (cursor.rowcount == 0):
