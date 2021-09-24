@@ -78,7 +78,7 @@ def query_db(userid, intent, text):
         if (cursor.rowcount == 0):
             var['NominativoCliente'] = ""
         else:
-            var['NominativoCliente'] = ' '.join([{riga[0]} {riga[1]} for riga in result])
+            var['NominativoCliente'] = ' '.join([riga[0] + ' ' + riga[1] for riga in result])
 
         return vars
 
@@ -94,7 +94,7 @@ def query_db(userid, intent, text):
         if (cursor.rowcount == 0):
             var['codCliente'] = ""
         else:
-            var['codCliente'] = ''.join([{riga[0]} for riga in result])
+            var['codCliente'] = ''.join([riga[0] for riga in result])
 
         return vars
     else:
