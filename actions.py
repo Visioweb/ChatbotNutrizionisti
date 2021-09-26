@@ -1,6 +1,7 @@
 from getpass import getpass
 from mysql.connector import connect, Error
 from datetime import datetime as dt
+import re
 
 
 def db_connect():

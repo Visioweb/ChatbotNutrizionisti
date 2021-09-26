@@ -6,7 +6,6 @@ from time import sleep
 from chatbot import Chatbot
 from actions import db_connect, siCodice, noCodEscalation
 from datetime import datetime as dt
-import re
 
 
 
