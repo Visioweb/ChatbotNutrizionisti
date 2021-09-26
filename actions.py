@@ -1,5 +1,7 @@
 from getpass import getpass
 from mysql.connector import connect, Error
+from datetime import datetime as dt
+
 
 def db_connect():
   try:
@@ -20,6 +22,36 @@ def notifiche():
 
   mydb.commit()
   return True
+
+
+def siCodice(text, userid):
+    def si_codice(vars):
+        db = db_connect()
+        cursor = db.cursor()
+        formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
+
+        codCliente = ''.join([str(temp) for temp in text if temp.isdigit()])
+        print(codCliente)
+        sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
+        valco = (userid, codCliente, formatted_date)
+        cursor.execute(sqlco, valco)
+        db.commit()
+        idconve = cursor.lastrowid
+        print(idconve)
+        cursor.execute(
+            "SELECT nome, cognome FROM clienti WHERE codCliente = '%s'" % codCliente)
+        result = cursor.fetchall()
+
+        if (cursor.rowcount == 0):
+            vars['NominativoCliente'] = "Sconosciuto"
+        else:
+            vars['NominativoCliente'] = ' '.join([riga[0] + ' ' + riga[1] for riga in result])
+            print(vars['NominativoCliente'])
+
+        return vars
+    return si_codice
+
+
 
 '''
 def search_nutritionists(vars):

@@ -4,7 +4,7 @@ from telegram import Update, ChatAction, ParseMode, InlineKeyboardMarkup, Inline
 from random import choice
 from time import sleep
 from chatbot import Chatbot
-from actions import db_connect
+from actions import db_connect, siCodice
 from datetime import datetime as dt
 import re
 
@@ -29,6 +29,8 @@ def bot_ask(update: Update, context: CallbackContext):
 
     chatbot = Chatbot(sensitivity=0.4)
     chatbot.load()
+
+    chatbot.add_action("SiCodice", siCodice(update.effective_message.text, update.effective_user.id))
 
     response, new_context, _, intent = chatbot.ask(update.effective_message.text,
                                            current_context=context.chat_data.get('context'),
@@ -61,30 +63,9 @@ def query_db(userid, intent, text, idconve=None):
     formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
     contesto = None
     risposta = "Non ho capito"
-    vars = {}
-    var = {}
-    if intent=='SiCodice':
-        codCliente = ''.join([str(temp) for temp in text if temp.isdigit()])
-        print(codCliente)
-        sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
-        valco = (userid, codCliente, formatted_date)
-        cursor.execute(sqlco, valco)
-        db.commit()
-        idconve = cursor.lastrowid
-        print(idconve)
-        cursor.execute(
-            "SELECT nome, cognome FROM clienti WHERE codCliente = '%s'" % codCliente)
-        result = cursor.fetchall()
 
-        if (cursor.rowcount == 0):
-            var['NominativoCliente'] = "Sconosciuto"
-        else:
-            var['NominativoCliente'] = ' '.join([riga[0] + ' ' + riga[1] for riga in result])
-            print(var['NominativoCliente'])
-
-        return vars
-
-    elif intent=='NoCodEscalation':
+    '''
+    if intent=='NoCodEscalation':
         match = re.search(r'[\w\.-]+@[\w\.-]+', text)
         email_address = match.group(0)
         print(email_address)
@@ -101,9 +82,11 @@ def query_db(userid, intent, text, idconve=None):
         return vars
     else:
         print("altri intent")
-
+    '''
     probabilita = 0
     errore = 1
+    idconve = 1
+    codCliente = 123456
 
     sql = "INSERT INTO conversations (idConversazioni, telegram_id, codCliente, domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     val = (idconve, userid, codCliente, text, risposta, intent, probabilita, errore, contesto, formatted_date)

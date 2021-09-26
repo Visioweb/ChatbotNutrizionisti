@@ -31,7 +31,6 @@ class Chatbot:
     _corpus = None
 
     _actions_map = {}
-    _query_db = {}
 
     def __init__(self, sensitivity=0.8):
         self._nlp = spacy.load("it_core_news_sm")
