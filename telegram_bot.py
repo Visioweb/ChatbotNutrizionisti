@@ -4,7 +4,7 @@ from telegram import Update, ChatAction, ParseMode, InlineKeyboardMarkup, Inline
 from random import choice
 from time import sleep
 from chatbot import Chatbot
-from actions import db_connect, siCodice
+from actions import db_connect, siCodice, noCodEscalation
 from datetime import datetime as dt
 import re
 
@@ -31,6 +31,8 @@ def bot_ask(update: Update, context: CallbackContext):
     chatbot.load()
 
     chatbot.add_action("SiCodice", siCodice(update.effective_message.text, update.effective_user.id))
+    chatbot.add_action("NoCodEscalation", noCodEscalation(update.effective_message.text, update.effective_user.id))
+
 
     response, new_context, _, intent = chatbot.ask(update.effective_message.text,
                                            current_context=context.chat_data.get('context'),
@@ -65,7 +67,6 @@ def query_db(userid, intent, text, idconve=None):
     risposta = "Non ho capito"
 
     '''
-    if intent=='NoCodEscalation':
         match = re.search(r'[\w\.-]+@[\w\.-]+', text)
         email_address = match.group(0)
         print(email_address)
@@ -80,8 +81,7 @@ def query_db(userid, intent, text, idconve=None):
             var['codCliente'] = ''.join([riga[0] for riga in result])
 
         return vars
-    else:
-        print("altri intent")
+
     '''
     probabilita = 0
     errore = 1

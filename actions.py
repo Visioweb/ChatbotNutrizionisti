@@ -51,7 +51,25 @@ def siCodice(text, userid):
         return vars
     return si_codice
 
+def noCodEscalation(text, userid):
+    def nocodEsc(vars):
+        db = db_connect()
+        cursor = db.cursor()
+        match = re.search(r'[\w\.-]+@[\w\.-]+', text)
+        email_address = match.group(0)
+        print(email_address)
+        #fare query select per prelevare codCliente
+        cursor.execute(
+            "SELECT codCliente FROM clienti WHERE email = '%s'" % email_address)
+        result = cursor.fetchall()
 
+        if (cursor.rowcount == 0):
+            vars['codCliente'] = ""
+        else:
+            vars['codCliente'] = ''.join([riga[0] for riga in result])
+
+        return vars
+    return nocodEsc
 
 '''
 def search_nutritionists(vars):
