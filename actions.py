@@ -44,7 +44,7 @@ def siCodice(text, userid):
         result = cursor.fetchall()
 
         if (cursor.rowcount == 0):
-            vars['NominativoCliente'] = "Sconosciuto"
+            vars['NominativoCliente'] = None
         else:
             vars['NominativoCliente'] = ' '.join([riga[0] + ' ' + riga[1] for riga in result])
             print(vars['NominativoCliente'])
@@ -65,7 +65,7 @@ def noCodEscalation(text, userid):
         result = cursor.fetchall()
 
         if (cursor.rowcount == 0):
-            vars['codCliente'] = ""
+            vars['codCliente'] = None
         else:
             vars['codCliente'] = ''.join([riga[0] for riga in result])
 

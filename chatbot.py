@@ -31,6 +31,7 @@ class Chatbot:
     _corpus = None
 
     _actions_map = {}
+    _actions_error_map = {}
 
     def __init__(self, sensitivity=0.8):
         self._nlp = spacy.load("it_core_news_sm")
@@ -43,6 +44,9 @@ class Chatbot:
 
     def add_action(self, intent, action):
         self._actions_map[intent] = action
+
+    def add_error_string(self, intent, error):
+        self._actions_error_map[intent] = error
 
 
 
@@ -173,8 +177,12 @@ class Chatbot:
 
 
         for var in vars:
+            if vars[var] == None:
+                return choice(self._actions_error_map.get(var, ["non ho trovato nulla"])), current_context
+
             # sostituiamo i placeholders con il dizionario
             response = response.replace("<" + var + ">", vars[var])
+
 
         return response, new_context
 

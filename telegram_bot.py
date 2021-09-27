@@ -30,7 +30,10 @@ def bot_ask(update: Update, context: CallbackContext):
     chatbot.load()
 
     chatbot.add_action("SiCodice", siCodice(update.effective_message.text, update.effective_user.id))
+    chatbot.add_error_string("SiCodice", ["Il codice inserito è errato, provane un altro", "Il codice non è registrato, potrebbe essere errato"])
+
     chatbot.add_action("NoCodEscalation", noCodEscalation(update.effective_message.text, update.effective_user.id))
+    chatbot.add_error_string("NoCodEscalation", ["La mail inserita è errata, provane un' altra", "La mail non è registrata, potrebbe essere errata"])
 
 
     response, new_context, _, intent = chatbot.ask(update.effective_message.text,
@@ -57,7 +60,7 @@ def bot_ask(update: Update, context: CallbackContext):
         update.effective_message.reply_text(response)
         context.chat_data['intent_sconosciuto'] = 0
 
-def query_db(userid, intent, text, idconve=None):
+def query_db(userid, intent, text):
     print(userid, intent, text) #qui inserire o selezionare i vari intent
     db = db_connect()
     cursor = db.cursor()
@@ -65,23 +68,6 @@ def query_db(userid, intent, text, idconve=None):
     contesto = None
     risposta = "Non ho capito"
 
-    '''
-        match = re.search(r'[\w\.-]+@[\w\.-]+', text)
-        email_address = match.group(0)
-        print(email_address)
-        #fare query select per prelevare codCliente
-        cursor.execute(
-            "SELECT codCliente FROM clienti WHERE email = '%s'" % email_address)
-        result = cursor.fetchall()
-
-        if (cursor.rowcount == 0):
-            var['codCliente'] = ""
-        else:
-            var['codCliente'] = ''.join([riga[0] for riga in result])
-
-        return vars
-
-    '''
     probabilita = 0
     errore = 1
     idconve = 1
@@ -92,7 +78,6 @@ def query_db(userid, intent, text, idconve=None):
     cursor.execute(sql, val)
 
     db.commit()
-    return vars
 
 
 def ultimeConvUtente(userid):
