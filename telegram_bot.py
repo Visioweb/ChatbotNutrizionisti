@@ -30,10 +30,10 @@ def bot_ask(update: Update, context: CallbackContext):
     chatbot.load()
 
     chatbot.add_action("SiCodice", siCodice(update.effective_message.text, update.effective_user.id))
-    chatbot.add_error_string("SiCodice", ["Il codice inserito è errato, provane un altro", "Il codice non è registrato, potrebbe essere errato"])
+    chatbot.add_error_string("NominativoCliente", ["Il codice inserito è errato, provane un altro", "Il codice non è registrato, potrebbe essere errato"])
 
     chatbot.add_action("NoCodEscalation", noCodEscalation(update.effective_message.text, update.effective_user.id))
-    chatbot.add_error_string("NoCodEscalation", ["La mail inserita è errata, provane un' altra", "La mail non è registrata, potrebbe essere errata"])
+    chatbot.add_error_string("codCliente", ["La mail inserita è errata, provane un' altra", "La mail non è registrata, potrebbe essere errata"])
 
 
     response, new_context, _, intent = chatbot.ask(update.effective_message.text,
