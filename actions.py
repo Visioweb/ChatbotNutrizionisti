@@ -64,11 +64,14 @@ def noCodEscalation(text, userid):
         cursor.execute(
             "SELECT codCliente FROM clienti WHERE email = '%s'" % email_address)
         result = cursor.fetchall()
+        print(result)
 
         if (cursor.rowcount == 0):
             vars['codCliente'] = None
         else:
             vars['codCliente'] = ''.join([riga[0] for riga in result])
+            print(vars['codCliente'])
+
             sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
             valco = (userid, codCliente, formatted_date)
             cursor.execute(sqlco, valco)
