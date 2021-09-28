@@ -92,11 +92,12 @@ def query_db(userid, intent, text, response):
         resultcl = cursor.fetchall()
 
         prezzo = 0
+        note = ''
         for recl in resultcl:
             idCliente = recl[0]
             idStanza = recl[1]
-        sqlw = "INSERT INTO wallet (`idStanza`, `idCliente`, `causale`, `prezzo`, `data`) VALUES (%s, %s, %s, %s, %s)"
-        valw = (idStanza, idCliente, text, prezzo, formatted_date)
+        sqlw = "INSERT INTO wallet (`idStanza`, `idCliente`, `causale`, `prezzo`, `data`, note) VALUES (%s, %s, %s, %s, %s, %s)"
+        valw = (idStanza, idCliente, text, prezzo, formatted_date, note)
         cursor.execute(sqlw, valw)
 
         db.commit()
