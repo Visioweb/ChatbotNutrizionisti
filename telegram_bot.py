@@ -74,8 +74,9 @@ def query_db(userid, intent, text, response):
 
     probabilita = 0
     errore = 0
-    idconve = result['id']
-    codCliente = result['codCliente']
+    for res in result:
+        idconve = res[0]
+        codCliente = res[1]
 
     sql = "INSERT INTO conversations (idConversazioni, telegram_id, codCliente, domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     val = (idconve, userid, codCliente, text, risposta, intent, probabilita, errore, contesto, formatted_date)
@@ -91,8 +92,9 @@ def query_db(userid, intent, text, response):
         resultcl = cursor.fetchall()
 
         prezzo = 0
-        idCliente = resultcl['id']
-        idStanza = resultcl['codCliente']
+        for recl in resultcl:
+            idCliente = recl[0]
+            idStanza = recl[1]
         sqlw = "INSERT INTO wallet (`idStanza`, `idCliente`, `causale`, `prezzo`, `data`) VALUES (%s, %s, %s, %s, %s)"
         valw = (idStanza, idCliente, text, prezzo, formatted_date)
         cursor.execute(sqlw, valw)
