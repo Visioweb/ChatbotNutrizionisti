@@ -73,7 +73,7 @@ def noCodEscalation(text, userid):
             print(vars['codCliente'])
 
             sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
-            valco = (userid, codCliente, formatted_date)
+            valco = (userid, vars['codCliente'], formatted_date)
             cursor.execute(sqlco, valco)
             db.commit()
             idconve = cursor.lastrowid
