@@ -30,10 +30,10 @@ def bot_ask(update: Update, context: CallbackContext):
     chatbot.load()
 
     chatbot.add_action("SiCodice", siCodice(update.effective_message.text, update.effective_user.id))
-    chatbot.add_error_string("NominativoCliente", ["Il codice inserito è errato, provane un altro", "Il codice non è registrato, potrebbe essere errato"])
+    chatbot.add_error_string("NominativoCliente", ["Il codice inserito è errato o non è nel database, ne provi un altro", "Il codice non è registrato, potrebbe essere errato"])
 
     chatbot.add_action("NoCodEscalation", noCodEscalation(update.effective_message.text, update.effective_user.id))
-    chatbot.add_error_string("codCliente", ["La mail inserita è errata, provane un'altra", "La mail non è registrata, potrebbe essere errata"])
+    chatbot.add_error_string("codCliente", ["La mail inserita è errata o non è nel nostro database, ne provi un'altra", "La mail non è registrata, potrebbe essere errata"])
 
 
     response, new_context, _, intent = chatbot.ask(update.effective_message.text,
@@ -47,7 +47,7 @@ def bot_ask(update: Update, context: CallbackContext):
             update.effective_message.reply_text('Attenda un secondo le passo l\'operatore...')
             context.bot.send_message(
                 1002946854,
-                f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\nQuesta è la sua conv: \n\n'
+                f'L\'utente {update.effective_user.mention_html()} ha bisogno di aiuto:\n\nQuesta è la sua conversazione: \n\n'
                 f'{ultimeConvUtente(update.effective_user.id)}',
                 parse_mode=ParseMode.HTML
             )
@@ -68,20 +68,36 @@ def query_db(userid, intent, text, response):
     contesto = None
     risposta = response
 
-    '''
-    SELECT l'ultima conversazione da conversazioni con userid presente in questa function
-    '''
+    cursor.execute("SELECT id, codCliente FROM conversazioni WHERE telegram_id = '%s' ORDER BY id DESC LIMIT 1" % userid)
+    result = cursor.fetchall()
+
 
     probabilita = 0
-    errore = 1
-    idconve = 1
-    codCliente = 123456
+    errore = 0
+    idconve = result['id']
+    codCliente = result['codCliente']
 
     sql = "INSERT INTO conversations (idConversazioni, telegram_id, codCliente, domanda, risposta, intent, probabilita, errore, contesto, dataora) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     val = (idconve, userid, codCliente, text, risposta, intent, probabilita, errore, contesto, formatted_date)
     cursor.execute(sql, val)
 
     db.commit()
+
+
+    #INSERT INTO `wallet`(`id`, `idStanza`, `idCliente`, `causale`, `prezzo`, `data`, `note`, `dataInserimento`)
+    if intent == 'WalletBarColazione' or intent == 'WalletBarGelato' or intent == 'WalletBarBibite':
+        cursor.execute(
+            "SELECT id, idStanza FROM clienti WHERE codCliente = '%s' ORDER BY id DESC LIMIT 1" % codCliente)
+        resultcl = cursor.fetchall()
+
+        prezzo = 0
+        idCliente = resultcl['id']
+        idStanza = resultcl['codCliente']
+        sqlw = "INSERT INTO wallet (`idStanza`, `idCliente`, `causale`, `prezzo`, `data`) VALUES (%s, %s, %s, %s, %s)"
+        valw = (idStanza, idCliente, text, prezzo, formatted_date)
+        cursor.execute(sqlw, valw)
+
+        db.commit()
 
 
 def ultimeConvUtente(userid):

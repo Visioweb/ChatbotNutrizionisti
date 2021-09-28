@@ -24,6 +24,10 @@
 			"name": "NoCodice",
 			"samples": [
 				"Non trovo il numero",
+				"Non trovo il codice",
+				"Qual è il codice?",
+				"Dove sta sto codice?",
+				"Non me lo ricordo, come faccio?",
 				"Non ho ricevuto l’email",
 				"Non ce l’ho il numero",
 				"Non ce l’ho il codice",
@@ -599,27 +603,6 @@
 			],
 			"responses": [
 				"Certo, le segno il gelato sulla camera. Ha bisogno di altro?"
-			]
-		},
-		{
-			"name": "WalletBarPanini",
-			"samples": [
-				"Ho preso un panino. Lo metti in conto alla camera?"
-			],
-			"responses": [
-				"Ok, metto un panino in conto  alla sua camera. Posso fare altro?"
-			]
-		},
-		{
-			"name": "WalletBarTramezzini",
-			"samples": [
-				"Mi metti in conto un tramezzino?",
-				"Mi segna un tramezzino sul conto della camera?",
-				"mi segni sul conto un tramezzino",
-				"sul conto della camera mi segni un tramezzino"
-			],
-			"responses": [
-				"Sì, certo, provvedo subito. C’è altro?"
 			]
 		},
 		{
