@@ -59,6 +59,8 @@ def noCodEscalation(text, userid):
         cursor = db.cursor()
         match = re.search(r'[\w\.-]+@[\w\.-]+', text)
         email_address = match.group(0)
+        formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
+
         print(email_address)
         #fare query select per prelevare codCliente
         cursor.execute(
