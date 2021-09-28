@@ -37,9 +37,9 @@
 				"Non possiamo continuare senza il codice?"
 			],
 			"responses": [
-				"Se non ha il numero, possiamo andare avanti comunque con nome, cognome e email",
-				"Se non trova il codice, avrò bisogno di nome, cognome e email",
-				"Se no ha il codice, mi può scrivere nome, cognome e email"
+				"Se non ha il numero, possiamo andare avanti comunque con la sua email",
+				"Se non trova il codice, avrò bisogno della sua email",
+				"Se no ha il codice, mi può scrivere la sua email"
 			],
 			"context": {
 				"set": "nocod",
@@ -49,14 +49,12 @@
 		{
 			"name": "NoCodEscalation",
 			"samples": [
-				"Mi chiamo Francesco Ingrosso e la mia email è info@visioweb.it",
-				"Sono Francesco Ingrosso e la mia email è info@visioweb.it",
-				"Francesco Ingrosso info@visioweb.it",
-				"Ingrosso Francesco info@visioweb.it",
-				"francesco ingosso info@visioweb.it",
-				"nome Francesco, cognome Ingrosso, mail info@visioweb.it",
-				"Francesco ingrosso mail: info@visioweb.it",
-				"Nome: Francesco, cognome: Ingrosso, mail: info@visioweb.it"
+				"La mia email è info@visioweb.it",
+				"Certo ecco la mia email è trediman@inwind.it",
+				"francesco.ingrosso@gmail.it",
+				"paolo@gmail.com",
+				"net-service@libero.it",
+				"Eccola pasquale90@alice.it"
 			],
 			"responses": [
 				"Perfetto! Il suo codice è <codCliente>. Ora mi dica come posso essere utile",

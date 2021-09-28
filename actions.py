@@ -33,12 +33,7 @@ def siCodice(text, userid):
 
         codCliente = ''.join([str(temp) for temp in text if temp.isdigit()])
         print(codCliente)
-        sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
-        valco = (userid, codCliente, formatted_date)
-        cursor.execute(sqlco, valco)
-        db.commit()
-        idconve = cursor.lastrowid
-        print(idconve)
+
         cursor.execute(
             "SELECT nome, cognome FROM clienti WHERE codCliente = '%s'" % codCliente)
         result = cursor.fetchall()
@@ -48,6 +43,12 @@ def siCodice(text, userid):
         else:
             vars['NominativoCliente'] = ' '.join([riga[0] + ' ' + riga[1] for riga in result])
             print(vars['NominativoCliente'])
+            sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
+            valco = (userid, codCliente, formatted_date)
+            cursor.execute(sqlco, valco)
+            db.commit()
+            idconve = cursor.lastrowid
+            print(idconve)
 
         return vars
     return si_codice
@@ -68,6 +69,12 @@ def noCodEscalation(text, userid):
             vars['codCliente'] = None
         else:
             vars['codCliente'] = ''.join([riga[0] for riga in result])
+            sqlco = "INSERT INTO conversazioni (telegram_id, codCliente, dataora) VALUES (%s, %s, %s)"
+            valco = (userid, codCliente, formatted_date)
+            cursor.execute(sqlco, valco)
+            db.commit()
+            idconve = cursor.lastrowid
+            print(idconve)
 
         return vars
     return nocodEsc

@@ -33,14 +33,14 @@ def bot_ask(update: Update, context: CallbackContext):
     chatbot.add_error_string("NominativoCliente", ["Il codice inserito è errato, provane un altro", "Il codice non è registrato, potrebbe essere errato"])
 
     chatbot.add_action("NoCodEscalation", noCodEscalation(update.effective_message.text, update.effective_user.id))
-    chatbot.add_error_string("codCliente", ["La mail inserita è errata, provane un' altra", "La mail non è registrata, potrebbe essere errata"])
+    chatbot.add_error_string("codCliente", ["La mail inserita è errata, provane un'altra", "La mail non è registrata, potrebbe essere errata"])
 
 
     response, new_context, _, intent = chatbot.ask(update.effective_message.text,
                                            current_context=context.chat_data.get('context'),
                                            return_proba=True)
 
-    query_db(update.effective_user.id, intent, update.effective_message.text)
+    query_db(update.effective_user.id, intent, update.effective_message.text, response)
 
     if intent=='Sconosciuto':
         if context.chat_data.get('intent_sconosciuto', 0)==1:
@@ -60,13 +60,17 @@ def bot_ask(update: Update, context: CallbackContext):
         update.effective_message.reply_text(response)
         context.chat_data['intent_sconosciuto'] = 0
 
-def query_db(userid, intent, text):
+def query_db(userid, intent, text, response):
     print(userid, intent, text) #qui inserire o selezionare i vari intent
     db = db_connect()
     cursor = db.cursor()
     formatted_date = dt.now().strftime("%Y/%m/%d %H:%M:%S")
     contesto = None
-    risposta = "Non ho capito"
+    risposta = response
+
+    '''
+    SELECT l'ultima conversazione da conversazioni con userid presente in questa function
+    '''
 
     probabilita = 0
     errore = 1
